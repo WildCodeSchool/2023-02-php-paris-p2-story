@@ -2,7 +2,7 @@
 
 ## Equipe
 Ester
-Lea
+Léa
 
 ## Description
 
