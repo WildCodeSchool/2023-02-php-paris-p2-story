@@ -3,7 +3,7 @@
 ## Equipe
 Ester
 Léa
-Vincen
+Vincent
 
 ## Description
 
