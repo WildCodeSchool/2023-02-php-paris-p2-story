@@ -1,7 +1,7 @@
 # Simple MVC
 
 ## Equipe
-Esther
+Ester
 
 ## Description
 
