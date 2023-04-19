@@ -1,3 +1,24 @@
+@font-face {
+    font-family: "inter";
+    src: local("inter"), local("inter"), 
+         url("../font/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+:root {
+    --nav-color: #FFDD9C;
+    --text-color: #000000;
+    --button-color: #ED553B;
+    --button-color-done: #BABABA;
+    --text-color-done: #232222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    color: #f76c6c;
+    font-family: 'inter', sans-serif;
+    color: var(--text-color);
 }
