@@ -1,18 +1,18 @@
 @import url("./style.css");
 
 
-.navbar {
+#navbar {
     height: 140px;
 }
 
-.logo-mobile {
+#logo-mobile {
     font-size: 26px;
     text-align: center;
     letter-spacing: 0.15em;
     margin-bottom: 1.5rem;
 }
 
-li,
+#navbar li,
 span {
     display: none;
 }
@@ -21,11 +21,11 @@ ul {
     justify-content: space-around;
 }
 
-ul img {
+#navbar ul img {
     height: 5%;
     width: 8%;
 }
 
-.picto-lire {
+#navbar .picto-read {
     width: 9%;
 }

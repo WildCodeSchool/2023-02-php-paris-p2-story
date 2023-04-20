@@ -1,33 +1,36 @@
 @import url("./style.css");
 
-.logo-mobile {
+#logo-mobile {
     display: none;
 }
 
-.logo-desktop {
+#logo-desktop {
     background-image: url(../images/logo-desktop.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 22%;
     height: 90px;
+    width: auto;
+    /* max-width: 100%;
+    height: auto; */
 }
 
-ul {
+#navbar ul {
     list-style-type: none;
     justify-content: center;
     letter-spacing: 0.12em;
 }
 
-ul img {
+#navbar ul img {
     display: none;
 }
 
-ul li {
+#navbar ul li {
     font-size: 18px;
     margin-right: 1.5rem;
     margin-left: 1.5rem;
 }
 
-ul span {
+#navbar ul span {
     color: #D1D1D1;
 }

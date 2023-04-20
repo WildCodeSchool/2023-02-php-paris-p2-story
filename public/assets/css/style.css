@@ -23,11 +23,11 @@ body {
     color: var(--text-color);
 }
 
-.navbar {
+#navbar {
     background-color: var(--nav-color);
     padding: 1rem;
 }
 
-ul {
+#navbar ul {
     display: flex;
 }
