@@ -1,5 +1,31 @@
 @import url("./style.css");
 
-body {
-    background-color: blueviolet;
+
+.navbar {
+    height: 140px;
+}
+
+.logo-mobile {
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+}
+
+li,
+span {
+    display: none;
+}
+
+ul {
+    justify-content: space-around;
+}
+
+ul img {
+    height: 5%;
+    width: 8%;
+}
+
+.picto-lire {
+    width: 9%;
 }

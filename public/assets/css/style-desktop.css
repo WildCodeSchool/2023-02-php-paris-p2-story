@@ -1,7 +1,10 @@
 @import url("./style.css");
 
+.logo-mobile {
+    display: none;
+}
 
-.logo {
+.logo-desktop {
     background-image: url(../images/logo-desktop.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -11,10 +14,12 @@
 
 ul {
     list-style-type: none;
-    display: flex;
     justify-content: center;
     letter-spacing: 0.12em;
+}
 
+ul img {
+    display: none;
 }
 
 ul li {
@@ -23,4 +28,6 @@ ul li {
     margin-left: 1.5rem;
 }
 
-span {}
+ul span {
+    color: #D1D1D1;
+}
