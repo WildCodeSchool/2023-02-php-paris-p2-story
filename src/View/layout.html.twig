@@ -1,21 +1,42 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/assets/images/favicon_e_stoires.png">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="/assets/images/favicon_e_stoires.png">
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="stylesheet" href="/assets/css/style-desktop.css" media="screen and (min-width:420px)">
+		<link rel="stylesheet" href="/assets/css/style-mobile.css" media="screen and (max-width:642px)">
 
-    <title>{% block title %}E-STOIRES{% endblock %}</title>  
+		<title>
+			{% block title %}e-stoires
+			{% endblock %}
+		</title>
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-    {% block stylesheet %}{% endblock %}
-</head>
+		{# {% block stylesheet %}{% endblock %} #}
+	</head>
 
-<body>
-    {% block content %}{% endblock %}
-    {% block javascript %}{% endblock %}
-</body>
+	<body>
+		{% block navbar %}
+			<section class="navbar">
+				<div class="logo"></div>
+				<div>
+					<ul>
+						<li>ACCUEIL</li>
+						<span>|</span>
+						<li>CRÉER</li>
+						<span>|</span>
+						<li>CONTRIBUER</li>
+						<span>|</span>
+						<li>LIRE</li>
+						<span>|</span>
+						<li>COMPTE</li>
+					</ul>
+				</div>
+			</section>
+		{% endblock %}
+		{% block content %}{% endblock %}
+		{% block javascript %}{% endblock %}
+	</body>
 </html>
-
-

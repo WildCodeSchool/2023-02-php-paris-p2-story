@@ -1,0 +1,26 @@
+@import url("./style.css");
+
+
+.logo {
+    background-image: url(../images/logo-desktop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22%;
+    height: 90px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.12em;
+
+}
+
+ul li {
+    font-size: 18px;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+span {}
