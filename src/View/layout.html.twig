@@ -1,21 +1,76 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/assets/images/favicon_e_stoires.png">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="/assets/images/favicon_e_stoires.png">
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="stylesheet" href="/assets/css/style-desktop.css" media="screen and (min-width:655px)">
+		<link rel="stylesheet" href="/assets/css/style-mobile.css" media="screen and (max-width:655px)">
 
-    <title>{% block title %}E-STOIRES{% endblock %}</title>  
+		<title>
+			{% block title %}e-stoires
+			{% endblock %}
+		</title>
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-    {% block stylesheet %}{% endblock %}
-</head>
+		{# {% block stylesheet %}{% endblock %} #}
+	</head>
 
-<body>
-    {% block content %}{% endblock %}
-    {% block javascript %}{% endblock %}
-</body>
+	<body>
+		{% block navbar %}
+			<section id="navbar">
+				<img id="logo-desktop" src="/assets/images/logo-desktop.png" alt="logo">
+				<div id="logo-mobile">
+					<p>E-STOIRES</p>
+				</div>
+				<div>
+					<ul>
+						<li>
+							<a href="/">ACCUEIL</a>
+						</li>
+						<span>|</span>
+
+						<li>
+							<a href="/stories/add">CRÉER</a>
+						</li>
+						<span>|</span>
+
+						<div class="picto">
+							<a href="/stories/add"><img src="/assets/images/pencil.png" class="picto-create" alt="picto crayon"></a>
+						</div>
+
+						<li>
+							<a href="/stories">CONTRIBUER</a>
+						</li>
+						<span>|</span>
+
+						<div class="picto">
+							<a href="/stories"><img class="picto-contribute" src="/assets/images/contribute.png" alt="picto contribuer"></a>
+						</div>
+
+						<li>
+							<a href="/stories">LIRE</a>
+						</li>
+						<span>|</span>
+
+						<div class="picto">
+							<a href="/stories"><img class="picto-read" src="/assets/images/open-book.png" alt="picto utilisateur"></a>
+						</div>
+
+						<li>
+							<a href="/">COMPTE</a>
+						</li>
+
+						<div class="picto">
+							<a href="/"><img class="picto-user" src="/assets/images/user.png" alt="picto utilisateur"></a>
+						</div>
+
+					</ul>
+				</div>
+			</section>
+		{% endblock %}
+		{% block content %}{% endblock %}
+		{% block javascript %}{% endblock %}
+	</body>
 </html>
-
-

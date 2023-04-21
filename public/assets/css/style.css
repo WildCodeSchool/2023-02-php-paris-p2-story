@@ -1,11 +1,11 @@
 @font-face {
     font-family: "inter";
-    src: local("inter"), local("inter"), 
-         url("../font/Inter-VariableFont_slnt\,wght.ttf");
+    src: local("inter"), local("inter"),
+        url("../font/Inter-VariableFont_slnt\,wght.ttf");
 }
 
 :root {
-    --nav-color: #FFDD9C;
+    --nav-color: #FFEECE;
     --text-color: #000000;
     --button-color: #ED553B;
     --button-color-done: #BABABA;
@@ -21,4 +21,14 @@
 body {
     font-family: 'inter', sans-serif;
     color: var(--text-color);
+}
+
+#navbar {
+    background-color: var(--nav-color);
+    padding: 1rem;
+    height: 8.75rem;
+}
+
+#navbar ul {
+    display: flex;
 }

@@ -1,0 +1,44 @@
+@import url("./style.css");
+
+#logo-desktop {
+    display: none;
+}
+
+#logo-mobile {
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#navbar li,
+span {
+    display: none;
+}
+
+
+#navbar .picto {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+
+}
+
+#navbar ul img {
+    width: 100%;
+    justify-content: center;
+}
+
+#navbar a {
+    display: flex;
+    width: 37%;
+    justify-content: center;
+}
+
+#navbar .picto-create,
+.picto-contribute,
+.picto-user {
+    width: 90%;
+    height: 90%;
+}
