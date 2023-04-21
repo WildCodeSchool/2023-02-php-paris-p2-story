@@ -1,14 +1,14 @@
 @import url("./style.css");
 
-
-#navbar {
-    height: 140px;
+#logo-desktop {
+    display: none;
 }
 
 #logo-mobile {
     font-size: 26px;
     text-align: center;
     letter-spacing: 0.15em;
+    margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
 
@@ -17,15 +17,28 @@ span {
     display: none;
 }
 
-ul {
-    justify-content: space-around;
+
+#navbar .picto {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+
 }
 
 #navbar ul img {
-    height: 5%;
-    width: 8%;
+    width: 100%;
+    justify-content: center;
 }
 
-#navbar .picto-read {
-    width: 9%;
+#navbar a {
+    display: flex;
+    width: 37%;
+    justify-content: center;
+}
+
+#navbar .picto-create,
+.picto-contribute,
+.picto-user {
+    width: 90%;
+    height: 90%;
 }

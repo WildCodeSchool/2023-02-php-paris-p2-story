@@ -20,29 +20,52 @@
 	<body>
 		{% block navbar %}
 			<section id="navbar">
-				<div id="logo-desktop"></div>
+				<img id="logo-desktop" src="/assets/images/logo-desktop.png" alt="logo">
 				<div id="logo-mobile">
 					<p>E-STOIRES</p>
 				</div>
 				<div>
 					<ul>
-						<li>ACCUEIL</li>
+						<li>
+							<a href="/">ACCUEIL</a>
+						</li>
 						<span>|</span>
 
-						<li>CRÉER</li>
+						<li>
+							<a href="/stories/add">CRÉER</a>
+						</li>
 						<span>|</span>
-						<img class="picto-create" src="/assets/images/pencil.png" alt="picto crayon">
 
-						<li>CONTRIBUER</li>
+						<div class="picto">
+							<a href="/stories/add"><img src="/assets/images/pencil.png" class="picto-create" alt="picto crayon"></a>
+						</div>
+
+						<li>
+							<a href="/stories">CONTRIBUER</a>
+						</li>
 						<span>|</span>
-						<img class="picto-contribute" src="/assets/images/contribute.png" alt="picto contribuer">
 
-						<li>LIRE</li>
+						<div class="picto">
+							<a href="/stories"><img class="picto-contribute" src="/assets/images/contribute.png" alt="picto contribuer"></a>
+						</div>
+
+						<li>
+							<a href="/stories">LIRE</a>
+						</li>
 						<span>|</span>
-						<img class="picto-read" src="/assets/images/open-book.png" alt="picto utilisateur">
 
-						<li>COMPTE</li>
-						<img class="picto-user" src="/assets/images/user.png" alt="picto utilisateur">
+						<div class="picto">
+							<a href="/stories"><img class="picto-read" src="/assets/images/open-book.png" alt="picto utilisateur"></a>
+						</div>
+
+						<li>
+							<a href="/">COMPTE</a>
+						</li>
+
+						<div class="picto">
+							<a href="/"><img class="picto-user" src="/assets/images/user.png" alt="picto utilisateur"></a>
+						</div>
+
 					</ul>
 				</div>
 			</section>
