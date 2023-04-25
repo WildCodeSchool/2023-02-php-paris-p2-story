@@ -13,16 +13,14 @@
 }
 
 #navbar li,
-span {
+#navbar span {
     display: none;
 }
-
 
 #navbar .picto {
     display: flex;
     justify-content: center;
     width: 60%;
-
 }
 
 #navbar ul img {
@@ -37,8 +35,8 @@ span {
 }
 
 #navbar .picto-create,
-.picto-contribute,
-.picto-user {
+#navbar .picto-contribute,
+#navbar .picto-user {
     width: 90%;
     height: 90%;
 }
