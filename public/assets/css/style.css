@@ -1,7 +1,7 @@
 @font-face {
     font-family: "inter";
-    src: local("inter"), local("inter"), 
-         url("../font/Inter-VariableFont_slnt\,wght.ttf");
+    src: local("inter"), local("inter"),
+        url("../font/Inter-VariableFont_slnt\,wght.ttf");
 }
 
 :root {
@@ -16,6 +16,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+#navbar {
+    background-color: var(--nav-color);
+    padding: 1rem;
+    height: 8.75rem;
+}
+
+#navbar ul {
+    display: flex;
 }
 
 body {
