@@ -1,5 +1,10 @@
 @import url("./style.css");
 
+
+:root:not([data-theme]) {
+    --color: black;
+}
+
 #logo-desktop {
     display: none;
 }
@@ -9,7 +14,6 @@
     text-align: center;
     letter-spacing: 0.15em;
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
 }
 
 #navbar li,
@@ -20,23 +24,24 @@
 #navbar .picto {
     display: flex;
     justify-content: center;
-    width: 60%;
+    width: 100%;
 }
 
-#navbar ul img {
-    width: 100%;
+#navbar nav ul img {
+    max-width: 138%;
+    min-width: 138%;
+    /* width: 100%; */
     justify-content: center;
 }
 
 #navbar a {
     display: flex;
-    width: 37%;
+    width: 50%;
     justify-content: center;
 }
 
 #navbar .picto-create,
 #navbar .picto-contribute,
 #navbar .picto-user {
-    width: 90%;
-    height: 90%;
+    min-width: 122%;
 }

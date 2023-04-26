@@ -29,6 +29,7 @@ body {
     height: 8.75rem;
 }
 
-#navbar ul {
+#navbar nav {
     display: flex;
+    justify-content: center;
 }
