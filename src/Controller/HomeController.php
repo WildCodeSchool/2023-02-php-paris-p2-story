@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\StoryManager;
+
 class HomeController extends AbstractController
 {
     /**
@@ -9,6 +11,8 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
-        return $this->twig->render('Home/index.html.twig');
+        $storyManager = new StoryManager();
+        $stories = $storyManager->selectSome('id');
+        return $this->twig->render('Home/index.html.twig', ['stories' => $stories]);
     }
 }

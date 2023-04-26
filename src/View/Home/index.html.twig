@@ -8,4 +8,26 @@
 		<p>Many species of gecko have adhesive toe pads which enable them to climb walls and even windows.</p>
 	</header>
 
-{% endblock %}
+	<main>
+		<section id="last-published">
+
+			<ul>
+				{% for story in stories %}
+					<hgroup>
+						<li>
+							<a href="/stories/show?id={{ story.id }}">{{ story.title }}</a>
+						</li>
+						<li>
+							<h5>{{ story.pseusdo }}</h5>
+						</li>
+					{% else %}
+						<li>Nothing to display</li>
+					{% endfor %}
+				</ul>
+				<a href="/stories/show">Ajouter</a>
+				<h4>Subtitle for heading 2</h4>
+			</hgroup>
+		</section>
+		<main/>
+
+	{% endblock %}
