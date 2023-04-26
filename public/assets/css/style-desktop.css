@@ -16,16 +16,14 @@
 }
 
 #navbar ul {
-    margin-top: 1rem;
     list-style-type: none;
-    justify-content: center;
     letter-spacing: 0.12em;
 }
 
 #navbar ul li {
     font-size: 18px;
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 #navbar ul li a {
