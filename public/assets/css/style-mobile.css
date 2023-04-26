@@ -1,15 +1,12 @@
 @import url("./style.css");
 
 
-:root:not([data-theme]) {
-    --color: black;
-}
-
 #logo-desktop {
     display: none;
 }
 
-#logo-mobile {
+#logo-mobile p {
+    color: black;
     font-size: 26px;
     text-align: center;
     letter-spacing: 0.15em;
@@ -30,7 +27,6 @@
 #navbar nav ul img {
     max-width: 138%;
     min-width: 138%;
-    /* width: 100%; */
     justify-content: center;
 }
 
