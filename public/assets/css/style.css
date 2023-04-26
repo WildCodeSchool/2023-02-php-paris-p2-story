@@ -34,3 +34,8 @@ body {
     display: flex;
     justify-content: center;
 }
+
+#last-published div {
+    width: 20 rem;
+    text-align: center;
+}

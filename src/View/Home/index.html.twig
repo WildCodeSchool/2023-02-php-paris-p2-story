@@ -10,23 +10,20 @@
 
 	<main>
 		<section id="last-published">
-
-			<ul>
+			<div class="grid">
 				{% for story in stories %}
-					<hgroup>
-						<li>
-							<a href="/stories/show?id={{ story.id }}">{{ story.title }}</a>
-						</li>
-						<li>
-							<h5>{{ story.pseusdo }}</h5>
-						</li>
-					{% else %}
-						<li>Nothing to display</li>
-					{% endfor %}
-				</ul>
-				<a href="/stories/show">Ajouter</a>
-				<h4>Subtitle for heading 2</h4>
-			</hgroup>
+					<div>
+						<img href="{{ story.picture }}" alt="couverture du livre">
+						<br>
+						<a href="/stories/show?id={{ story.id }}">{{ story.title }}</a>
+						<br>
+						<p>{{ story.pseudo }}</p>
+					</div>
+				{% else %}
+					<div>Nothing to display</div>
+				{% endfor %}
+			</div>
+			<a href="/stories">voir les autres e-stoires</a>
 		</section>
 		<main/>
 
