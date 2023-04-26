@@ -36,3 +36,9 @@
 #navbar ul span {
     color: #D1D1D1;
 }
+
+header {
+    background-image: url('./../images/image_header_desktop.png');
+    background-size: auto;
+    height: 700px;
+}
