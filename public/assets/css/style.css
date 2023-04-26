@@ -27,6 +27,7 @@ body {
     background-color: var(--nav-color);
     padding: 1rem;
     height: 10rem;
+    margin-bottom: 0;
 }
 
 #navbar nav {

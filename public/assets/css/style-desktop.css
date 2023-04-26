@@ -37,6 +37,6 @@
 
 header {
     background-image: url('./../images/image_header_desktop.png');
-    background-size: auto;
+    background-size: cover;
     height: 700px;
 }
