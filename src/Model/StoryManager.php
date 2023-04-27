@@ -6,28 +6,48 @@ use PDO;
 
 class StoryManager extends AbstractManager
 {
-    public const TABLE = 'stories';
+    public const TABLE = 'story';
+
 
     /**
-     * Insert new story in database - TO BE UPDATED by Vincent
+     * Insert new story in database - UPDATED by Vincent
      */
     public function insert(array $story): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`title`) VALUES (:title)");
-        $statement->bindValue('title', $story['title'], PDO::PARAM_STR);
+        $query = 'INSERT INTO 
+        story (title, pseudo, nbchapter, genre, lectorat, description) 
+        VALUES (:title, :pseudo, :nbchapter, :genre, :lectorat, :description);';
+
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':title', $story['title'], PDO::PARAM_STR);
+        $statement->bindValue(':pseudo', $story['pseudo'], PDO::PARAM_STR);
+        $statement->bindValue(':nbchapter', $story['nbchapter'], PDO::PARAM_INT);
+        $statement->bindValue(':genre', $story['genre'], PDO::PARAM_STR);
+        $statement->bindValue(':description', $story['description'], PDO::PARAM_STR);
+        $statement->bindValue(':lectorat', $story['lectorat'], PDO::PARAM_STR);
 
         $statement->execute();
+
         return (int)$this->pdo->lastInsertId();
     }
-
     /**
-     * Update story in database - TO BE UPDATED by Vincent
+     * Update story in database - UPDATED by Vincent
      */
     public function update(array $story): bool
     {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE id=:id");
-        $statement->bindValue('id', $story['id'], PDO::PARAM_INT);
-        $statement->bindValue('title', $story['title'], PDO::PARAM_STR);
+        $query = "UPDATE story 
+        SET `title`= :title, `pseudo` = :pseudo, `nbchapter` = :nbchapter, 
+        `genre` = :genre, `description` = :description, `lectorat` = :lectorat, 
+        WHERE `id` = :id";
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':title', $story['title'], PDO::PARAM_STR);
+        $statement->bindValue(':pseudo', $story['pseudo'], PDO::PARAM_STR);
+        $statement->bindValue(':nbchapter', $story['nbchapter'], PDO::PARAM_INT);
+        $statement->bindValue(':genre', $story['genre'], PDO::PARAM_STR);
+        $statement->bindValue(':description', $story['description'], PDO::PARAM_STR);
+        $statement->bindValue(':lectorat', $story['lectorat'], PDO::PARAM_INT);
 
         return $statement->execute();
     }

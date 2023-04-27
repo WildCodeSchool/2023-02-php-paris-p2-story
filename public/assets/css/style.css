@@ -18,6 +18,12 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'inter', sans-serif;
+    color: var(--text-color);
+    /* border: black solid 2px; */
+}
+
 #navbar {
     background-color: var(--nav-color);
     padding: 1rem;
@@ -28,42 +34,44 @@
     display: flex;
 }
 
-body {
-    font-family: 'inter', sans-serif;
-    color: var(--text-color);
-    /* border: black solid 2px; */
-}
-
-main {
-    margin: 5% 5% 5% 5%;
-    font-size: 10px;
-    /* border: red solid 2px; */
+body>main {
+    padding: 0 2rem 0 2rem;
+    font-size: 16px;
+    border: red solid 2px;
 }
 
 main .form {
     background-color: var(--nav-color);
     padding: 5%;
-    border: rgba(208, 206, 206, 0.715) solid 2px;
+    border: black solid 2px;
     border-radius: .5rem;
     justify-content: center;
+}
+
+body>main #title, #pseudo, #nbchapter, #genre, #description {
+    background-color: white;
+    font-size: 12px;
+    width: 90%;
+    height: auto;    
+    margin: 2% 5% 2% 5%;    
+    text-align: center;
+}
+
+body>main #picture {
+    display: flex;
+    justify-content: center;
+    background-color: #FFEECE;
+    font-size: 12px;
+    width: 30%;
+    height: 60%;    
+    margin: auto;    
 }
 
 main .form .binome {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 40% 40%; 
-    margin: 5% 5% 5% 5%;    
-}
-
-#title, #users, #nbchapters, #types, #pictureTheme, #description {
-    width: 90%;
-    height: auto;    
-    margin: 5% 5% 5% 5%;    
-    text-align: center;
-}
-
-#title {
-    font-size: 16px;
+    grid-template-rows: 50% 50%;
+    margin: 2% 2.5% 2% 2.5%;    
 }
 
 #description {
@@ -74,19 +82,21 @@ main .form .binome {
 .field {
     width: 90%;
     height: auto;
-    /* border: blue solid 2px; */
+    font-size: 12px;
+    border: blue solid 2px;
     margin: 5% 5% 5% 5%;
 }
 
-.field #agreement {
+/* .field #agreement {
     font-size: 6px;   
-}
+} */
 
 .buttonsLine {
-    width: 90%;
+    width: 50%;
     height: auto;
-    text-align: center;
-    /* border: orange solid 2px;  */
+    display: flex;
+    justify-content: center;
+    border: orange solid 2px;
     margin: 5% 5% 5% 5%;
 }
 
