@@ -2,28 +2,48 @@
 
 {% block content %}
 
-	<header>
-		<h1>Manifest</h1>
-		<p>Geckos are a group of usually small, usually nocturnal lizards. They are found on every continent except Australia.</p>
-		<p>Many species of gecko have adhesive toe pads which enable them to climb walls and even windows.</p>
-	</header>
+	{# Ajout d'un id pour éviter pb de sélécteurs #}
+	<section id="header">
+		<header>
+			<h1>Manifest</h1>
+			<p>Geckos are a group of usually small, usually nocturnal lizards. They are found on every continent except Australia.</p>
+			<p>Many species of gecko have adhesive toe pads which enable them to climb walls and even windows.</p>
+		</header>
+	</section>
 
 	<main>
 		<section id="last-published">
-			<div class="grid">
+
+			<h1>Dernières publications
+			</h1>
+
+			<div class="picto">
+				<a href="/stories"><img class="picto-read" src="/assets/images/open-book.png" alt="picto utilisateur"></a>
+			</div>
+
+			<section id="stories-list">
 				{% for story in stories %}
-					<div>
-						<img href="{{ story.picture }}" alt="couverture du livre">
-						<br>
+					<article>
+
+						<header>
+							<img src="{{ story.picture }}" alt="couverture du livre">
+						</header>
+
 						<a href="/stories/show?id={{ story.id }}">{{ story.title }}</a>
-						<br>
+
 						<p>{{ story.pseudo }}</p>
-					</div>
+
+					</article>
 				{% else %}
 					<div>Nothing to display</div>
 				{% endfor %}
+			</section>
+
+			<div id="other-stories">
+				<a href="/stories">Découvrez d'autres e-stoires
+				</a>
 			</div>
-			<a href="/stories">voir les autres e-stoires</a>
+
 		</section>
 		<main/>
 

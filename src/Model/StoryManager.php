@@ -6,7 +6,7 @@ use PDO;
 
 class StoryManager extends AbstractManager
 {
-    public const TABLE = 'stories';
+    public const TABLE = 'story';
 
     /**
      * Insert new story in database - TO BE UPDATED by Vincent

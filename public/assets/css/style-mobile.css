@@ -40,3 +40,30 @@
 #navbar .picto-user {
     min-width: 122%;
 }
+
+#last-published h1 {
+    font-size: 1.5rem;
+}
+
+#last-published .picto {
+    width: 10%;
+    margin: 0 auto;
+}
+
+#stories-list {
+    flex-direction: column;
+}
+
+#stories-list header {
+    border: none;
+}
+
+#copyright {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-networks {
+    display: none;
+}
