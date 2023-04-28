@@ -28,6 +28,7 @@ class StoryController extends AbstractController
         return $this->twig->render('Story/show.html.twig', ['story' => $story]);
     }
 
+
     /**
      * Edit a specific story
      */
@@ -71,12 +72,15 @@ class StoryController extends AbstractController
             $storyManager = new StoryManager();
             $id =  $storyManager->insert($story);
 
+
+
             header('Location:/stories/show?id=' . $id);
             return null;
         }
 
         return $this->twig->render('Story/add.html.twig');
     }
+
 
     /**
      * Delete a specific story

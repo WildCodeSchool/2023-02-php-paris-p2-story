@@ -1,0 +1,28 @@
+<form action="" method="post" class="form">
+	<div>
+		<label for="title"></label>
+		<input type="text" placeholder="Titre du chapitre :" name="title" id="title" maxlength="120" required>
+	</div>
+
+	<div>
+		<label for="pseudo"></label>
+		<input type="text" placeholder="Nom de plume :" name="pseudo" id="pseudo" maxlength="120" required>
+	</div>
+
+	<div>
+		<label for="content"></label>
+		<textarea placeholder="Ecris ton chapitre" name="content" id="content" minlength="1" maxlength="35000"></textarea>
+	</div>
+
+	<div>
+		<fieldset class="field">
+			<input type="checkbox" id="agreement" name="agreement" required>
+			<label for="agreement">J'ai lu et m'engage à respecter les
+				<a href="https://www.e-stoires.fr/charte-utilisateur" target="_blank">conditions d'utilisation</a>.</label>
+		</fieldset>
+	</div>
+
+	<div class="buttonsLine">
+		<button type="submit">Ecrire</button>
+	</div>
+</form>

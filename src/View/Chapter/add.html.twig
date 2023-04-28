@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<h1>{{ infoStory.title }}</h1>
+	<p>{{ infoStory.nbchapter }}
+		chapitres</p>
+	<p>{{ infoStory.genre }}</p>
+	<p>{{ infoStory.lectorat }}</p>
+
+	{# image #}
+
+	{% include 'Chapter/_form.html.twig' %}
+{% endblock %}
