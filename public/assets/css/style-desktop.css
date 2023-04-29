@@ -1,5 +1,9 @@
 @import url("./style.css");
 
+body>main {
+    margin-left: 1rem ;
+}
+
 #logo-mobile {
     display: none;
 }

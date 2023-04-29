@@ -1,8 +1,33 @@
 {# TODO : manage errors display #}
 
-<form method="post">
+{# code ci-dessous à indiquer dans la balise form  #}
+<form method="post" enctype="multipart/form-data">
+{# lignes de code ci-dessous à insérer dans la première partie du form #}
+	<div id="image-upload">
+
+		<div id="cover-zone">
+		</div>
+
+		<label for="picture"></label>
+
+		<input type="file" name="picture" id="upload-picture" onchange="loadFile(event)"/>
+			
+		<div class="book-cover">
+			<img id="bookCover"/>
+		</div>
+	</div>
+
 	<input type="hidden" value="{{ story.id }}" name="id">
 	<label for="title">Tile</label>
 	<input type="text" value="{{ story.title }}" name="title" id="title">
+	
 	<button>Submit</button>
 </form>
+
+
+	<script>
+	let loadFile = function(event) {
+    let image = document.getElementById('bookCover');
+    image.src=URL.createObjectURL(event.target.files[0]);
+    };
+    </script>
