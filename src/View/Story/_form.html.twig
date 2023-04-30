@@ -13,10 +13,11 @@
 		<input type="file" name="picture" id="upload-picture" onchange="loadFile(event)"/>
 			
 		<div class="book-cover">
-			<img id="bookCover"/>
+			<img id="bookCover" alt=""/>
 		</div>
 	</div>
 
+{# reste du formulaire #}
 	<input type="hidden" value="{{ story.id }}" name="id">
 	<label for="title">Tile</label>
 	<input type="text" value="{{ story.title }}" name="title" id="title">

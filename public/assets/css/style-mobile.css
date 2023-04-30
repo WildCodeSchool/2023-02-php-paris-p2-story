@@ -58,6 +58,28 @@
     border: none;
 }
 
+/* bouton upload image formulaire */
+#image-upload {
+    width: 112px;
+}
+
+#cover-zone {
+    background-image: url("/assets/images/cover-upload-mobile.png");
+    width:116px;
+    height:157px;
+}
+
+#bookCover {
+    width: 98px;
+    height: 136px;
+    margin-top: -165px;
+}
+
+#upload-picture {
+    width: 115px;
+    margin-top: 96px;
+}
+
 #copyright {
     display: flex;
     justify-content: center;

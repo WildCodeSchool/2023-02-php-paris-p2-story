@@ -78,6 +78,28 @@ body>main {
     text-decoration: none;
 }
 
+/* bouton upload image formulaire */
+#image-upload {
+    width: 286px;
+}
+
+#cover-zone {
+    background-image: url("/assets/images/cover-upload-desktop.png");
+    width:290px;
+    height:357px;
+}
+
+#bookCover {
+    width:223px;
+    height:321px;
+    margin-top: -364px;
+}
+
+#upload-picture {
+    width: 158px;
+    margin-top: 215px;
+}
+
 footer {
     background-color: #000000;
     padding: 2rem;

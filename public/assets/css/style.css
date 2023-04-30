@@ -100,18 +100,12 @@ body>main {
     color: #000000;
 }
 
+/* bouton upload image formulaire */
 #image-upload {
-    width: 286px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#cover-zone {
-    background-image: url("/assets/images/cover-upload-desktop.png");
-    width:290px;
-    height:357px;
 }
 
 #image-upload .book-cover {
@@ -120,19 +114,8 @@ body>main {
     align-items: center;
 }
 
-#bookCover {
-    width:223px;
-    height:321px;
-    /* position:absolute; */
-    margin-top: -364px;
-    /* z-index:0; */
-    text-decoration:none;
-}
-
 #upload-picture {
-    width: 158px;
     position:absolute;
-    margin-top: 215px;
     z-index:10;
     opacity:0;
 }
