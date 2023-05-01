@@ -12,8 +12,7 @@
 
 		<input type="file" name="picture" id="upload-picture" onchange="loadFile(event)"/>
 			
-		<div class="book-cover">
-			<img id="bookCover" alt=""/>
+		<div class="cover-preview-container">
 		</div>
 	</div>
 
@@ -25,10 +24,15 @@
 	<button>Submit</button>
 </form>
 
-
+{# permet de prévisualiser l'image avant validation du formulaire #}
 	<script>
-	let loadFile = function(event) {
-    let image = document.getElementById('bookCover');
-    image.src=URL.createObjectURL(event.target.files[0]);
+	const loadFile = function(event) {
+	const coverPreview = document.createElement('img');
+	const coverContainer = document.querySelector('.cover-preview-container');
+
+	coverPreview.classList.add("coverPreview");
+	coverContainer.appendChild(coverPreview);
+    coverPreview.src=URL.createObjectURL(event.target.files[0]);
+	coverPreview.alt = "prévisualisation de la couverture de l'e-stoire";
     };
     </script>
