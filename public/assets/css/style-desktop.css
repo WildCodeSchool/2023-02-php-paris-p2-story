@@ -36,3 +36,79 @@
 #navbar ul span {
     color: #D1D1D1;
 }
+
+
+
+/******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
+main #container #image #mobile { display: none;}
+
+main #textContribute {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 3em;
+}
+
+main #textContribute button {
+    width: 15%;
+    background-color: white;
+    color: black;
+    border-color: black;
+    padding: 7px;
+    margin: 0;
+}
+
+main #container {    
+    display: flex;
+    justify-content: center;
+    background-color: #FFF5E1;
+    margin: auto;
+    padding: 1em 0;
+    border-radius: 10px;
+}
+
+main #container #image img { padding-top: 3%; width: 200px; height: 360px;}
+
+main #container #infoStory { display: flex; flex-direction: column; align-items: flex-start; width: 61%; padding-left: 3%;}
+
+main #container #infoStory #title{ height: 2.5em; }
+main #container #infoStory #title h2{ font-size: 1.6em; }
+
+main #container #infoStory #pseudo{ height: 2em; }
+main #container #infoStory #pseudo p {opacity: 0.5;}
+
+main #container #infoStory #chapter{ display: flex; flex-direction: row; height: 2.3em; }
+main #container #infoStory #chapter p{ padding-left: 0.8em; }
+main #container #infoStory #chapter img { width: 30px; height: 30px; }
+
+main #container #infoStory #type_age{ display: flex; flex-direction: row; height: 4.2em;}
+main #container #infoStory #type{ padding-right: 3em; }
+main #container #infoStory #type p{ background-color: #FFDD9C; padding: 0.2em 1em; border-radius: 10px; }
+
+main #container #infoStory #age{ padding-left: 1em; }
+
+main #container #infoStory #description { text-align: justify; }
+
+main #container #button button{ grid-area: button; background: #F5664B; border: none; height: 73%; padding: 8px 20px;}
+
+main #container #button button a:link,
+main #container #button button a:visited,  
+main #container #button button a:hover { text-decoration: none; color: white; }
+ 
+main #form {
+    width: 80%;
+    margin: auto;
+    margin-top: 3em;
+    padding: 2em 2em 0.1em 2em;
+    background-color: #FFF5E1;
+    border-radius: 10px;
+}
+
+main #form .flex #title,
+main #form .flex #pseudo,
+main #form .flex #content{ font-size: 17px; background-color: white; }
+
+
+main #form .flex fieldset { font-size: 0.7em; background-color: white; width: 35%; margin-left: 0.5em;}
+main #form button { width: 15%; background: #F5664B; border: none; margin: auto; padding: 8px 20px;}
+
+/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */

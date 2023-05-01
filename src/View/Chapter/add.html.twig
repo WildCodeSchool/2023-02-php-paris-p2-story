@@ -1,13 +1,53 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<h1>{{ infoStory.title }}</h1>
-	<p>{{ infoStory.nbchapter }}
-		chapitres</p>
-	<p>{{ infoStory.genre }}</p>
-	<p>{{ infoStory.lectorat }}</p>
+	<main>
+		{# <div id="container"> #}
+		<div id="textContribute">
+			<h1>Contribuer à une e-stoire</h1>
+			<p>Remplissez le formulaire ci-dessous pour ajouter un chapitre.
+				<br>
+				N’oubliez pas de consulter la charte utilisateur avant de cliquer sur “Enregistrer”.</p>
+			<button type="submit">Charte utilisateur</button>
+		</div>
 
-	{# image #}
-
-	{% include 'Chapter/_form.html.twig' %}
-{% endblock %}
+		<div id="container">
+			<div id="image">
+				<img src="{{ infoStory.picture }}" alt="cover_story">
+			</div>
+			<div id="infoStory">
+				<div id="title">
+					<h2>{{ infoStory.title }}</h2>
+				</div>
+				<div id="pseudo">
+					<p>{{ infoStory.pseudo }}</p>
+				</div>
+				<div id="chapter">
+					<img src="/assets/images/list_chapters.png" alt="logo_list">
+					<p>{{ infoStory.nbchapter }}
+						chapitres</p>
+				</div>
+				<div id="type_age">
+					<div id="type">
+						<p>{{ infoStory.genre }}</p>
+					</div>
+					<div id="age">
+						<p>{{ infoStory.lectorat }}
+							ans</p>
+					</div>
+				</div>
+				<div id="description">
+					<p>{{ infoStory.description }}</p>
+				</div>
+				<div id="button">
+					<button type="submit">
+						<a href="/stories">Lire tous les chapitres</a>
+					</button>
+				</div>
+			</div>
+		</div>
+		<section id="form">
+			{% include 'Chapter/_form.html.twig' %}
+		</section>
+	</main>
+</main>{% endblock %}

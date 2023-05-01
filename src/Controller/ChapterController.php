@@ -9,10 +9,7 @@ class ChapterController extends AbstractController
 {
     private ChapterManager $chapterManager;
     private StoryManager $storyManager;
-
-    public const MAX_TITLE = 100;
-    public const MAX_PSEUDO = 100;
-    public const MAX_CONTENT = 35000;
+    public const MAX_LENGTH = 100;
 
 
     public function __construct()
@@ -28,21 +25,20 @@ class ChapterController extends AbstractController
 
         if ((!isset($infoNewChapter['title'])) || (empty($infoNewChapter['title']))) {
             $errors[] = "Dommage que votre chapitre n'ait pas de titre !";
-        } elseif (strlen($infoNewChapter['title']) > self::MAX_TITLE) {
+        } elseif (strlen($infoNewChapter['title']) > self::MAX_LENGTH) {
             $errors[] = "Le titre de votre chapitre est trop long";
         }
 
         if ((!isset($infoNewChapter['pseudo'])) || (empty($infoNewChapter['pseudo']))) {
             $errors[] = "Dommage que votre chapitre n'ait pas d'auteur !";
-        } elseif (strlen($infoNewChapter['pseudo']) > self::MAX_PSEUDO) {
+        } elseif (strlen($infoNewChapter['pseudo']) > self::MAX_LENGTH) {
             $errors[] = "Le nom de plume est trop long";
         }
 
         if ((!isset($infoNewChapter['content'])) || (empty($infoNewChapter['content']))) {
             $errors[] = "Dommage que votre chapitre n'ait pas de contenu !";
-        } elseif (strlen($infoNewChapter['content']) > self::MAX_CONTENT) {
-            $errors[] = "Le titre de votre chapitre est trop long";
         }
+
         return $errors;
     }
 
@@ -55,11 +51,10 @@ class ChapterController extends AbstractController
             $errors = $this->verify($infoNewChapter);
 
             if (empty($errors)) {
-                $idChapter =  $this->chapterManager->insert($infoNewChapter, $id);
+                $this->chapterManager->insert($infoNewChapter, $id); //$idChapter
             }
 
-            header('Location:/');
-            // header('Location:/chapters/show?id=' . '$idChapter');
+            header('Location:/stories/');
             return null;
         }
         return $this->twig->render('Chapter/add.html.twig', ['infoStory' => $infoStory]);

@@ -81,7 +81,6 @@ class StoryController extends AbstractController
         return $this->twig->render('Story/add.html.twig');
     }
 
-
     /**
      * Delete a specific story
      */

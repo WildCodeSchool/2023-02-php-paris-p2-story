@@ -4,7 +4,6 @@ namespace App\Model;
 
 use PDO;
 
-
 class StoryManager extends AbstractManager
 {
     public const TABLE = 'story';
@@ -32,12 +31,4 @@ class StoryManager extends AbstractManager
 
         return $statement->execute();
     }
-
-    // public function countChapInStory(): array //si story_id === NULL, aucun chapitre lié à une histoire
-    // {
-    //     $statement = $this->pdo->prepare("SELECT s.title, c.story_id, COUNT(*) AS num FROM story AS s LEFT JOIN chapter AS c ON c.story_id=s.id GROUP BY s.id;");
-    //     $statement->execute();
-
-    //     return $statement->fetchAll(PDO::FETCH_ASSOC);
-    // }
 }
