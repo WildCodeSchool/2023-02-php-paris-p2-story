@@ -28,7 +28,6 @@ class StoryController extends AbstractController
         return $this->twig->render('Story/show.html.twig', ['story' => $story]);
     }
 
-
     /**
      * Edit a specific story
      */
@@ -38,7 +37,6 @@ class StoryController extends AbstractController
         $story = $storyManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
             $story = array_map('trim', $_POST);
 
             // TODO validations (length, format...)
@@ -71,8 +69,6 @@ class StoryController extends AbstractController
             // if validation is ok, insert and redirection
             $storyManager = new StoryManager();
             $id =  $storyManager->insert($story);
-
-
 
             header('Location:/stories/show?id=' . $id);
             return null;

@@ -2,9 +2,8 @@
 
 {% block content %}
 	<main>
-		{# <div id="container"> #}
 		<div id="textContribute">
-			<h1>Contribuer à une e-stoire</h1>
+			<h1>Contribuez à une e-stoire</h1>
 			<p>Remplissez le formulaire ci-dessous pour ajouter un chapitre.
 				<br>
 				N’oubliez pas de consulter la charte utilisateur avant de cliquer sur “Enregistrer”.</p>
@@ -13,7 +12,7 @@
 
 		<div id="container">
 			<div id="image">
-				<img src="{{ infoStory.picture }}" alt="cover_story">
+				<img src="{{ infoStory.picture }}" alt="coverture e-stoire">
 			</div>
 			<div id="infoStory">
 				<div id="title">
@@ -23,7 +22,7 @@
 					<p>{{ infoStory.pseudo }}</p>
 				</div>
 				<div id="chapter">
-					<img src="/assets/images/list_chapters.png" alt="logo_list">
+					<img src="/assets/images/list_chapters.png" alt="logo liste chapitres">
 					<p>{{ infoStory.nbchapter }}
 						chapitres</p>
 				</div>
@@ -50,4 +49,4 @@
 			{% include 'Chapter/_form.html.twig' %}
 		</section>
 	</main>
-</main>{% endblock %}
+{% endblock %}

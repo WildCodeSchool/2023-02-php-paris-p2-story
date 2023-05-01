@@ -1,8 +1,0 @@
-{% extends 'layout.html.twig' %}
-
-{% block content %}
-	<h1>Edit story
-		{{ chapter.title }}</h1>
-	{% include 'Chapter/_form.html.twig' %}
-	<a href="/chapters/show?id={{ chapter.id }}">Back</a>
-{% endblock %}

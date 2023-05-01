@@ -11,7 +11,6 @@ class ChapterController extends AbstractController
     private StoryManager $storyManager;
     public const MAX_LENGTH = 100;
 
-
     public function __construct()
     {
         parent::__construct();
@@ -23,19 +22,19 @@ class ChapterController extends AbstractController
     {
         $errors = [];
 
-        if ((!isset($infoNewChapter['title'])) || (empty($infoNewChapter['title']))) {
+        if (!isset($infoNewChapter['title']) || empty($infoNewChapter['title'])) {
             $errors[] = "Dommage que votre chapitre n'ait pas de titre !";
         } elseif (strlen($infoNewChapter['title']) > self::MAX_LENGTH) {
             $errors[] = "Le titre de votre chapitre est trop long";
         }
 
-        if ((!isset($infoNewChapter['pseudo'])) || (empty($infoNewChapter['pseudo']))) {
+        if (!isset($infoNewChapter['pseudo']) || empty($infoNewChapter['pseudo'])) {
             $errors[] = "Dommage que votre chapitre n'ait pas d'auteur !";
         } elseif (strlen($infoNewChapter['pseudo']) > self::MAX_LENGTH) {
             $errors[] = "Le nom de plume est trop long";
         }
 
-        if ((!isset($infoNewChapter['content'])) || (empty($infoNewChapter['content']))) {
+        if (!isset($infoNewChapter['content']) || empty($infoNewChapter['content'])) {
             $errors[] = "Dommage que votre chapitre n'ait pas de contenu !";
         }
 
@@ -51,7 +50,7 @@ class ChapterController extends AbstractController
             $errors = $this->verify($infoNewChapter);
 
             if (empty($errors)) {
-                $this->chapterManager->insert($infoNewChapter, $id); //$idChapter
+                $this->chapterManager->insert($infoNewChapter, $id);
             }
 
             header('Location:/stories/');
