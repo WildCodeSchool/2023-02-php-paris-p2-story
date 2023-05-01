@@ -38,7 +38,9 @@
 }
 
 /******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
-main #container #image #mobile { display: none;}
+main #container #image #mobile {
+    display: none;
+}
 
 main #textContribute {
     width: 80%;
