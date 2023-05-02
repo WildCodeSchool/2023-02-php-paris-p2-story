@@ -14,4 +14,5 @@ return [
     'stories/add' => ['StoryController', 'add',],
     'stories/delete' => ['StoryController', 'delete',],
     'chapters/add' => ['ChapterController', 'add', ['id']],
+    'chapters/ended' => ['ChapterController', 'checkEndedStory', ['id']],
 ];
