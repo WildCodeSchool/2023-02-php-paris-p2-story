@@ -6,6 +6,11 @@ use App\Model\StoryManager;
 
 class StoryController extends AbstractController
 {
+    public const AUTHORIZED_EXTENSIONS = ['jpg', 'jepg', 'gif', 'png', 'webp'];
+    public const MAX_FILE_SIZE = 2000000;
+    public const UPLOAD_DIR = "../public/uploads/";
+    public const DEFAULT_PICTURE = "default.png";
+
     /**
      * List stories
      */
@@ -97,40 +102,59 @@ class StoryController extends AbstractController
     {
         $errors = [];
 
-        if ((!isset($story['title'])) || (empty($story['title']))) {
+        if (!isset($story['title']) || empty($story['title'])) {
             $errors[] = "Dommage que votre histoire n'ait pas de titre !";
-
-            if ((!isset($story['pseudo'])) || (empty($story['pseudo']))) {
-                $errors[] = "Merci de renseigner votre nom de plume.";
-            }
-
-            if (!isset($story['nbchapter']) || empty($story['nbchapter'])) {
-                $errors[] = "Merci d'indiquer le nombre de chapitres total de votre histoire.";
-            }
-
-            if (isset($story['genre']) == "Choisissez un genre") {
-                $errors[] = "Merci de choisir un genre parmi ceux proposés.";
-            }
-
-            if (!isset($story['lectorat'])) {
-                $errors[] = "Merci d'indiquer si votre histoire convient à tous les publics.";
-            }
-            return $errors;
         }
+
+        if (!isset($story['pseudo']) || empty($story['pseudo'])) {
+            $errors[] = "Merci de renseigner votre nom de plume.";
+        }
+
+        if (!isset($story['nbchapter']) || empty($story['nbchapter'])) {
+            $errors[] = "Merci d'indiquer le nombre de chapitres total de votre histoire.";
+        }
+
+        if (!isset($story['genre']) == "Choisissez un genre") {
+            $errors[] = "Merci de choisir un genre parmi ceux proposés.";
+        }
+
+        if (!isset($story['lectorat'])) {
+            $errors[] = "Merci d'indiquer si votre histoire convient à tous les publics.";
+        }
+
+        if (file_exists($story['picture']['tmp_name'])) {
+            $extension = pathinfo($story['picture']['name'], PATHINFO_EXTENSION);
+
+            if (!in_array($extension, self::AUTHORIZED_EXTENSIONS)) {
+                $errors[] = "Votre fichier doit être au format: jpg, jpeg, gif, png ou webp";
+            }
+
+            if (filesize($story['picture']['tmp_name']) > self::MAX_FILE_SIZE) {
+                $errors[] = "Le poids de votre fichier doit peser moins de 2 Mega";
+            }
+        }
+
+        return $errors;
     }
 
     public function add(): ?string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
-            $story = array_map('trim', $_POST);
+            $story = array_merge(array_map('trim', $_POST), $_FILES);
             $errors = $this->verify($story);
+
             if (empty($errors)) {
-                // if validation is ok, insert and redirection
+                if (file_exists($story['picture']['tmp_name'])) {
+                    $newFileName = uniqid('', true) . '.' . pathinfo($story['picture']['name'], PATHINFO_EXTENSION);
+                    move_uploaded_file($story['picture']['tmp_name'], self::UPLOAD_DIR . $newFileName);
+                    $story['picture'] = $newFileName;
+                } else {
+                    $story['picture'] = self::DEFAULT_PICTURE;
+                }
+
                 $storyManager = new StoryManager();
                 $id =  $storyManager->insert($story);
 
-                // erreur dans le header??
                 header('Location:/stories/show?id=' . $id);
                 return null;
             }

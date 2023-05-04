@@ -22,38 +22,37 @@
 	<!-- <input type="hidden" value="{{ story.id }}" name="id"> -->
 	<div class="fonds">
 		<label for="title"></label>
-		<input type="text" placeholder="Titre de l'e-stoire :" name="title" id="title" maxlength="120" required>
+		<input type="text" placeholder="Titre de l'e-stoire" name="title" id="title" maxlength="120" required>
 	</div>
 
 	<div>
 		<label for="pseudo"></label>
-		<input type="text" placeholder="Nom de plume :" name="pseudo" id="pseudo" maxlength="120" required>
+		<input type="text" placeholder="Nom de plume" name="pseudo" id="pseudo" maxlength="120" required>
 	</div>
 
 	<div class="binome">
 		<div>
 			<label for="nbchapter"></label>
-			<input type="number" placeholder="Nb de chapitres :" name="nbchapter" id="nbchapter" min="1" max="1000000000" required>
+			<input type="number" placeholder="Nb de chapitres" name="nbchapter" id="nbchapter" min="1" max="2000000000" required>
 		</div>
 
 		<div>
-			<input>
-				<fieldset class="field1">
-					<div>
-						<p>Age</p>
-						{# <label for="age"></label> #}
-						{# <input type="number" placeholder="Age :" name="age" id="age"> #}
-					</div>
-					<div>
-						<input type="radio" id="lectorat" name="lectorat" value="mineur" required>
-						<label for="mineur">12-18</label>
-					</div>
-					<div>
-						<input type="radio" id="lectorat" name="lectorat" value="majeur" required>
-						<label for="majeur">18+</label>
-					</div>
-				</fieldset>
-			</input>
+
+			<fieldset class="field1">
+				<div>
+					<p>Age</p>
+					{# <label for="age"></label> #}
+					{# <input type="number" placeholder="Age :" name="age" id="age"> #}
+				</div>
+				<div>
+					<input type="radio" id="lectorat" name="lectorat" value="mineur" required>
+					<label for="mineur">12-18</label>
+				</div>
+				<div>
+					<input type="radio" id="lectorat" name="lectorat" value="majeur" required>
+					<label for="majeur">18+</label>
+				</div>
+			</fieldset>
 		</div>
 	</div>
 
