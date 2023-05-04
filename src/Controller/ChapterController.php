@@ -9,7 +9,8 @@ class ChapterController extends AbstractController
 {
     private ChapterManager $chapterManager;
     private StoryManager $storyManager;
-    public const MAX_LENGTH = 100;
+    public const MAX_LENGTH_TITLE = 100;
+    public const MAX_LENGTH_PSEUDO = 100;
 
     public function __construct()
     {
@@ -24,13 +25,13 @@ class ChapterController extends AbstractController
 
         if (!isset($infoNewChapter['title']) || empty($infoNewChapter['title'])) {
             $errors[] = "Dommage que votre chapitre n'ait pas de titre !";
-        } elseif (strlen($infoNewChapter['title']) > self::MAX_LENGTH) {
+        } elseif (strlen($infoNewChapter['title']) > self::MAX_LENGTH_TITLE) {
             $errors[] = "Le titre de votre chapitre est trop long";
         }
 
         if (!isset($infoNewChapter['pseudo']) || empty($infoNewChapter['pseudo'])) {
             $errors[] = "Dommage que votre chapitre n'ait pas d'auteur !";
-        } elseif (strlen($infoNewChapter['pseudo']) > self::MAX_LENGTH) {
+        } elseif (strlen($infoNewChapter['pseudo']) > self::MAX_LENGTH_PSEUDO) {
             $errors[] = "Le nom de plume est trop long";
         }
 
@@ -41,21 +42,21 @@ class ChapterController extends AbstractController
         return $errors;
     }
 
-    public function add(int $id): ?string
+    public function add(int $storyId): ?string
     {
-        $infoStory = $this->storyManager->selectOneById($id);
+        $story = $this->storyManager->selectOneById($storyId);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $infoNewChapter = array_map('trim', $_POST);
             $errors = $this->verify($infoNewChapter);
 
             if (empty($errors)) {
-                $this->chapterManager->insert($infoNewChapter, $id);
+                $this->chapterManager->insert($infoNewChapter, $storyId);
             }
 
             header('Location:/stories/');
             return null;
         }
-        return $this->twig->render('Chapter/add.html.twig', ['infoStory' => $infoStory]);
+        return $this->twig->render('Chapter/add.html.twig', ['story' => $story]);
     }
 }

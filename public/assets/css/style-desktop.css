@@ -38,7 +38,7 @@
 }
 
 /******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
-main #container #image #mobile {
+main #container .image #mobile {
     display: none;
 }
 
@@ -66,13 +66,13 @@ main #container {
     border-radius: 10px;
 }
 
-main #container #image img {
+main #container .image img {
     padding-top: 3%;
     width: 200px;
     height: 360px;
 }
 
-main #container #infoStory {
+main #container .story {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -80,73 +80,73 @@ main #container #infoStory {
     padding-left: 3%;
 }
 
-main #container #infoStory #title {
+main #container .story .title {
     height: 2.5em;
 }
 
-main #container #infoStory #title h2 {
+main #container .story .title h2 {
     font-size: 1.6em;
 }
 
-main #container #infoStory #pseudo {
+main #container .story .pseudo {
     height: 2em;
 }
 
-main #container #infoStory #pseudo p {
+main #container .story .pseudo p {
     opacity: 0.5;
 }
 
-main #container #infoStory #chapter {
+main #container .story .chapter {
     display: flex;
     flex-direction: row;
     height: 2.3em;
 }
 
-main #container #infoStory #chapter p {
+main #container .story .chapter p {
     padding-left: 0.8em;
 }
 
-main #container #infoStory #chapter img {
+main #container .story .chapter img {
     width: 30px;
     height: 30px;
 }
 
-main #container #infoStory #type_age {
+main #container .story .type_age {
     display: flex;
     flex-direction: row;
     height: 4.2em;
 }
 
-main #container #infoStory #type {
+main #container .story .type {
     padding-right: 3em;
 }
 
-main #container #infoStory #type p {
+main #container .story .type p {
     background-color: #FFDD9C;
     padding: 0.2em 1em;
     border-radius: 10px;
 }
 
-main #container #infoStory #age {
+main #container .story .age {
     padding-left: 1em; 
 }
 
-main #container #infoStory #description {
+main #container .story .description {
     text-align: justify; 
 }
 
-main #container #button button{
-    grid-area: button;
+main #container button{
     background: #F5664B;
     border: none;
-    height: 73%;
     padding: 8px 20px;
+    width: 30%;
 }
 
-main #container #button button a:link,
-main #container #button button a:visited,  
-main #container #button button a:hover {
-    text-decoration: none; color: white;
+main #container button a:link,
+main #container button a:visited,  
+main #container button a:hover {
+    text-decoration: none; 
+    color: white;
 }
  
 main #form {
@@ -168,7 +168,8 @@ main #form .flex #content{
 main #form .flex fieldset {
     font-size: 0.7em;
     background-color: white;
-    width: 35%; margin-left: 0.5em;
+    width: 35%; 
+    margin-left: 0.5em;
 }
 
 main #form button {
