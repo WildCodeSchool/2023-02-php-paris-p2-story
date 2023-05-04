@@ -32,10 +32,10 @@ class StoryManager extends AbstractManager
         return $statement->execute();
     }
 
-    public function countChapInStory(int $id): array //si story_id === NULL, aucun chapitre lié à une histoire
+    public function countChapInStory(int $id): array
     {
         $query = "SELECT story.title, chapter.story_id, COUNT(*) AS numChapters
-                  FROM story LEFT JOIN chapter ON chapter.story_id=story.id GROUP BY story.id;";
+                  FROM story LEFT JOIN chapter ON chapter.story_id=$id GROUP BY story.id;";
         $statement = $this->pdo->prepare($query);
         $statement->execute();
 
