@@ -41,10 +41,21 @@
     height: 700px;
 }
 
+header {
+    margin-left: 50px;
+    padding-top: 50px;
+}
+
+#job {
+    text-align: center;
+    margin-top: -4%;
+}
+
 #instruction {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100%;
+    grid-template-rows: 97%;
+    margin-top: -4%;
 }
 
 #instruction article {
@@ -55,13 +66,33 @@
 #instruction article>button {
     background-color: #ED553B;
     border-color: rgb(255, 255, 255);
-    margin: 5% 5% 5% 5%;
+    margin: auto;
 }
 
-#instruction article>button>img {
-    max-width: 16%;
+#instruction article>button>a>img {
+    max-width: 20%;
     height: auto;
     border-style: none;
+}
+
+#instruction article>p {
+    text-align: center;
+    margin-top: -4%; 
+}
+
+#instruction article p .number {
+    margin-bottom: 35px;
+}
+
+#charte a.contrast.outline {
+    max-width: 25%;
+    height: auto;
+    border-color: #ED553B;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: #1fe0;
+    color: #000000;
+    
 }
 
 #last-published .picto {

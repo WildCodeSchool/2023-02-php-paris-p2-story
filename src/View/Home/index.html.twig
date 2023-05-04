@@ -3,39 +3,51 @@
 {% block content %}
 
 	{# Ajout d'un id pour éviter pb de sélécteurs #}
+
+
 	<section id="header">
 		<header>
 			<h1>Manifest</h1>
-			<p>Geckos are a group of usually small, usually nocturnal lizards. They are found on every continent except Australia.</p>
-			<p>Many species of gecko have adhesive toe pads which enable them to climb walls and even windows.</p>
+			<p>Geckos are a group of usually small, usually nocturnal lizards.<br> They are found on every continent except Australia.</p>
+			<p>Many species of gecko have adhesive toe pads which enable them <br> to climb walls and even windows.</p>
 		</header>
 	</section>
 
 	<main>
 
-	<h1>Mode d'emploi</h1>
+	<h1 id="job">Mode d'emploi</h1>
 	
 	<section id="instruction" class="grid">
 	
 		<article>
-    		<p>-1-</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem viverra aliquet eget sit.</p>
-            <button type="button"> <img src="/assets/images/pencil.png"</button>
+    		<p class="number">-1-</p>
+			<p>Créer</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem viverra aliquet eget sit.</p>
+            <button type="button"><a href ="/"><img src="/assets/images/pencil.png"></a></button>
         </article>
 
         <article>
-            <p>-2-</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem viverra aliquet eget sit.</p>
-            <button type="button"> <img src="/assets/images/read.png"</button>
+            <p class="number">-2-</p>
+            <p>Contribuer</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem viverra aliquet eget sit.</p>
+            <button type="button"><a href ="/"><img src="/assets/images/read.png"></a></button>
         </article>
 
         <article>
-            <p>-3-</p>
+            <p class="number">-3-</p>
+			<p>Lire</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem viverra aliquet eget sit.</p>
-            <button type="button"> <img src="/assets/images/user.png"</button>
+			<button type="button"><a href ="/"><img src="/assets/images/user.png"></a></button>
         </article>
 
 	</section>
+
+	<section id="charte" class="grid">
+		
+		<a href="#" role="button" class="contrast outline">Charte d'utilisateur</a>
+		
+	</section>
+
 
 
 	<section id="last-published">
@@ -68,6 +80,6 @@
 				<a href="/stories">Découvrez d'autres e-stoires</a>
 			</div>
 
-	<main/>
+	</main>
 
 	{% endblock %}
