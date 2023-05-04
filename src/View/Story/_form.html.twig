@@ -9,7 +9,17 @@
 </form>
 -->
 
-	<form action="" method="post" enctype="multipart/form-data" class="form"> <input type="hidden" value="{{ story.id }}" name="id">
+	<form action="" method="post" enctype="multipart/form-data" class="form"> <div id="image-upload">
+
+		<div id="cover-zone"></div>
+
+		<label for="picture"></label>
+
+		<input type="file" name="picture" id="upload-picture" onchange="loadFile(event)"/>
+
+		<div class="cover-preview-container"></div>
+	</div>
+	<!-- <input type="hidden" value="{{ story.id }}" name="id"> -->
 	<div class="fonds">
 		<label for="title"></label>
 		<input type="text" placeholder="Titre de l'e-stoire :" name="title" id="title" maxlength="120" required>
@@ -27,23 +37,23 @@
 		</div>
 
 		<div>
-			<fieldset class="field1">
-				<div>
-					<p>Age</p>
-
-					{# <label for="age"></label> #}
-					{# <input type="number" placeholder="Age :" name="age" id="age"> #}
-
-				</div>
-				<div>
-					<input type="radio" id="lectorat" name="lectorat" value="mineur" required>
-					<label for="mineur">12-18</label>
-				</div>
-				<div>
-					<input type="radio" id="lectorat" name="lectorat" value="majeur" required>
-					<label for="majeur">18+</label>
-				</div>
-			</fieldset>
+			<input>
+				<fieldset class="field1">
+					<div>
+						<p>Age</p>
+						{# <label for="age"></label> #}
+						{# <input type="number" placeholder="Age :" name="age" id="age"> #}
+					</div>
+					<div>
+						<input type="radio" id="lectorat" name="lectorat" value="mineur" required>
+						<label for="mineur">12-18</label>
+					</div>
+					<div>
+						<input type="radio" id="lectorat" name="lectorat" value="majeur" required>
+						<label for="majeur">18+</label>
+					</div>
+				</fieldset>
+			</input>
 		</div>
 	</div>
 
@@ -94,3 +104,14 @@
 		</ul>
 	</div>
 {% endif %}
+
+<script>
+	const loadFile = function (event) {
+const coverPreview = document.createElement('img');
+const coverContainer = document.querySelector('.cover-preview-container');
+coverPreview.classList.add("coverPreview");
+coverContainer.appendChild(coverPreview);
+coverPreview.src = URL.createObjectURL(event.target.files[0]);
+coverPreview.alt = "prévisualisation de la couverture de l'e-stoire";
+};
+</script>

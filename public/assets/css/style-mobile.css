@@ -41,15 +41,13 @@
     min-width: 122%;
 }
 
-;
-
-body>main {
+#create-story {
     padding: 0 2rem 0 2rem;
-    font-size: 12px;
-    border: red solid 2px;
+    font-size: 123px;
+    border: blue solid 2px;
 }
 
-body>main p {
+#presentation {
     font-size: 16px;
     text-align: justify;
     width: 100%;
@@ -60,7 +58,7 @@ h2 {
     font-size: 20px;
 }
 
-main .form {
+#create-story .form {
     background-color: var(--nav-color);
     padding: 5%;
     border: black solid 2px;
@@ -68,7 +66,7 @@ main .form {
     justify-content: center;
 }
 
-body>main #title,
+#create-story #title,
 #pseudo,
 #nbchapter,
 #genre,
@@ -81,7 +79,8 @@ body>main #title,
     text-align: center;
 }
 
-body>main #picture {
+/*
+#create-story #picture {
     display: flex;
     justify-content: center;
     background-color: #FFEECE;
@@ -90,8 +89,9 @@ body>main #picture {
     height: 60%;
     margin: auto;
 }
+*/
 
-main .form .binome {
+#create-story .form .binome {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 50% 50%;
@@ -103,21 +103,22 @@ main .form .binome {
     width: 90%;
 }
 
+#age {
+    font-size: 10px;
+}
+
 .field1,
-p {
+.field1 p {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 0;
     background-color: white;
     width: 90%;
     height: auto;
-    font-size: 10px;
+    font-size: 6px;
     margin: 2% 5% 2% 5%;
-}
-
-.field1 p {
-    font-size: 10px;
 }
 
 .field {
@@ -141,6 +142,7 @@ p {
     height: 100px;
 }
 
+/*
 .pictures {
     background-image: url('/assets/images/logo.png');
     background-size: cover;
@@ -151,6 +153,7 @@ p {
     margin: auto;
     margin-bottom: 5%;
 }
+*/
 
 button {
     width: 40%;
@@ -160,4 +163,26 @@ button {
     display: flex;
     justify-content: center;
     margin: auto;
+}
+
+/* bouton upload image formulaire */
+#image-upload {
+    width: 112px;
+}
+
+#cover-zone {
+    background-image: url("/assets/images/cover-upload-mobile.png");
+    width: 116px;
+    height: 157px;
+}
+
+#image-upload .coverPreview {
+    width: 99px;
+    height: 136px;
+    margin-top: -165px;
+}
+
+#upload-picture {
+    width: 115px;
+    margin-top: 96px;
 }

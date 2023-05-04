@@ -34,9 +34,22 @@ body {
     display: flex;
 }
 
-footer {
-    padding: 1rem;
-    font-size: 12px;
-    text-align: center;
+/* bouton upload image formulaire */
+#image-upload {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+#image-upload .cover-preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#upload-picture {
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
 }

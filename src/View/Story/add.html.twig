@@ -1,28 +1,28 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<main>
+	<main id="create-story">
 		<section>
 			<h1>Créez votre E-stoire</h1>
 
-			<p>Nous vous invitons à créer votre histoire sur cette page!</p>
+			<p id="presentation">Nous vous invitons à créer votre histoire sur cette page!</p>
 			<p>Il est recommandé d'avoir une idée de votre projet avant de démarrer celui-ci.</p>
 		</section>
 
 		<!-- <section class="image">
-							<form method="post" enctype="multipart/form-data" class="pictures">
-								<label for="picture"></label>
-								{# <input type="file" name="picture" id="picture"> #}
-								{# <button name="send">Send</button> #}
-							</form>
-						</section> -->
+															<form method="post" enctype="multipart/form-data" class="pictures">
+																<label for="picture"></label>
+																{# <input type="file" name="picture" id="picture"> #}
+																{# <button name="send">Send</button> #}
+															</form>
+														</section> -->
 
 
 		{# <div class="pictures">
-																<label for="picture"></label>
-																<input type="file" id=" picture" name=" picture" accept=" image/png, image/jpeg, image/jpg, image/gif">
-																<img src="">
-															</div> #}
+																								<label for="picture"></label>
+																								<input type="file" id=" picture" name=" picture" accept=" image/png, image/jpeg, image/jpg, image/gif">
+																								<img src="">
+																							</div> #}
 		{% include 'Story/_form.html.twig' %}
 	</main>
 {% endblock %}
