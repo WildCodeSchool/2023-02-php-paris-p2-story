@@ -37,7 +37,6 @@ class StoryController extends AbstractController
         $story = $storyManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
             $story = array_map('trim', $_POST);
 
             // TODO validations (length, format...)
