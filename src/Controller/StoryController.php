@@ -25,75 +25,73 @@ class StoryController extends AbstractController
     /**
      * Show informations for a specific story
      */
-    public function show(int $id): string
-    {
-        $storyManager = new StoryManager();
-        $story = $storyManager->selectOneById($id);
+    // public function show(int $id): int
+    // {
+    //     $storyManager = new StoryManager();
+    //     $story = $storyManager->selectOneById($id);
 
-        return $this->twig->render('Story/show.html.twig', ['story' => $story]);
-    }
-
+    //     return $this->twig->render('Story/show.html.twig', ['story' => $story]);
+    // }
     /**
      * Edit a specific story
      */
 
-    /*
-     public function edit(int $id): ?string
-    {
 
-        $storyManager = new StoryManager();
-        $story = $storyManager->selectOneById($id);
+    // public function edit(int $id): ?string
+    // {
 
-        $errors = [];
+    //     $storyManager = new StoryManager();
+    //     $story = $storyManager->selectOneById($id);
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
-            $story = array_map('trim', $_POST);
+    //     $errors = [];
 
-            if ((!isset($story['title'])) || (empty($story['title']))) {
-                $errors[] = "Dommage que votre histoire n'ait pas de titre ! ";
-            } elseif (strlen($story['title']) > 100) {
-                $errors[] = "Le titre de votre histoire est trop long";
-            }
+    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //         $story = array_map('trim', $_POST);
 
-            if ((!isset($story['pseudo'])) || (empty($story['pseudo']))) {
-                $errors[] = "Merci de renseigner votre nom de plume.";
-            } elseif (strlen($story['pseudo']) > 100) {
-                $errors[] = "Votre nom de plume est un peu trop long.";
-            }
+    //         if ((!isset($story['title'])) || (empty($story['title']))) {
+    //             $errors[] = "Dommage que votre histoire n'ait pas de titre ! ";
+    //         } elseif (strlen($story['title']) > 100) {
+    //             $errors[] = "Le titre de votre histoire est trop long";
+    //         }
 
-            if (!isset($story['nbchapter']) || empty($story['nbchapter'])) {
-                $errors[] = "Merci d'indiquer le nombre de chapitres total de votre histoire.";
-            }
+    //         if ((!isset($story['pseudo'])) || (empty($story['pseudo']))) {
+    //             $errors[] = "Merci de renseigner votre nom de plume.";
+    //         } elseif (strlen($story['pseudo']) > 100) {
+    //             $errors[] = "Votre nom de plume est un peu trop long.";
+    //         }
 
-            if (isset($story['genre']) == "Choisissez un genre") {
-                $errors[] = "Merci de choisir un genre parmi ceux proposés.";
-            }
+    //         if (!isset($story['nbchapter']) || empty($story['nbchapter'])) {
+    //             $errors[] = "Merci d'indiquer le nombre de chapitres total de votre histoire.";
+    //         }
 
-            if ((!empty($story['description'])) && (strlen($story['description']) < 400)) {
-                $errors[] = "Pour la description, merci de vous limite";
-            } elseif ((!empty($story['description'])) && (strlen($story['description']) > 2000)) {
-                $errors[] = "Pour la description, merci de vous limiter à un texte entre 400 et 2000 caractères.";
-            }
+    //         if (isset($story['genre']) == "Choisissez un genre") {
+    //             $errors[] = "Merci de choisir un genre parmi ceux proposés.";
+    //         }
 
-            if (!isset($story['lectorat'])) {
-                $errors[] = "Merci d'indiquer si votre histoire convient à tous les publics.";
-            }
+    //         if ((!empty($story['description'])) && (strlen($story['description']) < 400)) {
+    //             $errors[] = "Pour la description, merci de vous limite";
+    //         } elseif ((!empty($story['description'])) && (strlen($story['description']) > 2000)) {
+    //             $errors[] = "Pour la description, merci de vous limiter à un texte entre 400 et 2000 caractères.";
+    //         }
 
-            // if validation is ok, update and redirection
-            $storyManager->update($story);
+    //         if (!isset($story['lectorat'])) {
+    //             $errors[] = "Merci d'indiquer si votre histoire convient à tous les publics.";
+    //         }
 
-            // erreur dans le header??
-            header('Location: /stories/show?id=' . $id);
+    //         // if validation is ok, update and redirection
+    //         $storyManager->update($story);
 
-            // we are redirecting so we don't want any content rendered
-            return null;
+    //         // erreur dans le header??
+    //         header('Location: /stories/show?id=' . $id);
 
-            return $this->twig->render('Story/edit.html.twig', [
-            'story' => $story,
-        ]);
-        }
-    */
+    //         // we are redirecting so we don't want any content rendered
+    //         return null;
+
+    //         return $this->twig->render('Story/edit.html.twig', [
+    //             'story' => $story,
+    //         ]);
+    //     }
+    // }
 
     /**
      * Add a new story
