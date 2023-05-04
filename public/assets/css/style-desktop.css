@@ -46,6 +46,10 @@ header {
     padding-top: 50px;
 }
 
+header img {
+    display: none;
+}
+
 #job {
     text-align: center;
     margin-top: -4%;
@@ -70,7 +74,7 @@ header {
 }
 
 #instruction article>button>a>img {
-    max-width: 20%;
+    max-width: 30%;
     height: auto;
     border-style: none;
 }

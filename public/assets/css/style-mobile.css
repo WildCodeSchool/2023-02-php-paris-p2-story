@@ -67,3 +67,21 @@
 .social-networks {
     display: none;
 }
+#header {
+    /*background-image: url('./../images/image_header_desktop.png');*/
+    background-size: contain;
+    height: 700px;
+}
+
+header {
+    margin-left: 10px;
+    padding-top: 10px;
+}
+
+header h1 {
+    font-size: 25px;
+}
+
+header p {
+    font-size: 15px;
+}
