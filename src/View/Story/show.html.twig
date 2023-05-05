@@ -1,8 +1,11 @@
 {% extends 'layout.html.twig' %}
 
+
 {% block content %}
-	<h1>Story
-		{{ story.title }}</h1>
-	<p>{{ story.title }}</p>
-	<a href="/stories/edit?id={{ story.id }}">Edit</a>
+	{% include 'Chapter/_story.html.twig' %}
+	<h1>{{ story.title }}</h1>
+	<h3>{{ chapter.number }}</h3>
+	<h3>{{ chapter.title }}</h3>
+	<p>{{ chapter.content}}</p>
+	{# <a href="/stories/edit?id={{ story.id }}">Edit</a> #}
 {% endblock %}
