@@ -18,7 +18,7 @@ class StoryController extends AbstractController
     }
 
     /**
-     * Show informations for a specific story
+     * Show informations for a specific story - Lea
      */
     public function show(int $id): string
     {
