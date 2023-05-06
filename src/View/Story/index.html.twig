@@ -5,13 +5,14 @@
 		<div id="textContribute">
 			<h1>Nos e-stoires</h1>
 		</div>
-
-		{% for story in stories %}
-			{% if story.ended %}
-				{% include 'Story/_storyFinish.html.twig' %}
-			{% else %}
-				{% include 'Story/_storyCollaborate.html.twig' %}
-			{% endif %}
-		{% endfor %}
+		<div id="list_stories">
+			{% for story in stories %}
+				{% if story.ended %}
+					{% include 'Story/_storyRead.html.twig' %}
+				{% else %}
+					{% include 'Story/_storyCollaborate.html.twig' %}
+				{% endif %}
+			{% endfor %}
+		</div>
 	</main>
 {% endblock %}

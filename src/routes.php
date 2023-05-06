@@ -14,6 +14,6 @@ return [
     'stories/show' => ['StoryController', 'show', ['id']],
     'stories/add' => ['StoryController', 'add',],
     'stories/delete' => ['StoryController', 'delete',],
-    'stories/list' => ['StoryController', 'list',],
+    // 'stories/collaborate' => ['StoryController', 'list',],
     'chapters/add' => ['ChapterController', 'add', ['id']],
 ];
