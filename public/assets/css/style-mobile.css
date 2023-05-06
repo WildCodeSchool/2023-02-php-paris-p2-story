@@ -4,48 +4,47 @@
     display: none;
 }
 
-#logo-mobile {
+#logo-mobile p {
+    color: black;
     font-size: 26px;
     text-align: center;
     letter-spacing: 0.15em;
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
 }
 
 #navbar li,
-span {
+#navbar span {
     display: none;
 }
 
 #navbar .picto {
     display: flex;
     justify-content: center;
-    width: 60%;
-
+    width: 100%;
 }
 
-#navbar ul img {
-    width: 100%;
+#navbar nav ul img {
+    max-width: 138%;
+    min-width: 138%;
     justify-content: center;
 }
 
 #navbar a {
     display: flex;
-    width: 37%;
+    width: 50%;
     justify-content: center;
 }
 
 #navbar .picto-create,
-.picto-contribute,
-.picto-user {
-    width: 90%;
-    height: 90%;
+#navbar .picto-contribute,
+#navbar .picto-user {
+    min-width: 122%;
 }
 
 /******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
 main #textContribute,
-main #container #infoStory #description,
-main #container #image #desktop {
+main #container .story .description,
+main #container .image #desktop {
     display: none;
 }
 
@@ -55,94 +54,90 @@ main #container {
     justify-content: center;
 }
 
-main #container #image img {
+main #container .image img {
     padding-top: 3%;
     width: 100px;
     height: 160px;
 }
 
-main #container #infoStory {
+main #container .story {
     display: flex;
     flex-direction: column;
     padding-left: 3%;
     font-size: 0.8em;
 }
 
-main #container #infoStory #title {
+main #container .story .title {
     height: 2.2em;
 }
 
-main #container #infoStory #title h2 {
+main #container .story .title h2 {
     font-size: 1.5em;
 }
 
-main #container #infoStory #pseudo p,
-main #container #infoStory #chapter p,
-main #container #infoStory #type_age p {
+main #container .story .pseudo p,
+main #container .story .chapter p,
+main #container .story .type_age p {
     font-size: 1em;
 }
 
-main #container #infoStory #pseudo {
+main #container .story .pseudo {
     height: 2.1em;
 }
 
-main #container #infoStory #pseudo p {
+main #container .story .pseudo p {
     opacity: 0.5;
 }
 
-main #container #infoStory #chapter {
+main #container .story .chapter {
     display: flex;
     flex-direction: row;
     height: 2.5em;
 }
 
-main #container #infoStory #chapter p {
+main #container .story .chapter p {
     padding-left: 0.8em;
 }
 
-main #container #infoStory #chapter img {
+main #container .story .chapter img {
     width: 20px;
     height: 20px;
 }
 
-main #container #infoStory #type_age {
+main #container .story .type_age {
     display: flex;
     flex-direction: row;
     height: 3em;
 }
 
-main #container #infoStory #type {
+main #container .story .type {
     padding-right: 2em;
 }
 
-main #container #infoStory #type p {
+main #container .story .type p {
     background-color: #FFDD9C;
     padding: 0.2em 1.5em;
     border-radius: 10px;
 }
 
-main #container #infoStory #age {
+main #container .story .age {
     padding-left: 1em;
 }
 
-main #container #infoStory #description {
+main #container .story .description {
     text-align: justify;
 }
 
-main #container #button {
-    width: 100%;
-}
-
-main #container #button button {
+main #container button {
     background: #F5664B;
     border: none;
     padding: 5px 10px;
     font-size: 1.1em;
 }
 
-main #container #button button a:link,
-main #container #button button a:visited,
-main #container #button button a:active {
+main #container button a:link,
+main #container button a:visited,
+main #container button a:active {
     text-decoration: none;
     color: white;
 }

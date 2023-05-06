@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="stylesheet" href="/assets/css/style-desktop.css" media="screen and (min-width:655px)">
 		<link rel="stylesheet" href="/assets/css/style-mobile.css" media="screen and (max-width:655px)">
+		<title>E-STOIRES</title>
 	</head>
 
 	<body>
@@ -18,7 +19,7 @@
 				<div id="logo-mobile">
 					<p>E-STOIRES</p>
 				</div>
-				<div>
+				<nav>
 					<ul>
 						<li>
 							<a href="/">ACCUEIL</a>
@@ -59,12 +60,10 @@
 						<div class="picto">
 							<a href="/"><img class="picto-user" src="/assets/images/user.png" alt="picto utilisateur"></a>
 						</div>
-
 					</ul>
-				</div>
+				</nav>
 			</section>
 		{% endblock %}
 		{% block content %}{% endblock %}
-		{% block javascript %}{% endblock %}
 	</body>
 </html>
