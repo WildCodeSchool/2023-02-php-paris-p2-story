@@ -92,9 +92,6 @@ class StoryController extends AbstractController
         }
     }
 
-
-
-
     public function endedStory(int $storyId)
     {
         $storyManager = new StoryManager();

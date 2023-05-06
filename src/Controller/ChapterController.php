@@ -50,8 +50,8 @@ class ChapterController extends AbstractController
             $errors = $this->verify($infoNewChapter);
 
             if (empty($errors)) {
-                $recapChapters = $this->storyManager->countChapInStory($id);    //S1US03
-                $this->chapterManager->insert($infoNewChapter, $id, $recapChapters);  //S1US03
+                $recapChapters = $this->storyManager->countChapInStory($id);
+                $this->chapterManager->insert($infoNewChapter, $id, $recapChapters);
             }
             header('Location:/stories/');
             return null;
