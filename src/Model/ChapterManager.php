@@ -22,7 +22,6 @@ class ChapterManager extends AbstractManager
         $statement->execute();
     }
 
-
     public function countChapInStory(int $id): array
     {
         $query = "SELECT COUNT(*) AS numChaptersInStory
