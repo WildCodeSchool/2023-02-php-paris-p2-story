@@ -34,7 +34,7 @@ class StoryManager extends AbstractManager
 
     public function countChapInStory(int $id): array
     {
-        $query = "SELECT story.title, chapter.story_id, COUNT(*) AS numChapters
+        $query = "SELECT COUNT(*) AS numChaptersInStory
                   FROM story LEFT JOIN chapter ON chapter.story_id=$id GROUP BY story.id;";
         $statement = $this->pdo->prepare($query);
         $statement->execute();
@@ -42,9 +42,9 @@ class StoryManager extends AbstractManager
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function checkEndedStory(int $id)
+    public function checkEndedStory(int $storyId)
     {
-        $query = "UPDATE story SET story.ended=1 WHERE story.id=$id;";
+        $query = "UPDATE " . self::TABLE . " SET story.ended=1 WHERE story.id=$storyId;";
         $statement = $this->pdo->prepare($query);
         $statement->execute();
     }

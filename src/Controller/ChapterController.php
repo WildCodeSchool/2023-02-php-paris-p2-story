@@ -50,21 +50,12 @@ class ChapterController extends AbstractController
             $errors = $this->verify($infoNewChapter);
 
             if (empty($errors)) {
-                $this->chapterManager->insert($infoNewChapter, $id);
+                $recapChapters = $this->storyManager->countChapInStory($id);    //S1US03
+                $this->chapterManager->insert($infoNewChapter, $id, $recapChapters);  //S1US03
             }
             header('Location:/stories/');
             return null;
         }
         return $this->twig->render('Chapter/add.html.twig', ['infoStory' => $infoStory]);
-    }
-
-    public function endedStory(int $storyId)
-    {
-        $countChaps = $this->storyManager->countChapInStory($storyId);
-        $story = $this->storyManager->selectOneById($storyId);
-
-        if ($countChaps[$storyId - 1]['numChapters'] === $story['nbchapter']) {
-            $this->storyManager->checkEndedStory($storyId);
-        }
     }
 }
