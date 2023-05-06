@@ -33,16 +33,15 @@ class StoryManager extends AbstractManager
         return $statement->execute();
     }
 
-    /**
-     * Get one row from database by ID - TO BE UPDATED by lea
-     */
-    public function selectOneById(int $id): array|false
+    public function SelectAllById(int $id): array|false
     {
         // prepared request
-        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        // $chapter =
+        $statement = $this->pdo->prepare("SELECT story.title AS story_title, story.genre AS story_genre, story.pseudo AS story_pseudo, story.picture AS story_picture, story.nbchapter AS story_nbchapter, story.lectorat AS story_lectorat, story.description AS story_description, chapter.title AS chapter_title, chapter.pseudo AS chapter_pseudo, chapter.number AS chapter_number, chapter.title AS chapter_title, chapter.content AS chapter_content FROM " . static::TABLE . " JOIN chapter ON chapter.story_id=story.id");
+        // $statement->bindValue('s.id', $id, \PDO::PARAM_INT);
+        // $statement->bindValue('c.story_id', $chapter['id'], \PDO::PARAM_INT);
         $statement->execute();
 
-        return $statement->fetch();
+        return $statement->fetchAll();
     }
 }

@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+// use App\Model\ChapterManager;
 use App\Model\StoryManager;
+
+
 
 class StoryController extends AbstractController
 {
@@ -20,40 +23,41 @@ class StoryController extends AbstractController
     /**
      * Show informations for a specific story
      */
-    public function show(int $id, array $infoNewChapter): string
+    public function show(int $id): string
     {
         $storyManager = new StoryManager();
-        $story = $storyManager->selectOneById($id);
-
+        $story = $storyManager->selectAllById($id);
+        // var_dump($story);
+        // exit();
         return $this->twig->render('Story/show.html.twig', ['story' => $story]);
     }
 
     /**
      * Edit a specific story
      */
-    public function edit(int $id): ?string
-    {
-        $storyManager = new StoryManager();
-        $story = $storyManager->selectOneById($id);
+    // public function edit(int $id): ?string
+    // {
+    //     $storyManager = new StoryManager();
+    //     $story = $storyManager->selectOneById($id);
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $story = array_map('trim', $_POST);
+    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //         $story = array_map('trim', $_POST);
 
-            // TODO validations (length, format...)
+    //         // TODO validations (length, format...)
 
-            // if validation is ok, update and redirection
-            $storyManager->update($story);
+    //         // if validation is ok, update and redirection
+    //         $storyManager->update($story);
 
-            header('Location: /stories/show?id=' . $id);
+    //         header('Location: /stories/show?id=' . $id);
 
-            // we are redirecting so we don't want any content rendered
-            return null;
-        }
+    //         // we are redirecting so we don't want any content rendered
+    //         return null;
+    //     }
 
-        return $this->twig->render('Story/edit.html.twig', [
-            'story' => $story,
-        ]);
-    }
+    //     return $this->twig->render('Story/edit.html.twig', [
+    //         'story' => $story,
+    //     ]);
+    // }
 
     /**
      * Add a new story
