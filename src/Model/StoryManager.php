@@ -42,7 +42,7 @@ class StoryManager extends AbstractManager
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function endedStory(int $id)
+    public function checkEndedStory(int $id)
     {
         $query = "UPDATE story SET story.ended=1 WHERE story.id=$id;";
         $statement = $this->pdo->prepare($query);
