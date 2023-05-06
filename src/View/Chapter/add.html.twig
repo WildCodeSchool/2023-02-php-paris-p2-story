@@ -3,7 +3,7 @@
 {% block content %}
 	<main>
 		<div id="textContribute">
-			<h1>Contribuez à une e-stoire</h1>
+			<h1>Écrire un chapitre</h1>
 			<p>Remplissez le formulaire ci-dessous pour ajouter un chapitre.
 				<br>
 				N’oubliez pas de consulter la charte utilisateur avant de cliquer sur “Enregistrer”.</p>
@@ -44,7 +44,11 @@
 			</div>
 		</div>
 		<section id="form">
-			{% include 'Chapter/_form.html.twig' %}
+			{% if story.ended %}
+				{% include 'Chapter/_formFinishStory.html.twig' %}
+			{% else %}
+				{% include 'Chapter/_formCollaborate.html.twig' %}
+			{% endif %}
 		</section>
 	</main>
 {% endblock %}
