@@ -1,15 +1,17 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<h1>stories</h1>
-	<ul>
+	<main>
+		<div id="textContribute">
+			<h1>Nos e-stoires</h1>
+		</div>
+
 		{% for story in stories %}
-			<li>
-				<a href="/stories/show?id={{ story.id }}">{{ story.title }}</a>
-			</li>
-		{% else %}
-			<li>Nothing to display</li>
+			{% if story.ended %}
+				{% include 'Story/_storyFinish.html.twig' %}
+			{% else %}
+				{% include 'Story/_storyCollaborate.html.twig' %}
+			{% endif %}
 		{% endfor %}
-	</ul>
-	<a href="/stories/add">Ajouter</a>
+	</main>
 {% endblock %}

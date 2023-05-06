@@ -3,19 +3,28 @@
 namespace App\Controller;
 
 use App\Model\StoryManager;
+use App\Model\AbstractManager;
 
 class StoryController extends AbstractController
 {
     /**
      * List stories
      */
+    // public function index(): string
+    // {
+    //     $storyManager = new StoryManager();
+    //     $stories = $storyManager->selectAll('title');
+
+    //     return $this->twig->render('Story/index.html.twig', ['stories' => $stories]);
+    // }
     public function index(): string
     {
         $storyManager = new StoryManager();
-        $stories = $storyManager->selectAll('title');
+        $stories = $storyManager->selectAll();
 
         return $this->twig->render('Story/index.html.twig', ['stories' => $stories]);
     }
+
 
     /**
      * Show informations for a specific story

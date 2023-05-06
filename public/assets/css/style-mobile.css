@@ -171,5 +171,13 @@ main #form button {
     margin: auto;
     padding: 8px 0;
 }
-
 /* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
+
+
+
+/******************** PARTIE LISTER HISTOIRES ****************************************/
+main #title_list {
+    padding-left: 100px;
+}
+
+/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
