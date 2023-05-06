@@ -20,7 +20,7 @@ class StoryController extends AbstractController
     /**
      * Show informations for a specific story
      */
-    public function show(int $id): string
+    public function show(int $id, array $infoNewChapter): string
     {
         $storyManager = new StoryManager();
         $story = $storyManager->selectOneById($id);

@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use PDO;
+use App\Model\ChapterManager;
 
 class StoryManager extends AbstractManager
 {
