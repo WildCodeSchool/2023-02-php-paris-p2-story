@@ -22,8 +22,4 @@ class ChapterManager extends AbstractManager
 
         return (int)$this->pdo->lastInsertId();
     }
-
-    // public function updateNumChapter(int $storyId)
-    // {
-    // }
 }

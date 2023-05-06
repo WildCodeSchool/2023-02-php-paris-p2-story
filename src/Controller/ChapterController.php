@@ -52,7 +52,6 @@ class ChapterController extends AbstractController
 
             if (empty($errors)) {
                 $this->chapterManager->insert($infoNewChapter, $storyId);
-                // $this->chapterManager->updateNumChapter($storyId);   ///num chpater ir sumando
             }
 
             header('Location:/stories/');
