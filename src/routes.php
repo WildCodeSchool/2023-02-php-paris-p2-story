@@ -15,5 +15,4 @@ return [
     'stories/delete' => ['StoryController', 'delete',],
     'stories/ended' => ['StoryController', 'endedStory', ['id']], //seulement pour tester
     'chapters/add' => ['ChapterController', 'add', ['id']],
-
 ];
