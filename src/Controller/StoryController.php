@@ -31,7 +31,7 @@ class StoryController extends AbstractController
     /**
      * Edit a specific story
      */
-    public function edit(int $id): ?string
+    public function edit(int $id)
     {
         $storyManager = new StoryManager();
         $story = $storyManager->selectOneById($id);
@@ -50,12 +50,13 @@ class StoryController extends AbstractController
             // we are redirecting so we don't want any content rendered
             return null;
         }
-
-        return $this->twig->render('Story/edit.html.twig', [
-            'story' => $story,
-        ]);
     }
-
+    /*public function list(): string
+    {
+        $storyManager = new StoryManager();
+        $stories = $storyManager->listStories();
+        return $this->twig->render('Story/list.html.twig', ['stories' => $stories]);
+    }*/
     /**
      * Add a new story
      */
@@ -74,7 +75,6 @@ class StoryController extends AbstractController
             header('Location:/stories/show?id=' . $id);
             return null;
         }
-
         return $this->twig->render('Story/add.html.twig');
     }
 
