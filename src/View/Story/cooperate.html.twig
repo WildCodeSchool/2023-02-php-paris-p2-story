@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<main>
+		<div id="textContribute">
+			<h1>Contribuer dans nos e-stoires</h1>
+		</div>
+		<div id="list_stories">
+			{% for story in stories %}
+				{% if story.ended == 0 %}
+					{% include 'Story/_story.html.twig' %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</main>
+{% endblock %}

@@ -26,8 +26,14 @@
 		<div class="description">
 			<p>{{ story.description }}</p>
 		</div>
-		<button type="submit">
-			<a href="/stories">Lire</a>
-		</button>
+		{% if story.ended %}
+			<button type="submit">
+				<a href="/stories">Lire</a>
+			</button>
+		{% else %}
+			<button type="submit">
+				<a href="/stories">Contribuer</a>
+			</button>
+		{% endif %}
 	</div>
 </div>

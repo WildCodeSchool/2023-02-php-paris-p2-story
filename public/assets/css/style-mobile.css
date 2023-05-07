@@ -56,7 +56,7 @@ main #container {
 
 main #container .image img {
     padding-top: 3%;
-    width: 100px;
+    /* width: 100px; */
     height: 160px;
 }
 
@@ -126,6 +126,7 @@ main #container .story .age {
 
 main #container .story .description {
     text-align: justify;
+    width: 100%;
 }
 
 main #container button {

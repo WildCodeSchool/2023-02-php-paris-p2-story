@@ -3,14 +3,12 @@
 {% block content %}
 	<main>
 		<div id="textContribute">
-			<h1>Nos e-stoires</h1>
+			<h1>Contribuer dans nos e-stoires</h1>
 		</div>
 		<div id="list_stories">
 			{% for story in stories %}
-				{% if story.ended %}
-					{% include 'Story/_storyRead.html.twig' %}
-				{% else %}
-					{% include 'Story/_storyCollaborate.html.twig' %}
+				{% if story.ended == 1 %}
+					{% include 'Story/_story.html.twig' %}
 				{% endif %}
 			{% endfor %}
 		</div>
