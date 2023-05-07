@@ -44,29 +44,23 @@ class ChapterController extends AbstractController
 
     public function add(int $storyId): ?string
     {
-
-        // $story = $this->storyManager->selectOneById($storyId);
-        // $this->chapterManager->insert($story, $storyId);
-
-
         $story = $this->storyManager->selectOneById($storyId);
 
-        // var_dump($_GET);
-        // exit();
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $infoNewChapter = array_map('trim', $_POST);
 
+            $chapter = array_map('trim', $_POST);
 
-
-            $errors = $this->verify($infoNewChapter);
+            $errors = $this->verify($chapter);
 
             if (empty($errors)) {
-                $this->chapterManager->insert($infoNewChapter, $storyId);
+                $recapChapters = $this->chapterManager->countChapInStory($storyId);
+                var_dump($recapChapters); //duda de que el array que hay empieza por 0 y mi historia id por 1?
+                exit();
+                $this->chapterManager->insert($chapter, $recapChapters, $storyId);
             }
 
             header('Location:/stories/');
-            // // return null;
+            return null;
         }
         return $this->twig->render('Chapter/add.html.twig', ['story' => $story]);
     }
