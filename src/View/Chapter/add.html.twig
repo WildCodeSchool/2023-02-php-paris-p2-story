@@ -9,7 +9,6 @@
 				N’oubliez pas de consulter la charte utilisateur avant de cliquer sur “Enregistrer”.</p>
 			<button type="submit">Charte utilisateur</button>
 		</div>
-
 		<div id="container">
 			<div class="image">
 				<img src="{{ story.picture }}" alt="coverture e-stoire">
@@ -44,18 +43,19 @@
 			</div>
 		</div>
 		<section id="form">
-			<form action="" method="post">
-				{% include 'Chapter/_form.html.twig' %}
-				{% if story.ended %}
-					<button type="submit">
-						<a href="/stories">Publier</a>
-					</button>
-				{% else %}
-					<button type="submit">
-						<a href="/stories">Enregistrer</a>
-					</button>
-				{% endif %}
-			</form>
+			{% include 'Chapter/_form.html.twig' %}
+			{# <form action="" method="post">
+							{% include 'Chapter/_form.html.twig' %}
+							{% if story.ended %}
+								<button type="submit">
+									<a href="/stories">Publier</a>
+								</button>
+							{% else %}
+								<button type="submit">
+									<a href="/stories">Enregistrer</a>
+								</button>
+							{% endif %}
+						</form> #}
 		</section>
 	</main>
 {% endblock %}
