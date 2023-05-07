@@ -16,9 +16,17 @@
 					</h4>
 				</hgroup>
 
-				<p>
-					{{ chapter.content }}
-				</p>
+				<div class="content">
+					<p>
+						{{ chapter.content }}
+					</p>
+				</div>
+
+				<div class="author">
+					<p>
+						{{ "Auteur·ice: #{chapter.pseudo}" }}
+					</p>
+				</div>
 
 			{% endfor %}
 		</section>

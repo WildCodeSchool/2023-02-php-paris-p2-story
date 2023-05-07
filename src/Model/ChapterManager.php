@@ -25,7 +25,10 @@ class ChapterManager extends AbstractManager
 
     public function selectAllById(int $storyId): array|false
     {
-        $query = "SELECT c.title, c.pseudo, c.number, c.content FROM " . self::TABLE . " AS c JOIN story ON c.story_id=" . $storyId . " WHERE story.id=" . $storyId;
+        $query = "SELECT chapter.title, chapter.pseudo, chapter.number, chapter.content 
+        FROM " . self::TABLE .
+            " JOIN story ON chapter.story_id=" . $storyId .
+            " WHERE story.id=" . $storyId;
 
         return $this->pdo->query($query)->fetchAll();
     }

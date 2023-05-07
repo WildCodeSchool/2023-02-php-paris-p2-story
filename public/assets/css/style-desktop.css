@@ -183,9 +183,14 @@ main #form button {
     background-color: white;
 }
 
-#chapters p {
+#chapters .content p {
     font-size: 1rem;
-    margin: 0 30% 3rem 30%;
+    margin: 0 30% 2rem 30%;
+}
+
+#chapters .author {
+    width: 70%;
+    margin-bottom: 3rem;
 }
 
 #read-buttons {

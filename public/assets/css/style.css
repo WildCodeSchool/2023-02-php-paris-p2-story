@@ -52,6 +52,20 @@ body>main {
     text-align: center;
 }
 
+#chapters .chapter-title h4 {
+    color: var(--button-color-done);
+}
+
+#chapters .author {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#chapters .author p {
+    font-size: 0.8rem;
+    color: var(--button-color-done);
+}
+
 #read-buttons {
     display: flex;
 }
