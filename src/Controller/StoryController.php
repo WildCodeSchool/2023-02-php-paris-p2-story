@@ -21,14 +21,12 @@ class StoryController extends AbstractController
     public function cooperate()
     {
         $stories = $this->storyManager->selectAll();
-
         return $this->twig->render('Story/cooperate.html.twig', ['stories' => $stories]);
     }
 
     public function read()
     {
         $stories = $this->storyManager->selectAll();
-
         return $this->twig->render('Story/read.html.twig', ['stories' => $stories]);
     }
 

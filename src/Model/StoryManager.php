@@ -31,15 +31,4 @@ class StoryManager extends AbstractManager
 
         return $statement->execute();
     }
-
-
-
-    // public function selectAll(): array
-    // {
-    //     $query = "SELECT title, picture, nbchapter, genre, description FROM story;";
-    //     $statement = $this->pdo->prepare($query);
-    //     $statement->execute();
-
-    //     return $statement->fetchAll(PDO::FETCH_ASSOC);
-    // }
 }
