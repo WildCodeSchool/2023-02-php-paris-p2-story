@@ -53,10 +53,9 @@ class ChapterController extends AbstractController
             $errors = $this->verify($chapter);
 
             if (empty($errors)) {
-                $recapChapters = $this->chapterManager->countChapInStory($storyId);
-                var_dump($recapChapters); //duda de que el array que hay empieza por 0 y mi historia id por 1?
-                exit();
-                $this->chapterManager->insert($chapter, $recapChapters, $storyId);
+
+                $numChaps = $this->chapterManager->countChapInStory($storyId);
+                $this->chapterManager->insert($chapter, $numChaps, $storyId);
             }
 
             header('Location:/stories/');
