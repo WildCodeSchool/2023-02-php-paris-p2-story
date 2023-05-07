@@ -28,11 +28,11 @@
 		</div>
 		{% if story.ended %}
 			<button type="submit">
-				<a href="/stories/read">Lire</a>
+				<a href="/stories/show?id={{ story.id }}">Lire</a>
 			</button>
 		{% else %}
 			<button type="submit">
-				<a href="/stories/cooperate">Contribuer</a>
+				<a href="/chapters/add?=id{{ story.id }}">Contribuer</a>
 			</button>
 		{% endif %}
 	</div>
