@@ -64,13 +64,14 @@ header img {
 
 #instruction article {
     border: #ED553B 2px solid;
-    margin: 5% 5% 5% 5%;
+    margin: 6% 6% 6% 6%;
 }
 
 #instruction article>button {
     background-color: #ED553B;
     border-color: rgb(255, 255, 255);
     margin: auto;
+    width: 200px;
 }
 
 #instruction article>button>a>img {
@@ -86,12 +87,13 @@ header img {
 
 #instruction article p .number {
     margin-bottom: 35px;
+    font-weight: bolder;
 }
 
 #charte a.contrast.outline {
     max-width: 25%;
     height: auto;
-    border-color: #ED553B;
+    border-color: black;
     margin: auto;
     margin-bottom: 20px;
     background-color: #1fe0;
