@@ -18,11 +18,18 @@ class StoryController extends AbstractController
     /**
      * List stories
      */
-    public function index(): string
+    public function cooperate()
     {
         $stories = $this->storyManager->selectAll();
 
-        return $this->twig->render('Story/index.html.twig', ['stories' => $stories]);
+        return $this->twig->render('Story/cooperate.html.twig', ['stories' => $stories]);
+    }
+
+    public function read()
+    {
+        $stories = $this->storyManager->selectAll();
+
+        return $this->twig->render('Story/read.html.twig', ['stories' => $stories]);
     }
 
     /**
@@ -94,19 +101,5 @@ class StoryController extends AbstractController
 
             header('Location:/stories');
         }
-    }
-
-    public function cooperate()
-    {
-        $stories = $this->storyManager->selectAll();
-
-        return $this->twig->render('Story/cooperate.html.twig', ['stories' => $stories]);
-    }
-
-    public function read()
-    {
-        $stories = $this->storyManager->selectAll();
-
-        return $this->twig->render('Story/read.html.twig', ['stories' => $stories]);
     }
 }
