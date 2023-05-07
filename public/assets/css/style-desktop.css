@@ -139,13 +139,6 @@ main #container button{
     padding: 8px 20px;
     width: 30%;
 }
-
-main #container button a:link,
-main #container button a:visited,  
-main #container button a:hover {
-    text-decoration: none; 
-    color: white;
-}
  
 main #form {
     width: 80%;
@@ -176,5 +169,12 @@ main #form button {
     border: none;
     margin: auto;
     padding: 8px 20px;
+}
+
+main button a:link,
+main button a:visited,  
+main button a:hover {
+    text-decoration: none; 
+    color: white;
 }
 /* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
