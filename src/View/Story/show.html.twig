@@ -1,36 +1,30 @@
 {% extends 'layout.html.twig' %}
 
-
 {% block content %}
 	<main id="read">
 
 		{% include 'Chapter/_story.html.twig' %}
-		{# <progress></progress> #}
 		<section id="chapters">
 			{% for chapter in chapters %}
 
-				{% if chapter.title is not empty %}
-					<hgroup class="chapter-title">
-						<h3>
-							{{ chapter.title }}
-						</h3>
-						<h4>
-							{{ "Chapitre #{chapter.number}" }}
-						</h4>
-					</hgroup>
-				{% else %}
-					<h3 class="chapter-title">
-						{{ "Chapitre #{chapter.number}" }}
+				<hgroup class="chapter-title">
+					<h3>
+						{{ chapter.title }}
 					</h3>
-				{% endif %}
+					<h4>
+						{{ "Chapitre #{chapter.number}" }}
+					</h4>
+				</hgroup>
 				<p>
-					{{ chapter.content}}
+					{{ chapter.content }}
 				</p>
 			{% endfor %}
 		</section>
+
 		<div id="read-buttons">
 			<a href="/stories/edit?id={{ story.id }}" role="button" class="secondary outline">Modifier l'e-stoire</a>
 			<a href="/stories" role="button" class="outline" id="edit-button">Lire une autre e-stoire</a>
 		</div>
+
 	</main>
 {% endblock %}
