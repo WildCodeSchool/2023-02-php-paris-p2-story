@@ -54,9 +54,8 @@ class ChapterController extends AbstractController
                 $this->chapterManager->insert($chapter, $storyId);
 
                 $recapChapters = $this->storyManager->countChapInStory($storyId);
-                $currentNumChaps = $recapChapters[$storyId]['numChaptersInStory']; //num chaps en ce moment
 
-                if ($currentNumChaps === $story['nbchapter']) {
+                if ($recapChapters[$storyId]['numChaptersInStory'] === $story['nbchapter']) {
                     $this->storyManager->checkEndedStory($storyId);
                 }
             }
