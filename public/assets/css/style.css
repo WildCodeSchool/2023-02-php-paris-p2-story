@@ -10,6 +10,7 @@
     --button-color: #ED553B;
     --button-color-done: #BABABA;
     --text-color-done: #232222;
+    --primary: #ED553B;
 }
 
 * {
@@ -23,13 +24,40 @@ body {
     color: var(--text-color);
 }
 
+body>main {
+    padding-top: 1.5rem 0 0 0;
+}
+
 #navbar {
     background-color: var(--nav-color);
     padding: 1rem;
     height: 10rem;
+    margin-bottom: 0;
 }
 
 #navbar nav {
     display: flex;
     justify-content: center;
+}
+
+/* LIRE UNE HISTOIRE */
+#chapters {
+    text-align: justify;
+}
+
+#chapters {
+    margin-top: 2rem;
+}
+
+#chapters .chapter-title {
+    text-align: center;
+}
+
+#read-buttons {
+    display: flex;
+}
+
+#edit-button {
+    color: var(--button-color);
+    border-color: var(--button-color);
 }

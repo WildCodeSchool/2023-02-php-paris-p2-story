@@ -22,4 +22,11 @@ class ChapterManager extends AbstractManager
 
         return (int)$this->pdo->lastInsertId();
     }
+
+    public function selectAllById(int $storyId): array|false
+    {
+        $query = "SELECT c.title, c.pseudo, c.number, c.content FROM " . self::TABLE . " AS c JOIN story ON c.story_id=" . $storyId . " WHERE story.id=" . $storyId;
+
+        return $this->pdo->query($query)->fetchAll();
+    }
 }
