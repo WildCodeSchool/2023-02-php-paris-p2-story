@@ -17,7 +17,7 @@ class StoryController extends AbstractController
     /**
      * List stories
      */
-    public function index(): string|array
+    public function index(): string
     {
         $storyManager = new StoryManager();
         $stories = $storyManager->selectAll('title');
