@@ -56,7 +56,6 @@ main #container {
 
 main #container .image img {
     padding-top: 3%;
-    /* width: 100px; */
     height: 160px;
 }
 
