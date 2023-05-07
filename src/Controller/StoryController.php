@@ -8,11 +8,13 @@ use App\Model\ChapterManager;
 class StoryController extends AbstractController
 {
     private ChapterManager $chapterManager;
+    private StoryManager $storyManager;
 
     public function __construct()
     {
         parent::__construct();
         $this->chapterManager = new ChapterManager();
+        $this->storyManager = new StoryManager();
     }
     /**
      * List stories
@@ -30,10 +32,7 @@ class StoryController extends AbstractController
      */
     public function show(int $storyId): string
     {
-        $storyManager = new StoryManager();
-        $story = $storyManager->selectOneById($storyId);
-
-        $this->chapterManager = new ChapterManager();
+        $story = $this->storyManager->selectOneById($storyId);
         $chapters = $this->chapterManager->selectAllById($storyId);
 
         return $this->twig->render('Story/show.html.twig', ['story' => $story, 'chapters' => $chapters]);
