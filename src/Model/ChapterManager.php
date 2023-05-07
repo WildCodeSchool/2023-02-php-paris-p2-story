@@ -8,15 +8,15 @@ class ChapterManager extends AbstractManager
 {
     public const TABLE = 'chapter';
 
-    public function insert(array $infoNewChapter, int $storyId, array $recapChapters)
+    public function insert(array $chapter, int $storyId)
     {
         $query = "INSERT INTO " . self::TABLE . " 
-        (title, number, pseudo, content, story_id) VALUES (:title, :number, :pseudo, :content, :story_id);";
+        (title, pseudo, content, story_id) VALUES (:title, :pseudo, :content, :story_id);";
         $statement = $this->pdo->prepare($query);
-        $statement->bindValue(':title', $infoNewChapter['title'], PDO::PARAM_STR);
-        $statement->bindValue(':number', ($recapChapters[$storyId]['numChaptersInStory']) + 1, PDO::PARAM_INT);
-        $statement->bindValue(':pseudo', $infoNewChapter['pseudo'], PDO::PARAM_STR);
-        $statement->bindValue(':content', $infoNewChapter['content'], PDO::PARAM_STR);
+        $statement->bindValue(':title', $chapter['title'], PDO::PARAM_STR);
+        // $statement->bindValue(':number', ($recapChapters[$storyId]['numChaptersInStory']) + 1, PDO::PARAM_INT);
+        $statement->bindValue(':pseudo', $chapter['pseudo'], PDO::PARAM_STR);
+        $statement->bindValue(':content', $chapter['content'], PDO::PARAM_STR);
         $statement->bindValue(':story_id', $storyId, PDO::PARAM_STR);
 
         $statement->execute();

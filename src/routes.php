@@ -13,6 +13,5 @@ return [
     'stories/show' => ['StoryController', 'show', ['id']],
     'stories/add' => ['StoryController', 'add',],
     'stories/delete' => ['StoryController', 'delete',],
-    'stories/ended' => ['StoryController', 'endedStory', ['id']], //seulement pour tester
     'chapters/add' => ['ChapterController', 'add', ['id']],
 ];

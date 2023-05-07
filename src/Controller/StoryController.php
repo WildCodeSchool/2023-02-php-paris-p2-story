@@ -91,18 +91,4 @@ class StoryController extends AbstractController
             header('Location:/stories');
         }
     }
-
-    public function endedStory(int $storyId)
-    {
-        $storyManager = new StoryManager();
-
-        $recapChapters = $storyManager->countChapInStory($storyId); //combien chaps chaque histoire
-        $story = $storyManager->selectOneById($storyId); //info d'une seule histoire
-
-        $currentNumChaps = $recapChapters[$storyId]['numChaptersInStory']; //num chaps en ce moment
-
-        if ($currentNumChaps === $story['nbchapter']) {
-            $storyManager->checkEndedStory($storyId);
-        }
-    }
 }
