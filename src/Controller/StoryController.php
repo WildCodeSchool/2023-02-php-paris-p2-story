@@ -9,13 +9,13 @@ class StoryController extends AbstractController
     /**
      * List stories
      */
-    public function index(): string
-    {
-        $storyManager = new StoryManager();
-        $stories = $storyManager->selectAll('title');
+    // public function index(): string
+    // {
+    //     $storyManager = new StoryManager();
+    //     $stories = $storyManager->selectAll('title');
 
-        return $this->twig->render('Story/index.html.twig', ['stories' => $stories]);
-    }
+    //     return $this->twig->render('Story/index.html.twig', ['stories' => $stories]);
+    // }
 
     /**
      * Show informations for a specific story
