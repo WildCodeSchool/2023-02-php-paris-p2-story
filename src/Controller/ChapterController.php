@@ -47,13 +47,11 @@ class ChapterController extends AbstractController
         $story = $this->storyManager->selectOneById($storyId);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             $chapter = array_map('trim', $_POST);
 
             $errors = $this->verify($chapter);
 
             if (empty($errors)) {
-
                 $numChaps = $this->chapterManager->countChapInStory($storyId);
                 $this->chapterManager->insert($chapter, $numChaps, $storyId);
             }
