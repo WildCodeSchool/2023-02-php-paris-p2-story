@@ -44,11 +44,18 @@
 			</div>
 		</div>
 		<section id="form">
-			{% if story.ended %}
-				{% include 'Chapter/_formFinishStory.html.twig' %}
-			{% else %}
-				{% include 'Chapter/_formCollaborate.html.twig' %}
-			{% endif %}
+			<form action="" method="post">
+				{% include 'Chapter/_form.html.twig' %}
+				{% if story.ended %}
+					<button type="submit">
+						<a href="/stories">Publier</a>
+					</button>
+				{% else %}
+					<button type="submit">
+						<a href="/stories">Enregistrer</a>
+					</button>
+				{% endif %}
+			</form>
 		</section>
 	</main>
 {% endblock %}
