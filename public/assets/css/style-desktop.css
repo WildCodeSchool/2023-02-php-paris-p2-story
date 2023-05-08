@@ -178,6 +178,7 @@ main #form button {
     padding: 8px 20px;
 }
 
+
 /* LIRE UNE HISTOIRE */
 #read #container {
     background-color: white;
@@ -196,3 +197,15 @@ main #form button {
 #read-buttons {
     justify-content: space-evenly;
 }
+
+/******************** PARTIE LISTER HISTOIRES ****************************************/
+main #list_stories #container {
+    background-color: white;
+}
+
+main #list_stories .title_cooperate {
+    width: 80%;
+    margin: auto;
+}
+
+/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/

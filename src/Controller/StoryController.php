@@ -19,12 +19,16 @@ class StoryController extends AbstractController
     /**
      * List stories
      */
-    public function index(): string
+    public function cooperate()
     {
-        $storyManager = new StoryManager();
-        $stories = $storyManager->selectAll('title');
+        $stories = $this->storyManager->selectAll();
+        return $this->twig->render('Story/cooperate.html.twig', ['stories' => $stories]);
+    }
 
-        return $this->twig->render('Story/index.html.twig', ['stories' => $stories]);
+    public function read()
+    {
+        $stories = $this->storyManager->selectAll();
+        return $this->twig->render('Story/read.html.twig', ['stories' => $stories]);
     }
 
     /**
@@ -43,8 +47,7 @@ class StoryController extends AbstractController
      */
     public function edit(int $id): ?string
     {
-        $storyManager = new StoryManager();
-        $story = $storyManager->selectOneById($id);
+        $story = $this->storyManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $story = array_map('trim', $_POST);
@@ -52,7 +55,7 @@ class StoryController extends AbstractController
             // TODO validations (length, format...)
 
             // if validation is ok, update and redirection
-            $storyManager->update($story);
+            $this->storyManager->update($story);
 
             header('Location: /stories/show?id=' . $id);
 
@@ -77,8 +80,7 @@ class StoryController extends AbstractController
             // TODO validations (length, format...)
 
             // if validation is ok, insert and redirection
-            $storyManager = new StoryManager();
-            $id =  $storyManager->insert($story);
+            $id =  $this->storyManager->insert($story);
 
             header('Location:/stories/show?id=' . $id);
             return null;
@@ -94,8 +96,8 @@ class StoryController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
-            $storyManager = new StoryManager();
-            $storyManager->delete((int)$id);
+
+            $this->storyManager->delete((int)$id);
 
             header('Location:/stories');
         }

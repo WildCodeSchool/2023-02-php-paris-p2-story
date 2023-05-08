@@ -125,6 +125,7 @@ main #container .story .age {
 
 main #container .story .description {
     text-align: justify;
+    width: 100%;
 }
 
 main #container button {
@@ -220,3 +221,16 @@ main #form button {
 #read-buttons a {
     margin-bottom: 1rem;
 }
+
+/******************** PARTIE LISTER HISTOIRES ****************************************/
+main #title_list {
+    padding-left: 100px;
+}
+
+main #list_stories .title_cooperate {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
