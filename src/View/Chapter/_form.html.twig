@@ -18,5 +18,5 @@
 		</fieldset>
 	</div>
 	
-	<input type="submit" value="{{ story.ended ? 'Publier' : 'Enregistrer' }}">
+	<input type="submit" value="{{ story.nb_chapters + 1 == story.nbchapter ? 'Publier' : 'Enregistrer' }}">
 </form>
