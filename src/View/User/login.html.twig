@@ -1,37 +1,50 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+	<main>
+		<section id="login">
+			{% if user %}
+				<div id="welcome">
+					<p>
+						Bienvenue
+						<strong>{{ "#{user.name}" }}</strong>
+						!
+					</p>
+					<p>
+						Vous pouvez désormais accéder à toutes les fonctionnalités du site.
+					</p>
+					<a href="/logout" role="button">Déconnexion</a>
+				</div>
 
-	{% if user %}
-		<p>
-			Bienvenue
-			<strong>{{ "#{user.name} !" }}</strong>
-		</p>
-		<a href="/logout" role="button">Déconnexion</a>
+			{% else %}
+				<div>
+					<h2>Connectez-vous</h2>
+					<p>
+						pour participer à la création d'e-stoires !
+					</p>
+				</div>
 
-	{% else %}
+				<form action="" method="post">
+					<div>
+						<label for="name">Nom d'utilisateur</label>
+						<input type="text" id="name" name="name" placeholder="Nom d'utilisateur" required>
+					</div>
 
-		<form action="" method="post">
-			<div>
-				<label for="name">Nom d'utilisateur</label>
-				<input type="text" id="name" name="name" placeholder="Nom d'utilisateur">
-			</div>
+					<div>
+						<label for="password">Mot de passe</label>
+						<input type="password" id="password" name="password" placeholder="Mot de passe" required>
+					</div>
+					<!-- Button -->
+					<button type="submit">Connexion</button>
+				</form>
 
-			<div>
-				<label for="password">Mot de passe</label>
-				<input type="password" id="password" name="password" placeholder="Mot de passe">
-			</div>
-			<!-- Button -->
-			<button type="submit">Connexion</button>
-		</form>
+			{% endif %}
 
-	{% endif %}
-
-	{% if errors %}
-		{% for error in errors %}
-			<li>{{ error }}</li>
-		{% endfor %}
-	{% endif %}
-
-
+			{% if errors %}
+				{% for error in errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			{% endif %}
+		</section>
+	</main>
 {%  endblock %}

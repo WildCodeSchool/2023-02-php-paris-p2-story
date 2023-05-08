@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Model\UserManager;
-use Error;
 
 class UserController extends AbstractController
 {
@@ -26,8 +25,7 @@ class UserController extends AbstractController
 
             if ($user && ($credentials['password'] === $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
-                // var_dump($_SESSION);
-                // exit();
+                header('Location: /');
             } else {
                 $errors[] = "Mot de passe incorrect";
             }
