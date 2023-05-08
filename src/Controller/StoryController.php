@@ -37,7 +37,7 @@ class StoryController extends AbstractController
     public function show(int $storyId): string
     {
         $story = $this->storyManager->selectOneById($storyId);
-        $chapters = $this->chapterManager->selectAllByStory($storyId);
+        $chapters = $this->chapterManager->selectAllByStory($storyId, 'created_at');
 
         return $this->twig->render('Story/show.html.twig', ['story' => $story, 'chapters' => $chapters]);
     }
