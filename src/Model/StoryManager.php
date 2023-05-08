@@ -31,4 +31,11 @@ class StoryManager extends AbstractManager
 
         return $statement->execute();
     }
+
+    public function checkEndedStory(int $storyId)
+    {
+        $query = "UPDATE " . self::TABLE . " SET story.ended=1 WHERE story.id=$storyId;";
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+    }
 }

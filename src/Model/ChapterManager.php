@@ -37,8 +37,8 @@ class ChapterManager extends AbstractManager
     {
         $query = "SELECT chapter.title, chapter.pseudo, chapter.content
                   FROM " . self::TABLE . " 
-                  JOIN story ON chapter.story_id=" . $storyId . " 
-                  WHERE story.id=" . $storyId;
+                  JOIN story ON chapter.story_id = " . $storyId . " 
+                  WHERE story.id = " . $storyId;
 
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy;

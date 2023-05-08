@@ -48,18 +48,30 @@ class ChapterController extends AbstractController
 
         $story = $this->storyManager->selectOneById($storyId);
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $chapter = array_map('trim', $_POST);
+        if (!$story['ended']) {
+            $story['nb_chapters'] = count($this->chapterManager->selectAllByStory($storyId));
 
-            $errors = $this->verify($chapter);
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $chapter = array_map('trim', $_POST);
 
-            if (empty($errors)) {
-                $this->chapterManager->insert($chapter, $storyId);
-                header('Location:/stories/show?id=' . $storyId);
-                exit();
+                $errors = $this->verify($chapter);
+
+                if (empty($errors)) {
+                    $this->chapterManager->insert($chapter, $storyId);
+
+                    if ($story['nb_chapters'] + 1 === $story['nbchapter']) {
+                        $this->storyManager->checkEndedStory($storyId);
+                    }
+
+                    header('Location: /stories/show?id=' . $storyId);
+                    exit();
+                }
             }
-        }
 
-        return $this->twig->render('Chapter/add.html.twig', ['story' => $story, 'errors' => $errors]);
+            return $this->twig->render('Chapter/add.html.twig', ['story' => $story, 'errors' => $errors]);
+        } else {
+            header('Location: /stories/show?id=' . $storyId);
+            exit();
+        }
     }
 }
