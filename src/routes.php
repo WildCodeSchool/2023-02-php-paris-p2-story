@@ -15,4 +15,6 @@ return [
     'stories/add' => ['StoryController', 'add',],
     'stories/delete' => ['StoryController', 'delete',],
     'chapters/add' => ['ChapterController', 'add', ['id']],
+    'login' => ['UserController', 'login',],
+    'logout' => ['UserController', 'logout',],
 ];

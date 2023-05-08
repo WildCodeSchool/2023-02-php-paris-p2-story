@@ -31,9 +31,15 @@
 				<a href="/stories/show?id={{ story.id }}">Lire</a>
 			</button>
 		{% else %}
-			<button type="submit">
-				<a href="/chapters/add?id={{ story.id }}">Contribuer</a>
-			</button>
+			{% if user %}
+				<button type="submit">
+					<a href="/chapters/add?id={{ story.id }}">Contribuer</a>
+				</button>
+			{% else %}
+				<button type="submit">
+					<a href="/login">Contribuer</a>
+				</button>
+			{% endif %}
 		{% endif %}
 	</div>
 </div>
