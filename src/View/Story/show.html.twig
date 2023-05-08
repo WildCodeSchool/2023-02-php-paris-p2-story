@@ -1,8 +1,40 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<h1>Story
-		{{ story.title }}</h1>
-	<p>{{ story.title }}</p>
-	<a href="/stories/edit?id={{ story.id }}">Edit</a>
+	<main id="read">
+
+		{% include 'Story/_storyheader.html.twig' %}
+		<section id="chapters">
+			{% for chapter in chapters %}
+
+				<hgroup class="chapter-title">
+					<h3>
+						{{ chapter.title }}
+					</h3>
+					<h4>
+						{{ "Chapitre #{chapter.number}" }}
+					</h4>
+				</hgroup>
+
+				<div class="content">
+					<p>
+						{{ chapter.content }}
+					</p>
+				</div>
+
+				<div class="author">
+					<p>
+						{{ "Auteur·ice: #{chapter.pseudo}" }}
+					</p>
+				</div>
+
+			{% endfor %}
+		</section>
+
+		<div id="read-buttons">
+			<a href="/stories/edit?id={{ story.id }}" role="button" class="secondary outline">Modifier l'e-stoire</a>
+			<a href="/stories/read" role="button" class="outline" id="edit-button">Lire une autre e-stoire</a>
+		</div>
+
+	</main>
 {% endblock %}
