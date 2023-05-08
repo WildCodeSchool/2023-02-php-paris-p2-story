@@ -19,13 +19,13 @@ class ChapterManager extends AbstractManager
         return $recapChaps['numChaps'];
     }
 
-    public function insert(array $chapter, int $numChapsInStory, int $storyId)
+    public function insert(array $chapter, int $storyId)
     {
         $query = "INSERT INTO " . self::TABLE . " 
-        (title, number, pseudo, content, story_id) VALUES (:title, :number, :pseudo, :content, :story_id);";
+        (title, pseudo, content, story_id) VALUES (:title, :pseudo, :content, :story_id);";
+
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':title', $chapter['title'], PDO::PARAM_STR);
-        $statement->bindValue(':number', ($numChapsInStory + 1), PDO::PARAM_INT);
         $statement->bindValue(':pseudo', $chapter['pseudo'], PDO::PARAM_STR);
         $statement->bindValue(':content', $chapter['content'], PDO::PARAM_STR);
         $statement->bindValue(':story_id', $storyId, PDO::PARAM_STR);
@@ -33,9 +33,9 @@ class ChapterManager extends AbstractManager
         $statement->execute();
     }
 
-    public function selectAllByStory(int $storyId): array|false
+    public function selectAllByStory(int $storyId, string $orderBy = ''): array|false
     {
-        $query = "SELECT chapter.title, chapter.pseudo, chapter.number, chapter.content 
+        $query = "SELECT chapter.title, chapter.pseudo, chapter.content 
         FROM " . self::TABLE .
             " JOIN story ON chapter.story_id=" . $storyId .
             " WHERE story.id=" . $storyId;

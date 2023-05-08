@@ -44,6 +44,8 @@ class ChapterController extends AbstractController
 
     public function add(int $storyId): ?string
     {
+        $errors = [];
+
         $story = $this->storyManager->selectOneById($storyId);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -51,14 +53,14 @@ class ChapterController extends AbstractController
 
             $errors = $this->verify($chapter);
 
-            if (empty($errors)) {
-                $numChaps = $this->chapterManager->countChapInStory($storyId);
-                $this->chapterManager->insert($chapter, $numChaps, $storyId);
-            }
 
-            header('Location:/stories/');
-            return null;
+            if (empty($errors)) {
+                $this->chapterManager->insert($chapter, $storyId);
+                header('Location:/stories/show?id=' . $storyId);
+                exit();
+            }
         }
-        return $this->twig->render('Chapter/add.html.twig', ['story' => $story]);
+
+        return $this->twig->render('Chapter/add.html.twig', ['story' => $story, 'errors' => $errors]);
     }
 }
