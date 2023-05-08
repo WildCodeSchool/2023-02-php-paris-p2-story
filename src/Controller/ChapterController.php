@@ -69,8 +69,7 @@ class ChapterController extends AbstractController
             }
 
             return $this->twig->render('Chapter/add.html.twig', ['story' => $story, 'errors' => $errors]);
-        }
-        else {
+        } else {
             header('Location: /stories/show?id=' . $storyId);
             exit();
         }
