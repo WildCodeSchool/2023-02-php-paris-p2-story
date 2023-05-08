@@ -23,14 +23,13 @@ class ChapterManager extends AbstractManager
         return (int)$this->pdo->lastInsertId();
     }
 
-    public function getNumChapInStory(int $storyId): int
+    public function selectAllByStory(int $storyId): array|false
     {
-        $query = "SELECT COUNT(*) AS numChaps FROM " . self::TABLE . " WHERE story_id=$storyId GROUP BY story_id;";
-        $statement = $this->pdo->prepare($query);
-        $statement->execute();
+        $query = "SELECT chapter.title, chapter.pseudo, chapter.number, chapter.content 
+        FROM " . self::TABLE .
+            " JOIN story ON chapter.story_id=" . $storyId .
+            " WHERE story.id=" . $storyId;
 
-        $recapChaps = $statement->fetch();
-
-        return $recapChaps['numChaps'];
+        return $this->pdo->query($query)->fetchAll();
     }
 }

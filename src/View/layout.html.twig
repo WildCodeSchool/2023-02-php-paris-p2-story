@@ -27,7 +27,11 @@
 						<span>|</span>
 
 						<li>
-							<a href="/stories/add">CRÉER</a>
+							{% if user %}
+								<a href="/stories/add">CRÉER</a>
+							{% else %}
+								<a href="/login">CRÉER</a>
+							{% endif %}
 						</li>
 						<span>|</span>
 
@@ -36,7 +40,7 @@
 						</div>
 
 						<li>
-							<a href="/stories">CONTRIBUER</a>
+							<a href="/stories/cooperate">CONTRIBUER</a>
 						</li>
 						<span>|</span>
 
@@ -45,7 +49,9 @@
 						</div>
 
 						<li>
-							<a href="/stories">LIRE</a>
+
+							<a href="/stories/read">LIRE</a>
+
 						</li>
 						<span>|</span>
 
@@ -54,11 +60,11 @@
 						</div>
 
 						<li>
-							<a href="/">COMPTE</a>
+							<a href="/login">COMPTE</a>
 						</li>
 
 						<div class="picto">
-							<a href="/"><img class="picto-user" src="/assets/images/user.png" alt="picto utilisateur"></a>
+							<a href="/login"><img class="picto-user" src="/assets/images/user.png" alt="picto utilisateur"></a>
 						</div>
 					</ul>
 				</nav>

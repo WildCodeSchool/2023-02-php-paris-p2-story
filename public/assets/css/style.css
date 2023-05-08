@@ -23,13 +23,88 @@ body {
     color: var(--text-color);
 }
 
+body>main {
+    padding-top: 1.5rem 0 0 0;
+}
+
 #navbar {
     background-color: var(--nav-color);
     padding: 1rem;
     height: 10rem;
+    margin-bottom: 0;
 }
 
 #navbar nav {
     display: flex;
     justify-content: center;
+}
+
+/* LOGIN */
+#login,
+#welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login button,
+#login a {
+    background-color: var(--button-color);
+    border: none;
+    width: 16rem;
+}
+
+#login h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+#login p {
+    margin-bottom: 3rem;
+}
+
+#welcome p {
+    margin: 0 1rem 3rem 1rem;
+    text-align: center;
+}
+
+#login li {
+    list-style-type: none;
+    color: var(--button-color)
+}
+
+/* LIRE UNE HISTOIRE */
+#chapters {
+    text-align: justify;
+}
+
+#chapters {
+    margin-top: 2rem;
+}
+
+#chapters .chapter-title {
+    text-align: center;
+}
+
+#chapters .chapter-title h4 {
+    color: var(--button-color-done);
+}
+
+#chapters .author {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#chapters .author p {
+    font-size: 0.8rem;
+    color: var(--button-color-done);
+}
+
+#read-buttons {
+    display: flex;
+}
+
+#edit-button {
+    color: var(--button-color);
+    border-color: var(--button-color);
 }
