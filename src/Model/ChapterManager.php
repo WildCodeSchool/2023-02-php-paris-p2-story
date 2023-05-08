@@ -28,17 +28,21 @@ class ChapterManager extends AbstractManager
         $statement->bindValue(':title', $chapter['title'], PDO::PARAM_STR);
         $statement->bindValue(':pseudo', $chapter['pseudo'], PDO::PARAM_STR);
         $statement->bindValue(':content', $chapter['content'], PDO::PARAM_STR);
-        $statement->bindValue(':story_id', $storyId, PDO::PARAM_STR);
+        $statement->bindValue(':story_id', $storyId, PDO::PARAM_INT);
 
         $statement->execute();
     }
 
     public function selectAllByStory(int $storyId, string $orderBy = ''): array|false
     {
-        $query = "SELECT chapter.title, chapter.pseudo, chapter.content 
-        FROM " . self::TABLE .
-            " JOIN story ON chapter.story_id=" . $storyId .
-            " WHERE story.id=" . $storyId;
+        $query = "SELECT chapter.title, chapter.pseudo, chapter.content
+                  FROM " . self::TABLE . " 
+                  JOIN story ON chapter.story_id=" . $storyId . " 
+                  WHERE story.id=" . $storyId;
+
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy;
+        }
 
         return $this->pdo->query($query)->fetchAll();
     }

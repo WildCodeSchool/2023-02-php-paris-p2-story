@@ -53,7 +53,6 @@ class ChapterController extends AbstractController
 
             $errors = $this->verify($chapter);
 
-
             if (empty($errors)) {
                 $this->chapterManager->insert($chapter, $storyId);
                 header('Location:/stories/show?id=' . $storyId);

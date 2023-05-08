@@ -17,14 +17,6 @@
 			</label>
 		</fieldset>
 	</div>
-	{% if story.ended %}
-		<button type="submit">
-			<a href="/stories/show?id={{ story.id }}">Publier</a>
-		</button>
-	{% else %}
-		<button type="submit">
-			<a href="/chapters/show?id={{ story.id }}">Enregistrer</a>
-		</button>
-	{% endif %}
-	{# <button type="submit">Publier</button> #}
+	
+	<input type="submit" value="{{ story.ended ? 'Publier' : 'Enregistrer' }}">
 </form>
