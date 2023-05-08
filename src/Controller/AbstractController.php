@@ -15,9 +15,14 @@ abstract class AbstractController
     protected Environment $twig;
     protected array|false $user;
 
+    private UserManager $userManager;
+
     public function __construct()
     {
+        $this->userManager = new UserManager();
+
         $loader = new FilesystemLoader(APP_VIEW_PATH);
+
         $this->twig = new Environment(
             $loader,
             [
@@ -26,8 +31,8 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
-        $userManager = new UserManager();
-        $this->user = isset($_SESSION['user_id']) ? $userManager->selectOneById($_SESSION['user_id']) : false;
+        
+        $this->user = isset($_SESSION['user_id']) ? $this->userManager->selectOneById($_SESSION['user_id']) : false;
         $this->twig->addGlobal('user', $this->user);
     }
 }

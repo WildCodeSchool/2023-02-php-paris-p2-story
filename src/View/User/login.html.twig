@@ -15,7 +15,6 @@
 					</p>
 					<a href="/logout" role="button">Déconnexion</a>
 				</div>
-
 			{% else %}
 				<div>
 					<h2>Se connecter</h2>
@@ -26,24 +25,24 @@
 
 				<form action="" method="post">
 					<div>
-						<label for="name">Nom d'utilisateur</label>
-						<input type="text" id="name" name="name" placeholder="Nom d'utilisateur" required>
+						<label for="pseudo">Pseudo</label>
+						<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required>
 					</div>
 
 					<div>
 						<label for="password">Mot de passe</label>
 						<input type="password" id="password" name="password" placeholder="Mot de passe" required>
 					</div>
-					<!-- Button -->
 					<button type="submit">Connexion</button>
 				</form>
-
 			{% endif %}
 
 			{% if errors %}
+				<ul>
 				{% for error in errors %}
 					<li>{{ error }}</li>
 				{% endfor %}
+				</ul>
 			{% endif %}
 		</section>
 	</main>

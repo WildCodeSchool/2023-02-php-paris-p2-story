@@ -6,6 +6,14 @@ use App\Model\UserManager;
 
 class UserController extends AbstractController
 {
+    private UserManager $manager;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->manager = new UserManager();
+    }
+
     public function login(): string
     {
         $errors = [];
@@ -13,11 +21,11 @@ class UserController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentials = array_map('trim', $_POST);
 
-            if (!isset($credentials['name']) || empty($credentials['name'])) {
+            if (!isset($credentials['pseudo']) || empty($credentials['pseudo'])) {
                 $errors[] = "Merci d'indiquer un nom d'utilisateur";
             }
-            $userManager = new UserManager();
-            $user = $userManager->selectOneByName($credentials['name']);
+
+            $user = $this->manager->selectOneByPseudo($credentials['pseudo']);
 
             if (!isset($credentials['password']) || empty($credentials['password'])) {
                 $errors[] = "Merci d'indiquer un mot de passe";
@@ -26,10 +34,12 @@ class UserController extends AbstractController
             if ($user && ($credentials['password'] === $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
                 header('Location: /');
+                exit();
             } else {
                 $errors[] = "Mot de passe incorrect";
             }
         }
+
         return $this->twig->render('User/login.html.twig', ['errors' => $errors]);
     }
 
