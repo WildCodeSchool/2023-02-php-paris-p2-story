@@ -24,7 +24,7 @@ class UserController extends AbstractController
                 $errors[] = "Merci d'indiquer un mot de passe";
             }
 
-            if ($user && password_verify($credentials['password'], $user['password'])) {
+            if ($user && ($credentials['password'] === $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
                 // var_dump($_SESSION);
                 // exit();
