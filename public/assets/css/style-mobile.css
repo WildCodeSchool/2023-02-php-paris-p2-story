@@ -56,7 +56,6 @@ main #container {
 
 main #container .image img {
     padding-top: 3%;
-    width: 100px;
     height: 160px;
 }
 
@@ -126,6 +125,7 @@ main #container .story .age {
 
 main #container .story .description {
     text-align: justify;
+    width: 100%;
 }
 
 main #container button {
@@ -171,5 +171,20 @@ main #form button {
     margin: auto;
     padding: 8px 0;
 }
-
 /* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
+
+
+
+/******************** PARTIE LISTER HISTOIRES ****************************************/
+main #title_list {
+    padding-left: 100px;
+}
+
+main #list_stories .title_cooperate
+{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
