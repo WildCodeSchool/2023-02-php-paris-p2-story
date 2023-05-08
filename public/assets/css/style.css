@@ -72,3 +72,39 @@ body>main {
     list-style-type: none;
     color: var(--button-color)
 }
+
+/* LIRE UNE HISTOIRE */
+#chapters {
+    text-align: justify;
+}
+
+#chapters {
+    margin-top: 2rem;
+}
+
+#chapters .chapter-title {
+    text-align: center;
+}
+
+#chapters .chapter-title h4 {
+    color: var(--button-color-done);
+}
+
+#chapters .author {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#chapters .author p {
+    font-size: 0.8rem;
+    color: var(--button-color-done);
+}
+
+#read-buttons {
+    display: flex;
+}
+
+#edit-button {
+    color: var(--button-color);
+    border-color: var(--button-color);
+}

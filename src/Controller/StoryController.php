@@ -3,18 +3,19 @@
 namespace App\Controller;
 
 use App\Model\StoryManager;
-use App\Model\AbstractManager;
+use App\Model\ChapterManager;
 
 class StoryController extends AbstractController
 {
+    private ChapterManager $chapterManager;
     private StoryManager $storyManager;
 
     public function __construct()
     {
         parent::__construct();
+        $this->chapterManager = new ChapterManager();
         $this->storyManager = new StoryManager();
     }
-
     /**
      * List stories
      */
@@ -31,13 +32,14 @@ class StoryController extends AbstractController
     }
 
     /**
-     * Show informations for a specific story
+     * Show chapters for a specific story
      */
-    public function show(int $id): string
+    public function show(int $storyId): string
     {
-        $story = $this->storyManager->selectOneById($id);
+        $story = $this->storyManager->selectOneById($storyId);
+        $chapters = $this->chapterManager->selectAllByStory($storyId);
 
-        return $this->twig->render('Story/show.html.twig', ['story' => $story]);
+        return $this->twig->render('Story/show.html.twig', ['story' => $story, 'chapters' => $chapters]);
     }
 
     /**
