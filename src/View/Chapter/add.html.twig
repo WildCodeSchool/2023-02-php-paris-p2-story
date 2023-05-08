@@ -3,13 +3,12 @@
 {% block content %}
 	<main>
 		<div id="textContribute">
-			<h1>Contribuez à une e-stoire</h1>
+			<h1>Écrire un nouveau chapitre</h1>
 			<p>Remplissez le formulaire ci-dessous pour ajouter un chapitre.
 				<br>
 				N’oubliez pas de consulter la charte utilisateur avant de cliquer sur “Enregistrer”.</p>
 			<button type="submit">Charte utilisateur</button>
 		</div>
-
 		<div id="container">
 			<div class="image">
 				<img src="{{ story.picture }}" alt="coverture e-stoire">
@@ -39,7 +38,7 @@
 					<p>{{ story.description }}</p>
 				</div>
 				<button type="submit">
-					<a href="/stories">Lire tous les chapitres</a>
+					<a href="/stories/show?id={{ story.id }}">Lire tous les chapitres</a>
 				</button>
 			</div>
 		</div>

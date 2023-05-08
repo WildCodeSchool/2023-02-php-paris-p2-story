@@ -135,13 +135,6 @@ main #container button {
     font-size: 1.1em;
 }
 
-main #container button a:link,
-main #container button a:visited,
-main #container button a:active {
-    text-decoration: none;
-    color: white;
-}
-
 main #form {
     width: 80%;
     margin: auto;
@@ -164,6 +157,10 @@ main #form .flex fieldset {
     margin-left: 0.5em;
 }
 
+main #form .flex fieldset label{
+    font-weight: bold;
+}
+
 main #form button {
     width: 50%;
     background: #F5664B;
@@ -172,6 +169,14 @@ main #form button {
     padding: 8px 0;
 }
 
+main button a:link,
+main button a:visited,  
+main button a:hover {
+    text-decoration: none; 
+    color: white;
+}
+
+/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
 /* LIRE UNE HISTOIRE */
 #read #container .chapter,
 #read #container .age,

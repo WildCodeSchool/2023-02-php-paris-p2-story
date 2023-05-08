@@ -19,23 +19,23 @@ class ChapterController extends AbstractController
         $this->storyManager = new StoryManager();
     }
 
-    public function verify($infoNewChapter): array
+    public function verify($chapter): array
     {
         $errors = [];
 
-        if (!isset($infoNewChapter['title']) || empty($infoNewChapter['title'])) {
+        if (!isset($chapter['title']) || empty($chapter['title'])) {
             $errors[] = "Dommage que votre chapitre n'ait pas de titre !";
-        } elseif (strlen($infoNewChapter['title']) > self::MAX_LENGTH_TITLE) {
+        } elseif (strlen($chapter['title']) > self::MAX_LENGTH_TITLE) {
             $errors[] = "Le titre de votre chapitre est trop long";
         }
 
-        if (!isset($infoNewChapter['pseudo']) || empty($infoNewChapter['pseudo'])) {
+        if (!isset($chapter['pseudo']) || empty($chapter['pseudo'])) {
             $errors[] = "Dommage que votre chapitre n'ait pas d'auteur !";
-        } elseif (strlen($infoNewChapter['pseudo']) > self::MAX_LENGTH_PSEUDO) {
+        } elseif (strlen($chapter['pseudo']) > self::MAX_LENGTH_PSEUDO) {
             $errors[] = "Le nom de plume est trop long";
         }
 
-        if (!isset($infoNewChapter['content']) || empty($infoNewChapter['content'])) {
+        if (!isset($chapter['content']) || empty($chapter['content'])) {
             $errors[] = "Dommage que votre chapitre n'ait pas de contenu !";
         }
 
@@ -44,19 +44,22 @@ class ChapterController extends AbstractController
 
     public function add(int $storyId): ?string
     {
+        $errors = [];
+
         $story = $this->storyManager->selectOneById($storyId);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $infoNewChapter = array_map('trim', $_POST);
-            $errors = $this->verify($infoNewChapter);
+            $chapter = array_map('trim', $_POST);
+
+            $errors = $this->verify($chapter);
 
             if (empty($errors)) {
-                $this->chapterManager->insert($infoNewChapter, $storyId);
+                $this->chapterManager->insert($chapter, $storyId);
+                header('Location:/stories/show?id=' . $storyId);
+                exit();
             }
-
-            header('Location:/stories/');
-            return null;
         }
-        return $this->twig->render('Chapter/add.html.twig', ['story' => $story]);
+
+        return $this->twig->render('Chapter/add.html.twig', ['story' => $story, 'errors' => $errors]);
     }
 }
