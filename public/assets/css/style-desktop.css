@@ -163,6 +163,10 @@ main #form .flex fieldset {
     margin-left: 0.5em;
 }
 
+main #form .flex fieldset label{
+    font-weight: bold;
+}
+
 main #form button {
     width: 15%;
     background: #F5664B;
