@@ -55,7 +55,7 @@ main #textContribute button {
     margin: 0;
 }
 
-main #container {    
+main #container {
     display: flex;
     justify-content: center;
     background-color: #FFF5E1;
@@ -125,7 +125,7 @@ main #container .story .type p {
 }
 
 main #container .story .age {
-    padding-left: 1em; 
+    padding-left: 1em;
 }
 
 main #container .story .description {
@@ -133,13 +133,13 @@ main #container .story .description {
     width: 100%;
 }
 
-main #container button{
+main #container button {
     background: #F5664B;
     border: none;
     padding: 8px 20px;
     width: 35%;
 }
- 
+
 main #form {
     width: 80%;
     margin: auto;
@@ -151,7 +151,7 @@ main #form {
 
 main #form .flex #title,
 main #form .flex #pseudo,
-main #form .flex #content{
+main #form .flex #content {
     font-size: 17px;
     background-color: white;
 }
@@ -159,7 +159,7 @@ main #form .flex #content{
 main #form .flex fieldset {
     font-size: 0.7em;
     background-color: white;
-    width: 37%; 
+    width: 37%;
     margin-left: 0.5em;
 }
 
@@ -182,3 +182,34 @@ main button a:hover {
     color: white;
 }
 /* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
+
+/* LIRE UNE HISTOIRE */
+#read #container {
+    background-color: white;
+}
+
+#chapters .content p {
+    font-size: 1rem;
+    margin: 0 30% 2rem 30%;
+}
+
+#chapters .author {
+    width: 70%;
+    margin-bottom: 3rem;
+}
+
+#read-buttons {
+    justify-content: space-evenly;
+}
+
+/******************** PARTIE LISTER HISTOIRES ****************************************/
+main #list_stories #container {
+    background-color: white;
+}
+
+main #list_stories .title_cooperate {
+    width: 80%;
+    margin: auto;
+}
+
+/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/

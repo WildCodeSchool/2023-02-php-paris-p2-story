@@ -32,4 +32,14 @@ class ChapterManager extends AbstractManager
 
         $statement->execute();
     }
+
+    public function selectAllByStory(int $storyId): array|false
+    {
+        $query = "SELECT chapter.title, chapter.pseudo, chapter.number, chapter.content 
+        FROM " . self::TABLE .
+            " JOIN story ON chapter.story_id=" . $storyId .
+            " WHERE story.id=" . $storyId;
+
+        return $this->pdo->query($query)->fetchAll();
+    }
 }
