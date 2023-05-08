@@ -180,4 +180,11 @@ main #title_list {
     padding-left: 100px;
 }
 
+main #list_stories .title_cooperate
+{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
 /* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
