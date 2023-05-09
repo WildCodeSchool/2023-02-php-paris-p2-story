@@ -43,25 +43,47 @@
 
 #create-story {
     padding: 0 2rem 0 2rem;
-    font-size: 123px;
-    border: blue solid 2px;
 }
 
 #presentation {
-    font-size: 16px;
+    font-size: 14px;
     text-align: justify;
     width: 100%;
     margin: 0;
 }
 
-h2 {
-    font-size: 20px;
+/* bouton upload image formulaire */
+#create-story #desktop-display #image-upload {
+    width: 112px;
+    display: flex;
+    justify-content: center;
 }
 
-#create-story .form {
+#create-story #desktop-display #image-upload #cover-zone {
+    background-image: url("/assets/images/cover-upload-mobile.png");
+    display: flex;
+    justify-content: center;
+    width: 116px;
+    height: 157px;
+    margin: auto;
+}
+
+#image-upload .coverPreview {
+    width: 99px;
+    height: 136px;
+    margin-top: -165px;
+}
+
+#upload-picture {
+    width: 115px;
+    margin-top: 96px;
+}
+
+#create-story #fonds {
     background-color: var(--nav-color);
+    margin-top: 2em;
     padding: 5%;
-    border: black solid 2px;
+    border: lightgray solid 2px;
     border-radius: .5rem;
     justify-content: center;
 }
@@ -70,28 +92,17 @@ h2 {
 #pseudo,
 #nbchapter,
 #genre,
+#lectorat,
 #description {
     background-color: white;
     font-size: 12px;
     width: 90%;
     height: auto;
     margin: 2% 5% 2% 5%;
-    text-align: center;
+    text-align: left;
 }
 
-/*
-#create-story #picture {
-    display: flex;
-    justify-content: center;
-    background-color: #FFEECE;
-    font-size: 12px;
-    width: 30%;
-    height: 60%;
-    margin: auto;
-}
-*/
-
-#create-story .form .binome {
+#create-story .binome {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 50% 50%;
@@ -107,53 +118,16 @@ h2 {
     font-size: 10px;
 }
 
-.field1,
-.field1 p {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0;
-    background-color: white;
-    width: 90%;
-    height: auto;
-    font-size: 6px;
-    margin: 2% 5% 2% 5%;
-}
-
 .field {
     display: flex;
     flex-direction: row;
     width: 90%;
     height: 20px;
-    font-size: 9px;
-    margin: 5% 5% 5% 5%;
-    background-color: white;
-    justify-content: space-around;
+    font-size: 12px;
+    margin: 2% 5% 5% 5%;
+    justify-content: flex-start;
     align-items: center;
 }
-
-/* .field #agreement {
-    font-size: 6px;   
-} */
-
-.image {
-    border: blue solid 2px;
-    height: 100px;
-}
-
-/*
-.pictures {
-    background-image: url('/assets/images/logo.png');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    max-width: 30%;
-    max-height: auto;
-    margin: auto;
-    margin-bottom: 5%;
-}
-*/
 
 button {
     width: 40%;
@@ -163,28 +137,6 @@ button {
     display: flex;
     justify-content: center;
     margin: auto;
-}
-
-/* bouton upload image formulaire */
-#image-upload {
-    width: 112px;
-}
-
-#cover-zone {
-    background-image: url("/assets/images/cover-upload-mobile.png");
-    width: 116px;
-    height: 157px;
-}
-
-#image-upload .coverPreview {
-    width: 99px;
-    height: 136px;
-    margin-top: -165px;
-}
-
-#upload-picture {
-    width: 115px;
-    margin-top: 96px;
 }
 
 /******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/

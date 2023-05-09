@@ -34,21 +34,23 @@ class StoryManager extends AbstractManager
     /**
      * Update story in database - UPDATED by Vincent
      */
-    public function update(array $story): bool
+    public function update(array $story)
     {
         $query = "UPDATE story 
-        SET `title`= :title, `pseudo` = :pseudo, `nbchapter` = :nbchapter, 
+        SET `picture`= :picture, `title`= :title, `pseudo` = :pseudo, `nbchapter` = :nbchapter, 
         `genre` = :genre, `description` = :description, `lectorat` = :lectorat, 
         WHERE `id` = :id";
         $statement = $this->pdo->prepare($query);
 
+        $statement->bindValue(':picture', $story['picture'], PDO::PARAM_STR);
         $statement->bindValue(':title', $story['title'], PDO::PARAM_STR);
         $statement->bindValue(':pseudo', $story['pseudo'], PDO::PARAM_STR);
         $statement->bindValue(':nbchapter', $story['nbchapter'], PDO::PARAM_INT);
         $statement->bindValue(':genre', $story['genre'], PDO::PARAM_STR);
         $statement->bindValue(':description', $story['description'], PDO::PARAM_STR);
         $statement->bindValue(':lectorat', $story['lectorat'], PDO::PARAM_INT);
+        $statement->bindValue(':id', $story['id'], PDO::PARAM_INT);
 
-        return $statement->execute();
+        $statement->execute();
     }
 }

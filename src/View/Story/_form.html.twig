@@ -1,15 +1,5 @@
-{# TODO : manage errors display #}
-
-<!--
-<form method="post">	
-	<input type="hidden" value="{{ story.id }}" name="id">
-	<label for="title">Tile</label>
-	<input type="text" value="{{ story.title }}" name="title" id="title">
-	<button>Submit</button>
-</form>
--->
-
-	<form action="" method="post" enctype="multipart/form-data" class="form"> <div id="image-upload">
+<form action="" method="post" enctype="multipart/form-data" id="desktop-display">
+	<section id="image-upload">
 
 		<div id="cover-zone"></div>
 
@@ -18,46 +8,35 @@
 		<input type="file" name="picture" id="upload-picture" onchange="loadFile(event)"/>
 
 		<div class="cover-preview-container"></div>
-	</div>
-	<!-- <input type="hidden" value="{{ story.id }}" name="id"> -->
-	<div class="fonds">
-		<label for="title"></label>
-		<input type="text" placeholder="Titre de l'e-stoire" name="title" id="title" maxlength="120" required>
-	</div>
+	</section>
 
-	<div>
-		<label for="pseudo"></label>
-		<input type="text" placeholder="Nom de plume" name="pseudo" id="pseudo" maxlength="120" required>
-	</div>
-
-	<div class="binome">
+	<section id="fonds">
 		<div>
-			<label for="nbchapter"></label>
-			<input type="number" placeholder="Nb de chapitres" name="nbchapter" id="nbchapter" min="1" max="2000000000" required>
+			<label for="title"></label>
+			<input type="text" placeholder="Titre de l'e-stoire" name="title" id="title" maxlength="120" required>
 		</div>
 
 		<div>
-			<input>
-				<fieldset class="field1">
-					<div>
-						<p>Age</p>
-						{# <label for="age"></label> #}
-						{# <input type="number" placeholder="Age :" name="age" id="age"> #}
-					</div>
-					<div>
-						<input type="radio" id="lectorat" name="lectorat" value="12-18" required>
-						<label for="12-18">12-18</label>
-					</div>
-					<div>
-						<input type="radio" id="lectorat" name="lectorat" value="18+" required>
-						<label for="18+">18+</label>
-					</div>
-				</fieldset>
-			</input>
+			<label for="pseudo"></label>
+			<input type="text" placeholder="Nom de plume" name="pseudo" id="pseudo" maxlength="120" required>
 		</div>
-	</div>
 
-	<div>
+		<div class="binome">
+			<div>
+				<label for="nbchapter"></label>
+				<input type="number" placeholder="Nb de chapitres" name="nbchapter" id="nbchapter" min="1" max="2000000000" required>
+			</div>
+
+			<div>
+				<label for="lectorat"></label>
+				<select name="lectorat" id="lectorat" required>
+					<option value="">--Choisissez votre lectorat--</option>
+					<option value="12-18">12-18</option>
+					<option value="18+">18+</option>
+				</select>
+			</div>
+		</div>
+
 		<div>
 			<label for="genre"></label>
 			<select name="genre" id="genre" required>
@@ -70,28 +49,27 @@
 			</select>
 		</div>
 
-		<div></div>
-	</div>
+		<div>
+			<label for="description"></label>
+			<textarea placeholder="Ecris une courte description de ton histoire si tu le souhaites" name="description" id="description" minlength="400" maxlength="2000"></textarea>
+		</div>
 
-	<div>
-		<label for="description"></label>
-		<textarea placeholder="Ecris une courte description de ton histoire si tu le souhaites" name="description" id="description" minlength="400" maxlength="2000"></textarea>
-	</div>
+		<div>
+			<fieldset class="field">
+				<input type="checkbox" id="agreement" name="agreement" required>
+				<label for="agreement" id="agreement-fonds">
+					<b>J'ai lu et m'engage à respecter les
+						<a href="https://www.e-stoires.fr/charte-utilisateur" target="_blank">conditions d'utilisation
+						</a>
+						du site.</b>
+				</label>
+			</fieldset>
+		</div>
 
-	<div>
-		<fieldset class="field">
-			<input type="checkbox" id="agreement" name="agreement" required>
-			<label for="agreement">
-				<b>J'ai lu et m'engage à respecter les
-					<a href="https://www.e-stoires.fr/charte-utilisateur" target="_blank">conditions d'utilisation</b>
-				</a>
-			</label>
-		</fieldset>
-	</div>
-
-	<div class="buttonsLine">
-		<button type="submit">Ecrire</button>
-	</div>
+		<div class="buttonsLine">
+			<button type="submit">CREER</button>
+		</div>
+	</section>
 </form>
 
 

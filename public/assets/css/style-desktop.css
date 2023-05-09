@@ -16,12 +16,15 @@
 }
 
 #navbar ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     list-style-type: none;
     letter-spacing: 0.12em;
 }
 
 #navbar ul li {
-    font-size: 18px;
+    font-size: 16px;
     margin-right: 1rem;
     margin-left: 1rem;
 }
@@ -35,27 +38,112 @@
     color: #D1D1D1;
 }
 
-/* bouton upload image formulaire */
-#image-upload {
-    width: 286px;
+/******************** DEBUT PARTIE CREER NOUVELLE HISTOIRE **************************/
+
+#create-story {
+    padding: 0 2rem 0 2rem;
 }
 
-#cover-zone {
-    background-image: url("/assets/images/cover-upload-desktop.png");
-    width: 290px;
-    height: 357px;
+#presentation {
+    font-size: 14px;
+    text-align: justify;
+    width: 100%;
+    margin: 0;
+}
+
+#create-story #desktop-display #image-upload {
+    width: 112px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#create-story #cover-zone {
+    background-image: url("/assets/images/cover-upload-mobile.png");
+    width: 116px;
+    height: 157px;
+    margin: 0;
 }
 
 #image-upload .coverPreview {
-    width: 223px;
-    height: 321px;
-    margin-top: -364px;
+    width: 99px;
+    height: 136px;
+    margin-top: -165px;
 }
 
 #upload-picture {
-    width: 158px;
-    margin-top: 215px;
+    width: 115px;
+    margin-top: 96px;
 }
+
+#desktop-display {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 0% 2.5% 2% 2.5%;
+}
+
+#create-story #fonds {
+    background-color: var(--nav-color);
+    padding: 5%;
+    border: lightgray solid 2px;
+    border-radius: .5rem;
+    justify-content: center;
+}
+
+#create-story #title,
+#pseudo,
+#nbchapter,
+#genre,
+#lectorat,
+#description {
+    background-color: white;
+    font-size: 12px;
+    width: 90%;
+    height: auto;
+    margin: 2% 5% 2% 5%;
+    text-align: left;
+}
+
+#create-story .binome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    margin: 2% 2.5% 2% 2.5%;
+}
+
+#description {
+    height: 100px;
+    width: 90%;
+}
+
+#age {
+    font-size: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 20px;
+    font-size: 12px;
+    margin: 2% 5% 5% 5%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+button {
+    width: 30%;
+    height: auto;
+    background: #F5664B;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+/******************** FIN PARTIE CREER NOUVELLE HISTOIRE **************************/
+
+
+
 
 /******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
 main #container .image #mobile {
