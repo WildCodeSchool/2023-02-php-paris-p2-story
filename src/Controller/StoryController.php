@@ -106,10 +106,8 @@ class StoryController extends AbstractController
                     $story['picture'] = self::DEFAULT_PICTURE;
                 }
 
-                // if validation is ok, insert and redirection
                 $storyManager = new StoryManager();
                 $id =  $storyManager->insert($story, $this->user);
-
 
                 header('Location:/chapters/add?id=' . $id);
                 return null;

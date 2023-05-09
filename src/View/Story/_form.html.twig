@@ -72,7 +72,6 @@
 	</section>
 </form>
 
-
 {% if errors|length > 0 %}
 	<div>
 		<ul>
@@ -84,9 +83,10 @@
 {% endif %}
 
 <script>
-	const loadFile = function (event) {
+const loadFile = function (event) {
 const coverPreview = document.createElement('img');
 const coverContainer = document.querySelector('.cover-preview-container');
+
 coverPreview.classList.add("coverPreview");
 coverContainer.appendChild(coverPreview);
 coverPreview.src = URL.createObjectURL(event.target.files[0]);
