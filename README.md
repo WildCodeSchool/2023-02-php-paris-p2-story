@@ -1,5 +1,11 @@
 # Simple MVC
 
+## Equipe
+Ester
+Léa
+Vincent
+Estelle
+
 ## Description
 
 This repository is a simple PHP MVC structure from scratch.

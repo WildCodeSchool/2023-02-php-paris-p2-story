@@ -1,21 +1,75 @@
 <!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/assets/images/favicon.png">
+<html lang="fr" data-theme="light">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="/assets/images/favicon_e_stoires.png">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="stylesheet" href="/assets/css/style-desktop.css" media="screen and (min-width:655px)">
+		<link rel="stylesheet" href="/assets/css/style-mobile.css" media="screen and (max-width:655px)">
+		<title>E-STOIRES</title>
+	</head>
 
-    <title>{% block title %}{% endblock %}</title>
+	<body>
+		{% block navbar %}
+			<section id="navbar">
+				<img id="logo-desktop" src="/assets/images/logo-desktop.png" alt="logo">
+				<div id="logo-mobile">
+					<p>E-STOIRES</p>
+				</div>
+				<nav>
+					<ul>
+						<li>
+							<a href="/">ACCUEIL</a>
+						</li>
+						<span>|</span>
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-    {% block stylesheet %}{% endblock %}
-</head>
+						<li>
+							{% if user %}
+								<a href="/stories/add">CRÉER</a>
+							{% else %}
+								<a href="/login">CRÉER</a>
+							{% endif %}
+						</li>
+						<span>|</span>
 
-<body>
-    {% block content %}{% endblock %}
-    {% block javascript %}{% endblock %}
-</body>
+						<div class="picto">
+							<a href="/stories/add"><img src="/assets/images/pencil.png" class="picto-create" alt="picto crayon"></a>
+						</div>
+
+						<li>
+							<a href="/stories/cooperate">CONTRIBUER</a>
+						</li>
+						<span>|</span>
+
+						<div class="picto">
+							<a href="/stories"><img class="picto-contribute" src="/assets/images/contribute.png" alt="picto contribuer"></a>
+						</div>
+
+						<li>
+
+							<a href="/stories/read">LIRE</a>
+
+						</li>
+						<span>|</span>
+
+						<div class="picto">
+							<a href="/stories"><img class="picto-read" src="/assets/images/open-book.png" alt="picto utilisateur"></a>
+						</div>
+
+						<li>
+							<a href="/login">COMPTE</a>
+						</li>
+
+						<div class="picto">
+							<a href="/login"><img class="picto-user" src="/assets/images/user.png" alt="picto utilisateur"></a>
+						</div>
+					</ul>
+				</nav>
+			</section>
+		{% endblock %}
+		{% block content %}{% endblock %}
+	</body>
 </html>
-
-

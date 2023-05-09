@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<main>
+		<div id="textContribute">
+			<h1>Ecrire la suite d’une e-stoire</h1>
+			<p>1/ Choisissez une histoire qui vous inspire
+				<br>
+				2/ Cliquez sur contribuer pour participez à son écriture</p>
+			<button type="submit">Charte utilisateur</button>
+		</div>
+		<div id="list_stories">
+			<div class="title_cooperate">
+				<h2>E-stoires en cours</h2>
+			</div>
+			{% for story in stories %}
+				{% if story.ended == 0 %}
+					{% include 'Story/_story.html.twig' %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</main>
+{% endblock %}
