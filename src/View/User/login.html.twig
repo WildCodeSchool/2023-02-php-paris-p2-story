@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<main>
+		<section id="login">
+			{% if user %}
+				<div id="welcome">
+					<p>
+						Bienvenue
+						<strong>{{ "#{user.pseudo}" }}</strong>
+						!
+					</p>
+					<p>
+						Vous pouvez désormais accéder à toutes les fonctionnalités du site.
+					</p>
+					<a href="/logout" role="button">Déconnexion</a>
+				</div>
+			{% else %}
+				<div>
+					<h2>Se connecter</h2>
+					<p>
+						pour participer à la création d'e-stoires !
+					</p>
+				</div>
+
+				<form action="" method="post">
+					<div>
+						<label for="pseudo">Pseudo</label>
+						<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required>
+					</div>
+
+					<div>
+						<label for="password">Mot de passe</label>
+						<input type="password" id="password" name="password" placeholder="Mot de passe" required>
+					</div>
+					<button type="submit">Connexion</button>
+				</form>
+			{% endif %}
+
+			{% if errors %}
+				<ul>
+				{% for error in errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		</section>
+	</main>
+{%  endblock %}

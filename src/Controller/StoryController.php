@@ -3,34 +3,48 @@
 namespace App\Controller;
 
 use App\Model\StoryManager;
+use App\Model\ChapterManager;
 
 class StoryController extends AbstractController
 {
+    private ChapterManager $chapterManager;
+    private StoryManager $storyManager;
+
     public const AUTHORIZED_EXTENSIONS = ['jpg', 'jepg', 'gif', 'png', 'webp'];
     public const MAX_FILE_SIZE = 2000000;
     public const UPLOAD_DIR = "../public/uploads/";
     public const DEFAULT_PICTURE = "default.png";
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->chapterManager = new ChapterManager();
+        $this->storyManager = new StoryManager();
+    }
     /**
      * List stories
      */
-    public function index(): string
+    public function cooperate()
     {
-        $storyManager = new StoryManager();
-        $stories = $storyManager->selectAll('title');
+        $stories = $this->storyManager->selectAll();
+        return $this->twig->render('Story/cooperate.html.twig', ['stories' => $stories]);
+    }
 
-        return $this->twig->render('Story/index.html.twig', ['stories' => $stories]);
+    public function read()
+    {
+        $stories = $this->storyManager->selectAll();
+        return $this->twig->render('Story/read.html.twig', ['stories' => $stories]);
     }
 
     /**
-     * Show informations for a specific story
+     * Show chapters for a specific story
      */
-    public function show(int $id): string
+    public function show(int $storyId): string
     {
-        $storyManager = new StoryManager();
-        $story = $storyManager->selectOneById($id);
+        $story = $this->storyManager->selectOneById($storyId);
+        $chapters = $this->chapterManager->selectAllByStory($storyId, 'created_at');
 
-        return $this->twig->render('Story/show.html.twig', ['story' => $story]);
+        return $this->twig->render('Story/show.html.twig', ['story' => $story, 'chapters' => $chapters]);
     }
 
     /**
@@ -70,11 +84,9 @@ class StoryController extends AbstractController
             if (filesize($story['picture']['tmp_name']) > self::MAX_FILE_SIZE) {
                 $errors[] = "Le poids de votre fichier doit peser moins de 2 Mega";
             }
+            return $errors;
         }
-
-        return $errors;
     }
-
 
     /**
      * Add a new story
@@ -94,8 +106,9 @@ class StoryController extends AbstractController
                     $story['picture'] = self::DEFAULT_PICTURE;
                 }
 
+                // if validation is ok, insert and redirection
                 $storyManager = new StoryManager();
-                $id = $storyManager->insert($story);
+                $id =  $storyManager->insert($story);
 
                 header('Location:/chapters/add?id=' . $id);
                 return null;
@@ -145,8 +158,8 @@ class StoryController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
-            $storyManager = new StoryManager();
-            $storyManager->delete((int)$id);
+
+            $this->storyManager->delete((int)$id);
 
             header('Location:/stories');
         }

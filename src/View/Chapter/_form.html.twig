@@ -1,10 +1,10 @@
 <form action="" method="post">
 	<div class="flex">
 		<label for="title"></label>
-		<input type="text" placeholder="Titre du chapitre :" name="title" id="title" maxlength="120" required>
+		<input type="text" placeholder="Titre du chapitre" name="title" id="title" maxlength="120" required>
 
 		<label for="pseudo"></label>
-		<input type="text" placeholder="Nom de plume :" name="pseudo" id="pseudo" maxlength="120" required>
+		<input type="text" placeholder="Nom de plume" name="pseudo" id="pseudo" maxlength="120" required>
 
 		<label for="content"></label>
 		<textarea placeholder="Ecris ton chapitre" name="content" id="content" rows="10" required></textarea>
@@ -17,7 +17,6 @@
 			</label>
 		</fieldset>
 	</div>
-
-	<button type="submit">Enregistrer</button>
-
+	
+	<input type="submit" value="{{ story.nb_chapters + 1 == story.nbchapter ? 'Publier' : 'Enregistrer' }}">
 </form>

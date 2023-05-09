@@ -1,0 +1,34 @@
+<div id="container">
+	<div class="image">
+		{%if story.picture %}
+			<img src="{{ story.picture }}" alt="couverture e-stoire">
+		{% else %}
+			<img src="/assets/images/default.png" alt="couverture e-stoire">
+		{% endif %}
+	</div>
+	<div class="story">
+		<div class="title">
+			<h2>{{ story.title }}</h2>
+		</div>
+		<div class="pseudo">
+			<p>{{ story.pseudo }}</p>
+		</div>
+		<div class="chapter">
+			<img src="/assets/images/list_chapters.png" alt="logo liste chapitres">
+			<p>{{ story.nbchapter }}
+				chapitres</p>
+		</div>
+		<div class="type_age">
+			<div class="type">
+				<p>{{ story.genre }}</p>
+			</div>
+			<div class="age">
+				<p>{{ story.lectorat }}
+					ans</p>
+			</div>
+		</div>
+		<div class="description">
+			<p>{{ story.description }}</p>
+		</div>
+	</div>
+</div>

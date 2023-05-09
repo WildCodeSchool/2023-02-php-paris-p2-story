@@ -89,7 +89,7 @@
 }
 
 #create-story #title,
-#pseudo,
+#pseudo-form,
 #nbchapter,
 #genre,
 #lectorat,
@@ -129,7 +129,7 @@
     align-items: center;
 }
 
-button {
+#buttonform {
     width: 40%;
     height: auto;
     background: #F5664B;
@@ -154,7 +154,6 @@ main #container {
 
 main #container .image img {
     padding-top: 3%;
-    width: 100px;
     height: 160px;
 }
 
@@ -224,6 +223,7 @@ main #container .story .age {
 
 main #container .story .description {
     text-align: justify;
+    width: 100%;
 }
 
 main #container button {
@@ -231,13 +231,6 @@ main #container button {
     border: none;
     padding: 5px 10px;
     font-size: 1.1em;
-}
-
-main #container button a:link,
-main #container button a:visited,
-main #container button a:active {
-    text-decoration: none;
-    color: white;
 }
 
 main #form {
@@ -262,6 +255,10 @@ main #form .flex fieldset {
     margin-left: 0.5em;
 }
 
+main #form .flex fieldset label {
+    font-weight: bold;
+}
+
 main #form button {
     width: 50%;
     background: #F5664B;
@@ -270,4 +267,70 @@ main #form button {
     padding: 8px 0;
 }
 
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
+main button a:link,
+main button a:visited,
+main button a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/* LIRE UNE HISTOIRE */
+#read #container .chapter,
+#read #container .age,
+#read #container .description,
+#read #container .type_age {
+    display: none;
+}
+
+#read #container {
+    flex-direction: column;
+    align-items: center;
+}
+
+#read #container .pseudo {
+    display: flex;
+    justify-content: center;
+}
+
+#read #container .story {
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+
+#chapters .chapter-title h3 {
+    font-size: 1.2rem;
+}
+
+#chapters .chapter-title h4 {
+    font-size: 0.8rem;
+}
+
+#chapters .content p {
+    font-size: 1rem;
+    margin: 0 1rem 2rem 1rem;
+}
+
+#chapters .author {
+    width: 95%;
+    margin-bottom: 1rem;
+}
+
+#read-buttons {
+    flex-direction: column;
+    align-items: center;
+}
+
+#read-buttons a {
+    margin-bottom: 1rem;
+}
+
+/******************** PARTIE LISTER HISTOIRES ****************************************/
+main #title_list {
+    padding-left: 100px;
+}
+
+main #list_stories .title_cooperate {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+}

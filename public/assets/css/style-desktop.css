@@ -90,7 +90,7 @@
 }
 
 #create-story #title,
-#pseudo,
+#pseudo-form,
 #nbchapter,
 #genre,
 #lectorat,
@@ -130,8 +130,8 @@
     align-items: center;
 }
 
-button {
-    width: 30%;
+#buttonform {
+    width: 70%;
     height: auto;
     background: #F5664B;
     border: none;
@@ -157,7 +157,7 @@ main #textContribute {
 }
 
 main #textContribute button {
-    width: 15%;
+    width: 20%;
     background-color: white;
     color: black;
     border-color: black;
@@ -176,7 +176,6 @@ main #container {
 
 main #container .image img {
     padding-top: 3%;
-    width: 200px;
     height: 360px;
 }
 
@@ -241,13 +240,14 @@ main #container .story .age {
 
 main #container .story .description {
     text-align: justify;
+    width: 100%;
 }
 
 main #container button {
     background: #F5664B;
     border: none;
     padding: 8px 20px;
-    width: 30%;
+    width: 35%;
 }
 
 main #container button a:link,
@@ -280,6 +280,10 @@ main #form .flex fieldset {
     margin-left: 0.5em;
 }
 
+main #form .flex fieldset label {
+    font-weight: bold;
+}
+
 main #form button {
     width: 15%;
     background: #F5664B;
@@ -289,3 +293,42 @@ main #form button {
 }
 
 /* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
+main button a:link,
+main button a:visited,
+main button a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
+
+/* LIRE UNE HISTOIRE */
+#read #container {
+    background-color: white;
+}
+
+#chapters .content p {
+    font-size: 1rem;
+    margin: 0 30% 2rem 30%;
+}
+
+#chapters .author {
+    width: 70%;
+    margin-bottom: 3rem;
+}
+
+#read-buttons {
+    justify-content: space-evenly;
+}
+
+/******************** PARTIE LISTER HISTOIRES ****************************************/
+main #list_stories #container {
+    background-color: white;
+}
+
+main #list_stories .title_cooperate {
+    width: 80%;
+    margin: auto;
+}
+
+/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
