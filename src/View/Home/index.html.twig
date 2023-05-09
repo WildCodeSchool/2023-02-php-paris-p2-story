@@ -4,87 +4,77 @@
 
 	{# Ajout d'un id pour éviter pb de sélécteurs #}
 
-	<section id="header">
-
-		<header>
-
-			<h1>Les véritables histoires s'écrivent à plusieurs !</h1>
-			<p>Que vous soyez écrivain(e)s expérimenté(e)s ou débutant(e), laissez votre imagination débordante la possibilité de s'exprimer sur la toile.<br></p>
-			<p>Entrez dans la dynamique d'une écriture conviviale avec E-STOIRES et voyez où vous porte votre créativité.<br></p>
-		
-		</header>
-	
-	</section>
-
 	<main>
+
+		<section id="header">
+			<header>
+				<h1>Les véritables histoires s'écrivent à plusieurs !</h1>
+				<p>Que vous soyez écrivain(e)s expérimenté(e)s ou débutant(e), laissez votre imagination débordante la possibilité de s'exprimer sur la toile.<br></p>
+				<p>Entrez dans la dynamique d'une écriture conviviale avec E-STOIRES et voyez où vous porte votre créativité.<br></p>
+			</header>
+		</section>
+		
 		<div class= "partie2">
-		<div>
-			<h3>Vivez des E-STOIRES inédites</h3>
+			<div>
+				<h2	>Vivez des E-STOIRES inédites</h2>
+			</div>
+			
+			<section id="instruction" class="grid">
+				<article>
+					<p class="number">-1-</p><br>
+					<p class="title">Créer</p><br>
+					<p>Tout le monde a une histoire à raconter.<br> Alors commencez à l'écrire et faites vivre vos personnages.</p><br><br>
+					<button type="button"><a href="/stories/add"><img src="/assets/images/pencil.png"></a></button>
+				</article>
+
+				<article>
+					<p class="number">-2-</p><br>
+					<p class="title">Contribuer</p><br>
+					<p>Apportez votre plume à l'édifice.<br> Une histoire inachevée vous plaît et vous souhaitez lui ajouter un chapitre.</p><br>
+					<button type="button"><a href="/stories/cooperate"><img src="/assets/images/contribute.png"></a></button>
+				</article>
+
+				<article>
+					<p class="number">-3-</p><br>
+					<p class="title">Lire</p><br>
+					<p>Vous préférez lire.<br> Voici une bibliothèque authentique qui vous transportera dans différents univers.</p><br>
+					<button type="button"><a href="/stories/read"><img src="/assets/images/read.png"></a></button>
+				</article>
+			</section>
+			
+			<section id="charte" class="grid">
+				<a href="#" role="button" class="contrast outline">Charte d'utilisateur</a>
+			</section>
 		</div>
 		
-	<section id="instruction" class="grid">
-		
-		
-		<article>
-			<p class="number">-1-</p><br>
-			<p>Créer</p><br>
-			<p>Tout le monde a une histoire à raconter.<br> Alors commencez à l'écrire et faites vivre vos personnages.</p><br>
-            <button type="button"><a href="/stories/add"><img src="/assets/images/pencil.png"></a></button>
-        </article>
+		<section id="last-published">
+			<h1>Dernières publications</h1>
 
-        <article>
-            <p class="number">-2-</p><br>
-            <p>Contribuer</p><br>
-			<p>Apportez votre plume à l'édifice.<br> Une histoire inachevée vous plaît et vous souhaitez lui ajouter un chapitre.</p><br>
-            <button type="button"><a href="/stories/"><img src="/assets/images/contribute.png"></a></button>
-        </article>
+				{#<div class="picto">
+					<a href="/stories"><img class="picto-read" src="/assets/images/open-book.png" alt="picto utilisateur"></a>
+				</div>#}
+		<section id="stories-list">
+			{% for story in stories %}
+			
+			<article>
 
-        <article>
-            <p class="number">-3-</p><br>
-			<p>Lire</p><br>
-            <p>Vous préférez lire.<br> Voici une bibliothèque authentique qui vous transportera dans différents univers.</p><br>
-			<button type="button"><a href="/stories/"><img src="/assets/images/read.png"></a></button>
-        </article>
+				<header>
+					<img src="{{ story.picture }}" alt="couverture du livre">
+				</header>
 
-	</section>
+				<a href="/stories/show?id={{ story.id }}">{{ story.title }}</a>
 
-	</div>
-	
-	<section id="charte" class="grid">
-		
-		<a href="#" role="button" class="contrast outline">Charte d'utilisateur</a>
-		
-	</section>
+				<p>{{ story.pseudo }}</p>
 
-	<section id="last-published">
+			</article>
+			{% else %}
+			<div>Nothing to display</div>
+			{% endfor %}
+		</section>
 
-	<h1>Dernières publications</h1>
-
-		<div class="picto">
-				<a href="/stories"><img class="picto-read" src="/assets/images/open-book.png" alt="picto utilisateur"></a> </div>
-	
-	<section id="stories-list">
-		{% for story in stories %}
-		
-		<article>
-
-			<header>
-				<img src="{{ story.picture }}" alt="couverture du livre">
-			</header>
-
-			<a href="/stories/show?id={{ story.id }}">{{ story.title }}</a>
-
-			<p>{{ story.pseudo }}</p>
-
-		</article>
-		{% else %}
-		<div>Nothing to display</div>
-		{% endfor %}
-	</section>
-
-			<div id="other-stories">
-				<a href="/stories">Découvrez d'autres e-stoires</a>
-			</div>
+				<div id="other-stories">
+					<a href="/stories">Découvrez d'autres e-stoires</a>
+				</div>
 
 	</main>
 

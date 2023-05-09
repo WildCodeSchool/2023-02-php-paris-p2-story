@@ -38,4 +38,17 @@ class StoryManager extends AbstractManager
         $statement = $this->pdo->prepare($query);
         $statement->execute();
     }
+
+    /**
+     * Show last published stories on Home
+     */
+    public function selectSome(string $orderBy = '', string $direction = 'DESC'): array
+    {
+        $query = 'SELECT picture, title, pseudo FROM ' . static::TABLE;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction . ' LIMIT 3';
+        }
+
+        return $this->pdo->query($query)->fetchAll();
+    }
 }

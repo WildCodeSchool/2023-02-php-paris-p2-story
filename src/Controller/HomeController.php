@@ -10,7 +10,9 @@ class HomeController extends AbstractController
      * Display home page
      */
     public function index(): string
-    {
-        return $this->twig->render('Home/index.html.twig');
+    {	    	        
+        $storyManager = new StoryManager();
+        $stories = $storyManager->selectSome('id');
+        return $this->twig->render('Home/index.html.twig', ['stories' => $stories]);
     }
 }

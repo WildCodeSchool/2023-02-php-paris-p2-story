@@ -39,6 +39,9 @@ body>main {
     justify-content: center;
 }
 
+#instruction article {
+    box-shadow: none;
+}
 #last-published {
     background-color: var(--nav-color);
     padding: 0;

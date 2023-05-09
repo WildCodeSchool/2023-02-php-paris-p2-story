@@ -34,12 +34,12 @@
 #navbar ul span {
     color: #D1D1D1;
 }
-/*DEBUT ESTELLE*/
 
-#header {
+main #header {
     background-image: url('./../images/image_header_desktop.png');
     background-size: contain;
     height: 700px;
+    margin-top: -7%;
 }
 
 #header header {
@@ -56,9 +56,10 @@
     text-align: left;
 }
 
-div.partie2 h3 {
-    font-size: 100%;
+div.partie2 h2 {
+    font-size: 1.3em;
     text-align: center;
+    margin-top: -10%;
 }
 #job {
     text-align: center;
@@ -73,7 +74,7 @@ div.partie2 h3 {
 
 #instruction article {
     border: #ED553B 1px solid;
-    margin: 6% 6% 6% 6%;
+    margin: 6%;
 }
 
 #instruction article>button {
@@ -89,13 +90,19 @@ div.partie2 h3 {
     border-style: none;
 }
 
-#instruction article>p {
+#instruction article>p.title {
     text-align: center;
-    margin-top: -4%; 
+    margin-top: -4%;
+    font-weight: bold;
 }
 
-#instruction article p .number {
-    margin-bottom: 35%;
+#instruction article>p.number {
+    font-weight: bold;
+    text-align: center;
+}
+
+#instruction article>p {
+    text-align: center;
 }
 
 #charte a.contrast.outline {
@@ -108,8 +115,6 @@ div.partie2 h3 {
     color: #000000;
     
 }
-
-/*FIN ESTELLE*/
 
 #last-published .picto {
     display: none;

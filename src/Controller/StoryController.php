@@ -63,13 +63,7 @@ class StoryController extends AbstractController
             return null;
         }
     }
-    /*public function list(): string
-    {
-        $storyManager = new StoryManager();
-        $stories = $storyManager->listStories();
-        return $this->twig->render('Story/list.html.twig', ['stories' => $stories]);
-    }*/
-    /**
+        /**
      * Add a new story
      */
     public function add(): ?string

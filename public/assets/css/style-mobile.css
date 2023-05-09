@@ -68,31 +68,31 @@
     display: none;
 }
 
-/*ESTELLE*/
-
 #header {
     background-image: url('./../images/image_header_mobile.png');
     background-size: contain;
     height: 650px;
 }
 
-header {
+#header header {
     margin-left: 30px;
     padding-top: 240px;
+    margin-top: -8%;
 }
 
-h1 {
+#header header h1 {
     font-size: 110%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
-p {
+#header header p {
     font-size: 95%;
 }
 
-h3 {
-    font-size: 100%;
+.partie2 h2 {
+    font-size: 20px;
     text-align: center;
+    margin-top: -25%;
 }
 #job {
     text-align: center;
@@ -129,10 +129,15 @@ h3 {
     margin-top: -4%; 
 }
 
-#instruction article p .number {
+#instruction article .number {
     margin-bottom: 35px;
+    font-weight: bold;
 }
 
+#instruction article .title {
+    margin-bottom: 35px;
+    font-weight: bold;
+}
 #charte a.contrast.outline {
     max-width: 250%;
     height: auto;
