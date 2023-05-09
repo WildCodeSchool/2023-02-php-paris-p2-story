@@ -11,8 +11,6 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
-        $storyManager = new StoryManager();
-        $stories = $storyManager->selectSome('id');
-        return $this->twig->render('Home/index.html.twig', ['stories' => $stories]);
+        return $this->twig->render('Home/index.html.twig');
     }
 }
