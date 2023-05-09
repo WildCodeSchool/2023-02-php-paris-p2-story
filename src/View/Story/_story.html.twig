@@ -27,26 +27,12 @@
 			<p>{{ story.description }}</p>
 		</div>
 		{% if story.ended %}
-			<input
-			type="button" value="Lire" onclick="window.location.href='/stories/show?id={{ story.id }}'">
-
-			{# <button type=" submit">
-																			<a href="/stories/show?id={{ story.id }}">Lire</a>
-																		</button> #}
-
+			<input type="submit" value="Lire" onclick="window.location.href='/stories/show?id={{ story.id }}'">
 		{% else %}
 			{% if user %}
-				{# <input
-																																				type="button" value="Contribuer" onclick="window.location.href='/chapters/add?id={{ story.id }}'" style="background: #F5664B; width: 20%; border: none;"> #}
-				<button type="submit">
-					<a href="/chapters/add?id={{ story.id }}">Contribuer</a>
-				</button>
+				<input type="submit" value="Contribuer" onclick="window.location.href='/chapters/add?id={{ story.id }}'">
 			{% else %}
-				{# <input
-																																type="button" value="Contribuer" onclick="window.location.href='/login'" style="background: #F5664B; width: 20%; border: none;"> #}
-				<button type="submit">
-					<a href="/login">Contribuer</a>
-				</button>
+				<input type="submit" value="Contribuer" onclick="window.location.href='/login'">
 			{% endif %}
 		{% endif %}
 	</div>

@@ -132,19 +132,23 @@ main #container .story .description {
     text-align: justify; 
     width: 100%;
 }
-/* Boutons*/
+
+/* Boutons contribuer, lire, enregistrer, publier*/
 input[type=submit] {
     background: #F5664B;
-    width: 20%;
-    margin-left: 40%;
     border: none;
 }
-/*
-input[type=button] {
-    background: #F5664B;
+
+/* Bouton enregistrer/publier */
+form input[type=submit] {
     width: 20%;
-    border: none;
-} */
+    margin-left: 40%;
+}
+
+/* Bouton contribuer/lire */
+#container .story input[type=submit] {
+    width: 35%;
+}
 
 main #container button {
     background: #F5664B;
