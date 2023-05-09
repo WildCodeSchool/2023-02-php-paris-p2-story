@@ -39,9 +39,8 @@
 }
 
 /******************** DEBUT PARTIE CREER NOUVELLE HISTOIRE **************************/
-
 #create-story {
-    padding: 0 2rem 0 2rem;
+    padding: 1.5rem 2rem 0 2rem;
 }
 
 #presentation {
@@ -51,40 +50,39 @@
     margin: 0;
 }
 
-#create-story #desktop-display #image-upload {
-    width: 112px;
-    display: flex;
-    justify-content: flex-start;
-}
-
-#create-story #cover-zone {
-    background-image: url("/assets/images/cover-upload-mobile.png");
-    width: 116px;
-    height: 157px;
-    margin: 0;
-}
-
-#image-upload .coverPreview {
-    width: 99px;
-    height: 136px;
-    margin-top: -165px;
-}
-
-#upload-picture {
-    width: 115px;
-    margin-top: 96px;
-}
-
 #desktop-display {
     display: grid;
     grid-template-columns: 1fr 3fr;
     margin: 0% 2.5% 2% 2.5%;
 }
 
+#image-upload {
+    display: flex;
+    justify-content: flex-start;
+    width: 286px;
+}
+
+#cover-zone {
+    background-image: url("/assets/images/cover-upload-desktop.png");
+    width: 290px;
+    height: 357px;
+}
+
+#image-upload .coverPreview {
+    width: 223px;
+    height: 321px;
+    margin-top: -364px;
+}
+
+#upload-picture {
+    width: 158px;
+    margin-top: 215px;
+}
+
 #create-story #fonds {
-    background-color: var(--nav-color);
+    background-color: rgba(255, 221, 156, 0.3);
     padding: 5%;
-    border: lightgray solid 2px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: .5rem;
     justify-content: center;
 }
@@ -139,11 +137,6 @@
     justify-content: center;
     margin: auto;
 }
-
-/******************** FIN PARTIE CREER NOUVELLE HISTOIRE **************************/
-
-
-
 
 /******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
 main #container .image #mobile {
@@ -292,15 +285,12 @@ main #form button {
     padding: 8px 20px;
 }
 
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
 main button a:link,
 main button a:visited,
 main button a:hover {
     text-decoration: none;
     color: white;
 }
-
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
 
 /* LIRE UNE HISTOIRE */
 #read #container {
@@ -330,5 +320,3 @@ main #list_stories .title_cooperate {
     width: 80%;
     margin: auto;
 }
-
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/

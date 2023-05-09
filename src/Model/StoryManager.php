@@ -11,17 +11,18 @@ class StoryManager extends AbstractManager
     /**
      * Insert new story in database - UPDATED by Vincent
      */
-    public function insert(array $story): int
+    public function insert(array $story, array $creator): int
     {
-        $query = 'INSERT INTO 
-        story (picture, title, pseudo, nbchapter, genre, lectorat, description) 
-        VALUES (:picture, :title, :pseudo, :nbchapter, :genre, :lectorat, :description);';
+        $query = 'INSERT INTO '
+            . self::TABLE . '(picture, title, pseudo, creator_id, nbchapter, genre, lectorat, description) 
+        VALUES (:picture, :title, :pseudo, :creator_id, :nbchapter, :genre, :lectorat, :description);';
 
         $statement = $this->pdo->prepare($query);
 
         $statement->bindValue(':picture', $story['picture'], PDO::PARAM_STR);
         $statement->bindValue(':title', $story['title'], PDO::PARAM_STR);
         $statement->bindValue(':pseudo', $story['pseudo'], PDO::PARAM_STR);
+        $statement->bindValue(':creator_id', $creator['id'], PDO::PARAM_INT);
         $statement->bindValue(':nbchapter', $story['nbchapter'], PDO::PARAM_INT);
         $statement->bindValue(':genre', $story['genre'], PDO::PARAM_STR);
         $statement->bindValue(':description', $story['description'], PDO::PARAM_STR);

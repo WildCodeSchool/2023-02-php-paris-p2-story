@@ -13,7 +13,7 @@ class StoryController extends AbstractController
     public const AUTHORIZED_EXTENSIONS = ['jpg', 'jepg', 'gif', 'png', 'webp'];
     public const MAX_FILE_SIZE = 2000000;
     public const UPLOAD_DIR = "../public/uploads/";
-    public const DEFAULT_PICTURE = "default.png";
+    public const DEFAULT_PICTURE = "../assets/images/default.png";
 
     public function __construct()
     {
@@ -108,7 +108,8 @@ class StoryController extends AbstractController
 
                 // if validation is ok, insert and redirection
                 $storyManager = new StoryManager();
-                $id =  $storyManager->insert($story);
+                $id =  $storyManager->insert($story, $this->user);
+
 
                 header('Location:/chapters/add?id=' . $id);
                 return null;
@@ -116,39 +117,6 @@ class StoryController extends AbstractController
         }
 
         return $this->twig->render('Story/add.html.twig');
-    }
-
-    /**
-     * Edit a specific story
-     */
-
-    public function edit(int $id): ?string
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $story = array_merge(array_map('trim', $_POST), $_FILES);
-            $errors = $this->verify($story);
-
-            if (empty($errors)) {
-                if (file_exists($story['picture']['tmp_name'])) {
-                    $newFileName = uniqid('', true) . '.' . pathinfo($story['picture']['name'], PATHINFO_EXTENSION);
-                    move_uploaded_file($story['picture']['tmp_name'], self::UPLOAD_DIR . $newFileName);
-                    $story['picture'] = $newFileName;
-                } else {
-                    $story['picture'] = self::DEFAULT_PICTURE;
-                }
-
-                $storyManager = new StoryManager();
-
-                // if validation is ok, update and redirection
-                $storyManager->update($story);
-
-                // erreur dans le header??
-                header('Location: /stories/show?id=' . $id);
-
-                // we are redirecting so we don't want any content rendered
-                return $this->twig->render('Story/edit.html.twig', ['story' => $story]);
-            }
-        }
     }
 
     /**

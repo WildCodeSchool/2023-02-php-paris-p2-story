@@ -42,7 +42,7 @@
 }
 
 #create-story {
-    padding: 0 2rem 0 2rem;
+    padding: 1.5rem 2rem 0 2rem;
 }
 
 #presentation {
@@ -53,19 +53,15 @@
 }
 
 /* bouton upload image formulaire */
-#create-story #desktop-display #image-upload {
+#image-upload {
     width: 112px;
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
 }
 
-#create-story #desktop-display #image-upload #cover-zone {
+#cover-zone {
     background-image: url("/assets/images/cover-upload-mobile.png");
-    display: flex;
-    justify-content: center;
     width: 116px;
     height: 157px;
-    margin: auto;
 }
 
 #image-upload .coverPreview {
@@ -80,10 +76,10 @@
 }
 
 #create-story #fonds {
-    background-color: var(--nav-color);
+    background-color: rgba(255, 221, 156, 0.3);
     margin-top: 2em;
     padding: 5%;
-    border: lightgray solid 2px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: .5rem;
     justify-content: center;
 }
