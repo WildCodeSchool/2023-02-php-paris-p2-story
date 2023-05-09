@@ -47,7 +47,11 @@
     font-size: 14px;
     text-align: justify;
     width: 100%;
-    margin: 0;
+    margin: 0% 2.5% 0% 2.5%;
+}
+
+#create-story h1 {
+    margin: 0% 2.5% 2% 2.5%;
 }
 
 #desktop-display {
@@ -76,7 +80,7 @@
 
 #upload-picture {
     width: 158px;
-    margin-top: 215px;
+    margin-top: 257px;
 }
 
 #create-story #fonds {

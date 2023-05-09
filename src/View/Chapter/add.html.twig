@@ -11,8 +11,8 @@
 		</div>
 		<div id="container">
 			<div class="image">
-				{%if story.picture %}
-					<img src="{{ story.picture }}" alt="couverture e-stoire">
+				{% if story.picture %}
+					<img src="/uploads/{{ story.picture }}" alt="couverture e-stoire">
 				{% else %}
 					<img src="/assets/images/default.png" alt="couverture e-stoire">
 				{% endif %}
