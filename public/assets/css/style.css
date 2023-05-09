@@ -104,3 +104,10 @@ footer {
     margin-bottom: 0;
 
 }
+
+body>main {
+    padding-top: 1.5rem 0 0 0;
+}
+#navbar {
+    margin-bottom: 0;
+}

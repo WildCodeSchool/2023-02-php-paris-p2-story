@@ -67,10 +67,13 @@
 .social-networks {
     display: none;
 }
+
+/*ESTELLE*/
+
 #header {
     background-image: url('./../images/image_header_mobile.png');
     background-size: contain;
-    height: 700px;
+    height: 650px;
 }
 
 header {
@@ -78,19 +81,16 @@ header {
     padding-top: 240px;
 }
 
-header img {
-    display: none;
+h1 {
+    fonth-size: 110%;
+    margin-top: 10%;
 }
 
-header h1 {
-    font-size: 110%;
-}
-
-header p {
+p {
     font-size: 95%;
 }
 
-header h3 {
+h3 {
     font-size: 100%;
     text-align: center;
 }
@@ -131,7 +131,6 @@ header h3 {
 
 #instruction article p .number {
     margin-bottom: 35px;
-    font-weight: strong;
 }
 
 #charte a.contrast.outline {
