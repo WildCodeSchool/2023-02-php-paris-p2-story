@@ -42,7 +42,7 @@ class StoryManager extends AbstractManager
     /**
      * Show last published stories on Home
      */
-    public function selectSome(string $orderBy = '', string $direction = 'DESC'): array
+    public function selectLastThree(string $orderBy = '', string $direction = 'DESC'): array
     {
         $query = 'SELECT picture, title, pseudo FROM ' . static::TABLE;
         if ($orderBy) {

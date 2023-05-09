@@ -50,11 +50,11 @@
     margin: 0 auto;
 }
 
-#stories-list {
+#last-published {
     flex-direction: column;
 }
 
-#stories-list header {
+#last-published header {
     border: none;
 }
 

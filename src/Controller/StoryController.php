@@ -43,27 +43,6 @@ class StoryController extends AbstractController
     }
 
     /**
-     * Edit a specific story
-     */
-    public function edit(int $id)
-    {
-        $story = $this->storyManager->selectOneById($id);
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $story = array_map('trim', $_POST);
-
-            // TODO validations (length, format...)
-
-            // if validation is ok, update and redirection
-            $this->storyManager->update($story);
-
-            header('Location: /stories/show?id=' . $id);
-
-            // we are redirecting so we don't want any content rendered
-            return null;
-        }
-    }
-        /**
      * Add a new story
      */
     public function add(): ?string
