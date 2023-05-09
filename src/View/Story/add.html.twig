@@ -1,6 +1,15 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<h1>Add a new item</h1>
-	{% include 'Story/_form.html.twig' %}
+	<main id="create-story">
+		<section>
+			<h1>Créez votre e-stoire</h1>
+			<div id="presentation">
+				<p>Nous vous invitons à créer votre histoire sur cette page!</p>
+				<p>Il est recommandé d'avoir une idée de votre projet avant de démarrer celui-ci.</p>
+			</div>
+		</section>
+
+		{% include 'Story/_form.html.twig' %}
+	</main>
 {% endblock %}

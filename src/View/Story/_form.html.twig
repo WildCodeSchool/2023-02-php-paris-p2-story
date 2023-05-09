@@ -1,8 +1,95 @@
-{# TODO : manage errors display #}
+<form action="" method="post" enctype="multipart/form-data" id="desktop-display">
+	<section id="image-upload">
 
-<form method="post">
-	<input type="hidden" value="{{ story.id }}" name="id">
-	<label for="title">Tile</label>
-	<input type="text" value="{{ story.title }}" name="title" id="title">
-	<button>Submit</button>
+		<div id="cover-zone"></div>
+
+		<label for="picture"></label>
+
+		<input type="file" name="picture" id="upload-picture" onchange="loadFile(event)"/>
+
+		<div class="cover-preview-container"></div>
+	</section>
+
+	<section id="fonds">
+		<div>
+			<label for="title"></label>
+			<input type="text" placeholder="Titre de l'e-stoire" name="title" id="title" maxlength="120" required>
+		</div>
+
+		<div>
+			<label for="pseudo-form"></label>
+			<input type="text" placeholder="Nom de plume" name="pseudo" id="pseudo-form" maxlength="120" required>
+		</div>
+
+		<div class="binome">
+			<div>
+				<label for="nbchapter"></label>
+				<input type="number" placeholder="Nb de chapitres" name="nbchapter" id="nbchapter" min="1" max="2000000000" required>
+			</div>
+
+			<div>
+				<label for="lectorat"></label>
+				<select name="lectorat" id="lectorat" required>
+					<option value="">--Choisissez votre lectorat--</option>
+					<option value="12-18">12-18</option>
+					<option value="18+">18+</option>
+				</select>
+			</div>
+		</div>
+
+		<div>
+			<label for="genre"></label>
+			<select name="genre" id="genre" required>
+				<option value="">--Choisissez un genre--</option>
+				<option value="scienceFiction">Science-fiction</option>
+				<option value="romance">Romance</option>
+				<option value="policier">Policier</option>
+				<option value="aventure">Aventure</option>
+				<option value="fantastique">Fantastique</option>
+			</select>
+		</div>
+
+		<div>
+			<label for="description"></label>
+			<textarea placeholder="Ecris une courte description de ton histoire si tu le souhaites" name="description" id="description" minlength="400" maxlength="2000"></textarea>
+		</div>
+
+		<div>
+			<fieldset class="field">
+				<input type="checkbox" id="agreement" name="agreement" required>
+				<label for="agreement" id="agreement-fonds">
+					<b>J'ai lu et m'engage à respecter les
+						<a href="https://www.e-stoires.fr/charte-utilisateur" target="_blank">conditions d'utilisation
+						</a>
+						du site.</b>
+				</label>
+			</fieldset>
+		</div>
+
+		<div class="buttonsLine">
+			<button type="submit" id="buttonform">CRÉER</button>
+		</div>
+	</section>
 </form>
+
+{% if errors|length > 0 %}
+	<div>
+		<ul>
+			{% for error in errors %}
+				<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endif %}
+
+<script>
+const loadFile = function (event) {
+const coverPreview = document.createElement('img');
+const coverContainer = document.querySelector('.cover-preview-container');
+
+coverPreview.classList.add("coverPreview");
+coverContainer.appendChild(coverPreview);
+coverPreview.src = URL.createObjectURL(event.target.files[0]);
+coverPreview.alt = "prévisualisation de la couverture de l'e-stoire";
+};
+</script>

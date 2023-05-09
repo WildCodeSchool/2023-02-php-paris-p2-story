@@ -16,12 +16,15 @@
 }
 
 #navbar ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     list-style-type: none;
     letter-spacing: 0.12em;
 }
 
 #navbar ul li {
-    font-size: 18px;
+    font-size: 16px;
     margin-right: 1rem;
     margin-left: 1rem;
 }
@@ -33,6 +36,110 @@
 
 #navbar ul span {
     color: #D1D1D1;
+}
+
+/******************** DEBUT PARTIE CREER NOUVELLE HISTOIRE **************************/
+#create-story {
+    padding: 1.5rem 2rem 0 2rem;
+}
+
+#presentation {
+    font-size: 14px;
+    text-align: justify;
+    width: 100%;
+    margin: 0% 2.5% 0% 2.5%;
+}
+
+#create-story h1 {
+    margin: 0% 2.5% 2% 2.5%;
+}
+
+#desktop-display {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 0% 2.5% 2% 2.5%;
+}
+
+#image-upload {
+    display: flex;
+    justify-content: flex-start;
+    width: 286px;
+}
+
+#cover-zone {
+    background-image: url("/assets/images/cover-upload-desktop.png");
+    width: 290px;
+    height: 357px;
+}
+
+#image-upload .coverPreview {
+    width: 223px;
+    height: 321px;
+    margin-top: -364px;
+}
+
+#upload-picture {
+    width: 158px;
+    margin-top: 257px;
+}
+
+#create-story #fonds {
+    background-color: rgba(255, 221, 156, 0.3);
+    padding: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: .5rem;
+    justify-content: center;
+}
+
+#create-story #title,
+#pseudo-form,
+#nbchapter,
+#genre,
+#lectorat,
+#description {
+    background-color: white;
+    font-size: 12px;
+    width: 90%;
+    height: auto;
+    margin: 2% 5% 2% 5%;
+    text-align: left;
+}
+
+#create-story .binome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    margin: 2% 2.5% 2% 2.5%;
+}
+
+#description {
+    height: 100px;
+    width: 90%;
+}
+
+#age {
+    font-size: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 20px;
+    font-size: 12px;
+    margin: 2% 5% 5% 5%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#buttonform {
+    width: 70%;
+    height: auto;
+    background: #F5664B;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 /******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
@@ -129,7 +236,7 @@ main #container .story .age {
 }
 
 main #container .story .description {
-    text-align: justify; 
+    text-align: justify;
     width: 100%;
 }
 
@@ -138,6 +245,13 @@ main #container button {
     border: none;
     padding: 8px 20px;
     width: 35%;
+}
+
+main #container button a:link,
+main #container button a:visited,
+main #container button a:hover {
+    text-decoration: none;
+    color: white;
 }
 
 main #form {
@@ -163,7 +277,7 @@ main #form .flex fieldset {
     margin-left: 0.5em;
 }
 
-main #form .flex fieldset label{
+main #form .flex fieldset label {
     font-weight: bold;
 }
 
@@ -176,12 +290,11 @@ main #form button {
 }
 
 main button a:link,
-main button a:visited,  
+main button a:visited,
 main button a:hover {
-    text-decoration: none; 
+    text-decoration: none;
     color: white;
 }
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
 
 /* LIRE UNE HISTOIRE */
 #read #container {
@@ -211,5 +324,3 @@ main #list_stories .title_cooperate {
     width: 80%;
     margin: auto;
 }
-
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
