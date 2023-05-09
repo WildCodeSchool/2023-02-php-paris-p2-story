@@ -132,6 +132,19 @@ main #container .story .description {
     text-align: justify; 
     width: 100%;
 }
+/* Boutons*/
+input[type=submit] {
+    background: #F5664B;
+    width: 20%;
+    margin-left: 40%;
+    border: none;
+}
+/*
+input[type=button] {
+    background: #F5664B;
+    width: 20%;
+    border: none;
+} */
 
 main #container button {
     background: #F5664B;
@@ -174,11 +187,6 @@ main #form button {
     margin: auto;
     padding: 8px 20px;
 }
-
-/* main #form input #button_add_chapter {
-    background: #F5664B;
-    border: none;
-} */
 
 main button a:link,
 main button a:visited,  
