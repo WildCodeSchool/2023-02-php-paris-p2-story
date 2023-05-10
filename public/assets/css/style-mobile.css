@@ -1,15 +1,21 @@
 @import url("./style.css");
 
+/* Navbar */
 #logo-desktop {
     display: none;
 }
 
-#logo-mobile p {
+#navbar #logo-mobile a {
     color: black;
     font-size: 26px;
-    text-align: center;
     letter-spacing: 0.15em;
-    margin-top: 1rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+    width: 60%;
+}
+
+#navbar #logo-mobile a:link {
+    text-decoration: none;
 }
 
 #navbar li,
@@ -18,6 +24,7 @@
 }
 
 #navbar .picto {
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -41,33 +48,7 @@
     min-width: 122%;
 }
 
-#last-published h1 {
-    font-size: 1.5rem;
-}
-
-#last-published .picto {
-    width: 10%;
-    margin: 0 auto;
-}
-
-#last-published {
-    flex-direction: column;
-}
-
-#last-published header {
-    border: none;
-}
-
-#copyright {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.social-networks {
-    display: none;
-}
-
+/* Home page */
 #header {
     background-image: url('./../images/image_header_mobile.png');
     background-size: contain;
@@ -75,14 +56,14 @@
 }
 
 #header header {
-    margin-left: 30px;
-    padding-top: 240px;
-    margin-top: -8%;
+    padding-top: 185px;
+    margin: -8% 1rem 2rem 1rem;
 }
 
 #header header h1 {
     font-size: 110%;
     margin-top: 5%;
+    margin-bottom: 1rem;
 }
 
 #header header p {
@@ -92,8 +73,9 @@
 .partie2 h2 {
     font-size: 20px;
     text-align: center;
-    margin-top: -25%;
+    margin-top: -59%;
 }
+
 #job {
     text-align: center;
     margin-top: -30%;
@@ -126,7 +108,7 @@
 
 #instruction article>p {
     text-align: center;
-    margin-top: -4%; 
+    margin-top: -4%;
 }
 
 #instruction article .number {
@@ -138,6 +120,7 @@
     margin-bottom: 35px;
     font-weight: bold;
 }
+
 #charte a.contrast.outline {
     max-width: 250%;
     height: auto;
@@ -146,8 +129,8 @@
     margin-bottom: 20px;
     background-color: #1fe0;
     color: #000000;
-    
 }
+
 #create-story {
     padding: 1.5rem 2rem 0 2rem;
 }
@@ -159,7 +142,24 @@
     margin: 0;
 }
 
-/* bouton upload image formulaire */
+#last-published h1 {
+    font-size: 1.5rem;
+}
+
+#last-published .picto {
+    width: 10%;
+    margin: 0 auto;
+}
+
+#last-published {
+    flex-direction: column;
+}
+
+#last-published header {
+    border: none;
+}
+
+/* Form create a new story */
 #image-upload {
     width: 112px;
     margin: 0 auto;
@@ -242,7 +242,7 @@
     margin: auto;
 }
 
-/******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
+/* Create a new chapter */
 main #textContribute,
 main #container .story .description,
 main #container .image #desktop {
@@ -377,7 +377,7 @@ main button a:hover {
     color: white;
 }
 
-/* LIRE UNE HISTOIRE */
+/* Read a story */
 #read #container .chapter,
 #read #container .age,
 #read #container .description,
@@ -427,7 +427,7 @@ main button a:hover {
     margin-bottom: 1rem;
 }
 
-/******************** PARTIE LISTER HISTOIRES ****************************************/
+/* Stories list */
 main #title_list {
     padding-left: 100px;
 }
@@ -436,4 +436,15 @@ main #list_stories .title_cooperate {
     width: 80%;
     margin: auto;
     margin-bottom: 10px;
+}
+
+/* Footer */
+#copyright {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-networks {
+    display: none;
 }

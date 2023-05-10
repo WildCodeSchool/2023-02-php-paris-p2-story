@@ -24,9 +24,10 @@ body {
 }
 
 body>main {
-    padding-top: 1.5rem 0 0 0;
+    padding: 1.5rem 0 0 0;
 }
 
+/* Navbar */
 #navbar {
     background-color: var(--nav-color);
     padding: 1rem;
@@ -38,7 +39,66 @@ body>main {
     display: flex;
 }
 
-/* bouton upload image formulaire */
+/* Home page */
+#instruction article {
+    box-shadow: none;
+}
+
+#last-published {
+    background-color: var(--nav-color);
+    padding: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+#last-published h1 {
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#last-published article {
+    background: var(--nav-color);
+    box-shadow: none;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#last-published article>header {
+    padding: 0;
+    margin: 0 0 1rem 0;
+    background-color: var(--nav-color);
+}
+
+#last-published article>header>img {
+    box-shadow: -1px 2px 14px -6px rgba(0, 0, 0, 0.7);
+}
+
+#last-published a {
+    font-weight: 600;
+}
+
+#last-published img {
+    max-height: 17rem;
+    min-height: 17rem;
+    min-width: 12rem;
+}
+
+#last-published a {
+    color: #000000;
+}
+
+#other-stories {
+    background-color: var(--nav-color);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* form create a story */
 #image-upload {
     display: flex;
     flex-direction: column;
@@ -58,82 +118,7 @@ body>main {
     opacity: 0;
 }
 
-#instruction article {
-    box-shadow: none;
-}
-#last-published {
-    background-color: var(--nav-color);
-    padding: 0;
-    margin-bottom: 0;
-}
-
-#last-published h1 {
-    padding: 1rem;
-    text-align: center;
-    margin-bottom: 0;
-}
-
-#stories-list {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 0;
-}
-
-#stories-list article {
-    background: var(--nav-color);
-    box-shadow: none;
-    text-align: center;
-    margin-bottom: 0;
-    padding: 0;
-}
-
-#stories-list article>header {
-    padding: 0;
-    margin: 0 0 1rem 0;
-    background-color: var(--nav-color);
-}
-
-#stories-list article>header>img {
-    box-shadow: -1px 2px 14px -6px rgba(0, 0, 0, 0.7);
-}
-
-#stories-list article>p {
-    color: #888888;
-}
-
-#stories-list a {
-    font-weight: 600;
-}
-
-#stories-list img {
-    max-height: 17rem;
-    min-height: 17rem;
-    min-width: 12rem;
-}
-
-#other-stories {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-}
-
-#other-stories a,
-#stories-list a {
-    color: #000000;
-}
-
-footer {
-    margin-bottom: 0;
-
-}
-
-body>main {
-    padding-top: 1.5rem 0 0 0;
-}
-#navbar {
-    margin-bottom: 0;
-}
-/* LOGIN */
+/* Login */
 #login,
 #welcome {
     display: flex;
@@ -167,7 +152,7 @@ body>main {
     color: var(--button-color)
 }
 
-/* LIRE UNE HISTOIRE */
+/* read a story */
 #chapters {
     text-align: justify;
 }
@@ -201,4 +186,9 @@ body>main {
 #edit-button {
     color: var(--button-color);
     border-color: var(--button-color);
+}
+
+/* Footer */
+footer {
+    margin-bottom: 0;
 }

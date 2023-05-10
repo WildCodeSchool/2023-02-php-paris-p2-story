@@ -1,5 +1,6 @@
 @import url("./style.css");
 
+/* Navbar */
 #logo-mobile {
     display: none;
 }
@@ -38,32 +39,35 @@
     color: #D1D1D1;
 }
 
+/* home page */
 main #header {
     background-image: url('./../images/image_header_desktop.png');
-    background-size: contain;
+    background-size: cover;
     height: 700px;
-    margin-top: -7%;
+    margin-top: -2.5%;
 }
 
 #header header {
     padding-left: 5%;
     padding-top: 2%;
 }
-#header header p{
+
+#header header p {
     width: 55%;
-    font-size: 95%;  
+    font-size: 95%;
 }
 
 #header header h1 {
-    font-size:xx-large;
+    font-size: xx-large;
     text-align: left;
 }
 
 div.partie2 h2 {
     font-size: 1.3em;
     text-align: center;
-    margin-top: -10%;
+    margin-top: -2%;
 }
+
 #job {
     text-align: center;
 }
@@ -72,7 +76,7 @@ div.partie2 h2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 97%;
-    margin-top: -4%;
+    /* margin-top: -4%; */
 }
 
 #instruction article {
@@ -116,36 +120,20 @@ div.partie2 h2 {
     margin-bottom: 20px;
     background-color: #1fe0;
     color: #000000;
-    
+
 }
 
 #last-published .picto {
     display: none;
 }
 
-#stories-list a:hover,
+#last-published a:hover,
 #other-stories a:hover {
     color: var(--button-color);
     text-decoration: none;
 }
 
-footer {
-    background-color: #000000;
-    padding: 2rem;
-}
-
-footer .grid {
-    grid-template-columns: 3fr repeat(4, 1fr);
-    align-items: center;
-}
-
-footer div p {
-    margin-left: 1rem;
-    margin-top: 1.2rem;
-    color: white;
-}
-
-/******************** DEBUT PARTIE CREER NOUVELLE HISTOIRE **************************/
+/* Form create a story */
 #create-story {
     padding: 1.5rem 2rem 0 2rem;
 }
@@ -249,7 +237,7 @@ footer div p {
     margin: auto;
 }
 
-/******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
+/* Create a chapter */
 main container #mobile {
     display: none;
 }
@@ -403,7 +391,7 @@ main button a:hover {
     color: white;
 }
 
-/* LIRE UNE HISTOIRE */
+/* Read a story */
 #read #container {
     background-color: white;
 }
@@ -422,7 +410,7 @@ main button a:hover {
     justify-content: space-evenly;
 }
 
-/******************** PARTIE LISTER HISTOIRES ****************************************/
+/* Stories list */
 main #list_stories #container {
     background-color: white;
 }
@@ -430,4 +418,21 @@ main #list_stories #container {
 main #list_stories .title_cooperate {
     width: 80%;
     margin: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    padding: 2rem;
+}
+
+footer .grid {
+    grid-template-columns: 3fr repeat(4, 1fr);
+    align-items: center;
+}
+
+footer div p {
+    margin-left: 1rem;
+    margin-top: 1.2rem;
+    color: white;
 }
