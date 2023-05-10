@@ -263,6 +263,8 @@ main #container {
 main #container .image img {
     padding-top: 3%;
     height: 160px;
+    width: 100px;
+
 }
 
 main #container .story {
