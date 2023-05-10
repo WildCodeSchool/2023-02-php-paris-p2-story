@@ -8,15 +8,16 @@
 
 		<section id="header">
 			<header>
-				<h1>Les véritables e-stoires s'écrivent à plusieurs !</h1>
-				<p>Que vous soyez écrivain(e)s expérimenté(e)s ou débutant(e), laissez votre imagination débordante la possibilité de s'exprimer sur la toile.<br></p>
-				<p>Entrez dans la dynamique d'une écriture conviviale avec e-stoires et voyez où vous porte votre créativité.<br></p>
+				<h1>Les plus belles e-stoires s'écrivent à plusieurs !</h1>
+				<p>Que vous soyez écrivain(e) expérimenté(e) ou débutant(e),</p>
+				<p>libérez votre imagination débordante en écrivant des e-stoires sur la toile.</p>
+				<p>Entrez dans la dynamique d'une écriture collaborative et voyez où vous porte votre créativité.</p>
 			</header>
 		</section>
 
 		<div class="partie2">
 			<div>
-				<h2>Vivez des e-stoires inédites</h2>
+				<h1>Vivez des e-stoires inédites</h1>
 			</div>
 
 			<section id="instruction" class="grid">
@@ -26,25 +27,34 @@
 					<p>Tout le monde a une histoire à raconter.<br>
 						Alors commencez à l'écrire et faites vivre vos personnages.</p><br>
 					<button type="button">
-						<a href="/stories/add"><img src="/assets/images/pencil.png"></a>
+						{% if user %}
+							<a href="/stories/add"><img src="/assets/images/pencil.png"></a>
+						{% else %}
+							<a href="/login"><img src="/assets/images/pencil.png"></a>
+						{% endif %}
 					</button>
 				</article>
 
 				<article>
 					<p class="number">-2-</p><br>
 					<p class="title">Contribuer</p><br>
-					<p>Apportez votre plume à l'édifice.<br>
-						Une histoire inachevée vous plaît et vous souhaitez lui ajouter un chapitre.</p><br>
+					<p>Une histoire inachevée vous plaît ?<br>
+						Et vous souhaitez lui ajouter un chapitre ?
+						<br>Apportez votre pierre à l'édifice.</p><br>
 					<button type="button">
-						<a href="/stories/cooperate"><img src="/assets/images/contribute.png"></a>
+						{% if user %}
+							<a href="/stories/cooperate"><img src="/assets/images/contribute.png"></a>
+						{% else %}
+							<a href="/login"><img src="/assets/images/contribute.png"></a>
+						{% endif %}
 					</button>
 				</article>
 
 				<article>
 					<p class="number">-3-</p><br>
 					<p class="title">Lire</p><br>
-					<p>Vous préférez lire.<br>
-						Voici une bibliothèque authentique qui vous transportera dans différents univers.</p><br>
+					<p>Vous préférez lire ?<br>
+						Voici une bibliothèque originale qui vous transportera dans différents univers.</p><br>
 					<button type="button">
 						<a href="/stories/read"><img src="/assets/images/read.png"></a>
 					</button>
@@ -56,15 +66,19 @@
 			</section>
 		</div>
 
+		<h1 id="last-published-title">Dernières publications</h1>
 		<section id="last-published">
-			<h1>Dernières publications</h1>
 
 			{% for story in stories %}
 
-				<article>
+				<article class="last-stories">
 
 					<header>
-						<img src="{{ story.picture }}" alt="couverture du livre">
+						{% if story.picture %}
+							<img src="/uploads/{{ story.picture }}" alt="couverture e-stoire">
+						{% else %}
+							<img src="/assets/images/default.png" alt="couverture e-stoire">
+						{% endif %}
 					</header>
 
 					<a href="/stories/show?id={{ story.id }}">{{ story.title }}</a>

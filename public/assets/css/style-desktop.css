@@ -44,7 +44,7 @@ main #header {
     background-image: url('./../images/image_header_desktop.png');
     background-size: cover;
     height: 700px;
-    margin-top: -2.5%;
+    margin-top: -3.5%;
 }
 
 #header header {
@@ -53,19 +53,18 @@ main #header {
 }
 
 #header header p {
-    width: 55%;
+    margin-top: -1rem;
     font-size: 95%;
+    color: black;
 }
 
 #header header h1 {
-    font-size: xx-large;
     text-align: left;
 }
 
-div.partie2 h2 {
-    font-size: 1.3em;
+div.partie2 h1 {
     text-align: center;
-    margin-top: -2%;
+    margin-top: -3%;
 }
 
 #job {
@@ -76,7 +75,6 @@ div.partie2 h2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 97%;
-    /* margin-top: -4%; */
 }
 
 #instruction article {
@@ -117,10 +115,9 @@ div.partie2 h2 {
     height: auto;
     border-color: black;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 51px;
     background-color: #1fe0;
     color: #000000;
-
 }
 
 #last-published .picto {
@@ -342,6 +339,20 @@ main #container button {
     width: 35%;
 }
 
+input[type=submit] {
+    background: #F5664B;
+    border: none;
+}
+
+form input[type=submit] {
+    width: 20%;
+    margin-left: 40%;
+}
+
+#container .story input[type=submit] {
+    width: 35%;
+}
+
 main #container button a:link,
 main #container button a:visited,
 main #container button a:hover {
@@ -422,6 +433,7 @@ main #list_stories .title_cooperate {
 
 /* Footer */
 footer {
+    margin-top: 3rem;
     background-color: #000000;
     padding: 2rem;
 }

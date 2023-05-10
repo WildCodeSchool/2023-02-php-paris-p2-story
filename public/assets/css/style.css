@@ -50,7 +50,13 @@ body>main {
     margin-bottom: 0;
     display: flex;
     justify-content: space-around;
-    padding: 2rem;
+}
+
+#last-published-title {
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1rem;
 }
 
 #last-published h1 {
