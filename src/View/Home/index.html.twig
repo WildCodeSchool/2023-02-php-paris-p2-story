@@ -1,8 +1,100 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<h1>Hello Wilder !</h1>
-	<p>Find a complete CRUD example on
-		<a href="/stories">/stories</a>
-		page.</p>
+
+	{# Ajout d'un id pour éviter pb de sélécteurs #}
+
+	<main>
+
+		<section id="header">
+			<header>
+				<h1>Les plus belles e-stoires s'écrivent à plusieurs !</h1>
+				<p>Que vous soyez écrivain(e) expérimenté(e) ou débutant(e),</p>
+				<p>libérez votre imagination débordante en écrivant des e-stoires sur la toile.</p>
+				<p>Entrez dans la dynamique d'une écriture collaborative et voyez où vous porte votre créativité.</p>
+			</header>
+		</section>
+
+		<div class="partie2">
+			<div>
+				<h1>Vivez des e-stoires inédites</h1>
+			</div>
+
+			<section id="instruction" class="grid">
+				<article>
+					<p class="number">-1-</p><br>
+					<p class="title">Créer</p><br>
+					<p>Tout le monde a une histoire à raconter.<br>
+						Alors commencez à l'écrire et faites vivre vos personnages.</p><br>
+					<button type="button">
+						{% if user %}
+							<a href="/stories/add"><img src="/assets/images/pencil.png"></a>
+						{% else %}
+							<a href="/login"><img src="/assets/images/pencil.png"></a>
+						{% endif %}
+					</button>
+				</article>
+
+				<article>
+					<p class="number">-2-</p><br>
+					<p class="title">Contribuer</p><br>
+					<p>Une histoire inachevée vous plaît ?<br>
+						Et vous souhaitez lui ajouter un chapitre ?
+						<br>Apportez votre pierre à l'édifice.</p><br>
+					<button type="button">
+						{% if user %}
+							<a href="/stories/cooperate"><img src="/assets/images/contribute.png"></a>
+						{% else %}
+							<a href="/login"><img src="/assets/images/contribute.png"></a>
+						{% endif %}
+					</button>
+				</article>
+
+				<article>
+					<p class="number">-3-</p><br>
+					<p class="title">Lire</p><br>
+					<p>Vous préférez lire ?<br>
+						Voici une bibliothèque originale qui vous transportera dans différents univers.</p><br>
+					<button type="button">
+						<a href="/stories/read"><img src="/assets/images/read.png"></a>
+					</button>
+				</article>
+			</section>
+
+			<section id="charte" class="grid">
+				<a href="#" role="button" class="contrast outline">Charte d'utilisateur</a>
+			</section>
+		</div>
+
+		<h1 id="last-published-title">Dernières publications</h1>
+		<section id="last-published">
+
+			{% for story in stories %}
+
+				<article class="last-stories">
+
+					<header>
+						{% if story.picture %}
+							<img src="/uploads/{{ story.picture }}" alt="couverture e-stoire">
+						{% else %}
+							<img src="/assets/images/default.png" alt="couverture e-stoire">
+						{% endif %}
+					</header>
+
+					<a href="/stories/show?id={{ story.id }}">{{ story.title }}</a>
+
+					<p>{{ story.pseudo }}</p>
+
+				</article>
+			{% else %}
+				<div>Nothing to display</div>
+			{% endfor %}
+		</section>
+
+		<div id="other-stories">
+			<a href="/stories/read">Découvrez d'autres e-stoires</a>
+		</div>
+
+	</main>
+
 {% endblock %}

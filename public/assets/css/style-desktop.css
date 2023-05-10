@@ -1,5 +1,6 @@
 @import url("./style.css");
 
+/* Navbar */
 #logo-mobile {
     display: none;
 }
@@ -16,12 +17,15 @@
 }
 
 #navbar ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     list-style-type: none;
     letter-spacing: 0.12em;
 }
 
 #navbar ul li {
-    font-size: 18px;
+    font-size: 16px;
     margin-right: 1rem;
     margin-left: 1rem;
 }
@@ -35,8 +39,203 @@
     color: #D1D1D1;
 }
 
-/******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
-main #container .image #mobile {
+/* home page */
+main #header {
+    background-image: url('./../images/image_header_desktop.png');
+    background-size: cover;
+    height: 700px;
+    margin-top: -3.5%;
+}
+
+#header header {
+    padding-left: 5%;
+    padding-top: 2%;
+}
+
+#header header p {
+    margin-top: -1rem;
+    font-size: 95%;
+    color: black;
+}
+
+#header header h1 {
+    text-align: left;
+}
+
+div.partie2 h1 {
+    text-align: center;
+    margin-top: -3%;
+}
+
+#job {
+    text-align: center;
+}
+
+#instruction {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 97%;
+}
+
+#instruction article {
+    border: #ED553B 1px solid;
+    margin: 6%;
+}
+
+#instruction article>button {
+    background-color: #ED553B;
+    border-color: rgb(255, 255, 255);
+    margin: auto;
+    width: 200px;
+}
+
+#instruction article>button>a>img {
+    max-width: 30px;
+    height: auto;
+    border-style: none;
+}
+
+#instruction article>p.title {
+    text-align: center;
+    margin-top: -4%;
+    font-weight: bold;
+}
+
+#instruction article>p.number {
+    font-weight: bold;
+    text-align: center;
+}
+
+#instruction article>p {
+    text-align: center;
+}
+
+#charte a.contrast.outline {
+    max-width: 25%;
+    height: auto;
+    border-color: black;
+    margin: auto;
+    margin-bottom: 51px;
+    background-color: #1fe0;
+    color: #000000;
+}
+
+#last-published .picto {
+    display: none;
+}
+
+#last-published a:hover,
+#other-stories a:hover {
+    color: var(--button-color);
+    text-decoration: none;
+}
+
+/* Form create a story */
+#create-story {
+    padding: 1.5rem 2rem 0 2rem;
+}
+
+#presentation {
+    font-size: 14px;
+    text-align: justify;
+    width: 100%;
+    margin: 0% 2.5% 0% 2.5%;
+}
+
+#create-story h1 {
+    margin: 0% 2.5% 2% 2.5%;
+}
+
+#desktop-display {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 0% 2.5% 2% 2.5%;
+}
+
+#image-upload {
+    display: flex;
+    justify-content: flex-start;
+    width: 286px;
+}
+
+#cover-zone {
+    background-image: url("/assets/images/cover-upload-desktop.png");
+    width: 290px;
+    height: 357px;
+}
+
+#image-upload .coverPreview {
+    width: 223px;
+    height: 321px;
+    margin-top: -364px;
+}
+
+#upload-picture {
+    width: 158px;
+    margin-top: 257px;
+}
+
+#create-story #fonds {
+    background-color: rgba(255, 221, 156, 0.3);
+    padding: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: .5rem;
+    justify-content: center;
+}
+
+#create-story #title,
+#pseudo-form,
+#nbchapter,
+#genre,
+#lectorat,
+#description {
+    background-color: white;
+    font-size: 12px;
+    width: 90%;
+    height: auto;
+    margin: 2% 5% 2% 5%;
+    text-align: left;
+}
+
+#create-story .binome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    margin: 2% 2.5% 2% 2.5%;
+}
+
+#description {
+    height: 100px;
+    width: 90%;
+}
+
+#age {
+    font-size: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 20px;
+    font-size: 12px;
+    margin: 2% 5% 5% 5%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#buttonform {
+    width: 70%;
+    height: auto;
+    background: #F5664B;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+/* Create a chapter */
+main container #mobile {
     display: none;
 }
 
@@ -129,7 +328,7 @@ main #container .story .age {
 }
 
 main #container .story .description {
-    text-align: justify; 
+    text-align: justify;
     width: 100%;
 }
 
@@ -138,6 +337,27 @@ main #container button {
     border: none;
     padding: 8px 20px;
     width: 35%;
+}
+
+input[type=submit] {
+    background: #F5664B;
+    border: none;
+}
+
+form input[type=submit] {
+    width: 20%;
+    margin-left: 40%;
+}
+
+#container .story input[type=submit] {
+    width: 35%;
+}
+
+main #container button a:link,
+main #container button a:visited,
+main #container button a:hover {
+    text-decoration: none;
+    color: white;
 }
 
 main #form {
@@ -163,7 +383,7 @@ main #form .flex fieldset {
     margin-left: 0.5em;
 }
 
-main #form .flex fieldset label{
+main #form .flex fieldset label {
     font-weight: bold;
 }
 
@@ -176,14 +396,13 @@ main #form button {
 }
 
 main button a:link,
-main button a:visited,  
+main button a:visited,
 main button a:hover {
-    text-decoration: none; 
+    text-decoration: none;
     color: white;
 }
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
 
-/* LIRE UNE HISTOIRE */
+/* Read a story */
 #read #container {
     background-color: white;
 }
@@ -202,7 +421,7 @@ main button a:hover {
     justify-content: space-evenly;
 }
 
-/******************** PARTIE LISTER HISTOIRES ****************************************/
+/* Stories list */
 main #list_stories #container {
     background-color: white;
 }
@@ -212,4 +431,20 @@ main #list_stories .title_cooperate {
     margin: auto;
 }
 
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
+/* Footer */
+footer {
+    margin-top: 3rem;
+    background-color: #000000;
+    padding: 2rem;
+}
+
+footer .grid {
+    grid-template-columns: 3fr repeat(4, 1fr);
+    align-items: center;
+}
+
+footer div p {
+    margin-left: 1rem;
+    margin-top: 1.2rem;
+    color: white;
+}

@@ -1,6 +1,10 @@
 <div id="container">
 	<div class="image">
-		<img src="{{ story.picture }}" alt="coverture e-stoire">
+		{%if story.picture %}
+			<img src="/uploads/{{ story.picture }}" alt="couverture e-stoire">
+		{% else %}
+			<img src="/assets/images/default.png" alt="couverture e-stoire">
+		{% endif %}
 	</div>
 	<div class="story">
 		<div class="title">
@@ -27,18 +31,12 @@
 			<p>{{ story.description }}</p>
 		</div>
 		{% if story.ended %}
-			<button type="submit">
-				<a href="/stories/show?id={{ story.id }}">Lire</a>
-			</button>
+			<input type="submit" value="Lire" onclick="window.location.href='/stories/show?id={{ story.id }}'">
 		{% else %}
 			{% if user %}
-				<button type="submit">
-					<a href="/chapters/add?id={{ story.id }}">Contribuer</a>
-				</button>
+				<input type="submit" value="Contribuer" onclick="window.location.href='/chapters/add?id={{ story.id }}'">
 			{% else %}
-				<button type="submit">
-					<a href="/login">Contribuer</a>
-				</button>
+				<input type="submit" value="Contribuer" onclick="window.location.href='/login'">
 			{% endif %}
 		{% endif %}
 	</div>

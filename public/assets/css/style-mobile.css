@@ -1,15 +1,21 @@
 @import url("./style.css");
 
+/* Navbar */
 #logo-desktop {
     display: none;
 }
 
-#logo-mobile p {
+#navbar #logo-mobile a {
     color: black;
     font-size: 26px;
-    text-align: center;
     letter-spacing: 0.15em;
-    margin-top: 1rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+    width: 60%;
+}
+
+#navbar #logo-mobile a:link {
+    text-decoration: none;
 }
 
 #navbar li,
@@ -18,6 +24,7 @@
 }
 
 #navbar .picto {
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -41,7 +48,206 @@
     min-width: 122%;
 }
 
-/******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
+/* Home page */
+#header {
+    background-image: url('./../images/image_header_mobile.png');
+    background-size: contain;
+    height: 650px;
+}
+
+#header header {
+    padding-top: 185px;
+    margin: -8% 1rem 2rem 1rem;
+}
+
+#header header h1 {
+    font-size: 110%;
+    margin-top: 8%;
+    margin-bottom: 1rem;
+}
+
+#header header p {
+    font-size: 95%;
+    color: black;
+}
+
+.partie2 h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: -47%;
+}
+
+#job {
+    text-align: center;
+    margin-top: -30%;
+}
+
+#instruction {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin-top: -4%;
+}
+
+#instruction article {
+    border: #ED553B 2px solid;
+    margin: 6% 6% 6% 6%;
+}
+
+#instruction article>button {
+    background-color: #ED553B;
+    border-color: rgb(255, 255, 255);
+    margin: auto;
+    width: 150px;
+}
+
+#instruction article>button>a>img {
+    max-width: 30%;
+    height: auto;
+    border-style: none;
+}
+
+#instruction article>p {
+    text-align: center;
+    margin-top: -4%;
+}
+
+#instruction article .number {
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+
+#instruction article .title {
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+
+#charte a.contrast.outline {
+    max-width: 250%;
+    height: auto;
+    border-color: black;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: #1fe0;
+    color: #000000;
+}
+
+#last-published h1 {
+    font-size: 1.5rem;
+}
+
+#last-published .picto {
+    width: 10%;
+    margin: 0 auto;
+}
+
+#last-published {
+    flex-direction: column;
+}
+
+#last-published header {
+    border: none;
+}
+
+#last-published-title {
+    font-size: 26px;
+}
+
+/* Form create a new story */
+#image-upload {
+    width: 112px;
+    margin: 0 auto;
+}
+
+#cover-zone {
+    background-image: url("/assets/images/cover-upload-mobile.png");
+    width: 116px;
+    height: 157px;
+}
+
+#image-upload .coverPreview {
+    width: 99px;
+    height: 136px;
+    margin-top: -165px;
+}
+
+#upload-picture {
+    width: 115px;
+    margin-top: 96px;
+}
+
+#create-story {
+    padding: 1.5rem 2rem 0 2rem;
+}
+
+#presentation {
+    font-size: 14px;
+    text-align: justify;
+    width: 100%;
+    margin: 0;
+}
+
+#create-story #fonds {
+    background-color: rgba(255, 221, 156, 0.3);
+    margin-top: 2em;
+    padding: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: .5rem;
+    justify-content: center;
+}
+
+#create-story #title,
+#pseudo-form,
+#nbchapter,
+#genre,
+#lectorat,
+#description {
+    background-color: white;
+    font-size: 12px;
+    width: 90%;
+    height: auto;
+    margin: 2% 5% 2% 5%;
+    text-align: left;
+}
+
+#create-story .binome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    margin: 2% 2.5% 2% 2.5%;
+}
+
+#description {
+    height: 100px;
+    width: 90%;
+}
+
+#age {
+    font-size: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 20px;
+    font-size: 12px;
+    margin: 2% 5% 5% 5%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#buttonform {
+    width: 40%;
+    height: auto;
+    background: #F5664B;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+/* Create a new chapter */
 main #textContribute,
 main #container .story .description,
 main #container .image #desktop {
@@ -135,6 +341,25 @@ main #container button {
     font-size: 1.1em;
 }
 
+input[type=submit] {
+    background: #F5664B;
+    border: none;
+}
+
+form input[type=submit] {
+    width: 45%;
+    margin-left: 30%;
+}
+
+#container .story input[type=submit] {
+    width: 65%;
+    height: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 main #form {
     width: 80%;
     margin: auto;
@@ -157,7 +382,7 @@ main #form .flex fieldset {
     margin-left: 0.5em;
 }
 
-main #form .flex fieldset label{
+main #form .flex fieldset label {
     font-weight: bold;
 }
 
@@ -170,14 +395,13 @@ main #form button {
 }
 
 main button a:link,
-main button a:visited,  
+main button a:visited,
 main button a:hover {
-    text-decoration: none; 
+    text-decoration: none;
     color: white;
 }
 
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
-/* LIRE UNE HISTOIRE */
+/* Read a story */
 #read #container .chapter,
 #read #container .age,
 #read #container .description,
@@ -227,7 +451,7 @@ main button a:hover {
     margin-bottom: 1rem;
 }
 
-/******************** PARTIE LISTER HISTOIRES ****************************************/
+/* Stories list */
 main #title_list {
     padding-left: 100px;
 }
@@ -238,4 +462,13 @@ main #list_stories .title_cooperate {
     margin-bottom: 10px;
 }
 
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
+/* Footer */
+#copyright {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-networks {
+    display: none;
+}
