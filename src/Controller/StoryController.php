@@ -113,7 +113,6 @@ class StoryController extends AbstractController
                 return null;
             }
         }
-
         return $this->twig->render('Story/add.html.twig');
     }
 

@@ -10,7 +10,6 @@ return [
     '' => ['HomeController', 'index',],
     'stories/cooperate' => ['StoryController', 'cooperate',],
     'stories/read' => ['StoryController', 'read',],
-    'stories/edit' => ['StoryController', 'edit', ['id']],
     'stories/show' => ['StoryController', 'show', ['id']],
     'stories/add' => ['StoryController', 'add',],
     'stories/delete' => ['StoryController', 'delete',],
