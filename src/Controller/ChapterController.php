@@ -57,7 +57,7 @@ class ChapterController extends AbstractController
                 $errors = $this->verify($chapter);
 
                 if (empty($errors)) {
-                    $this->chapterManager->insert($chapter, $storyId);
+                    $this->chapterManager->insert($chapter, $storyId, $this->user);
 
                     if ($story['nb_chapters'] + 1 === $story['nbchapter']) {
                         $this->storyManager->checkEndedStory($storyId);

@@ -148,6 +148,100 @@
     color: #000000;
     
 }
+#create-story {
+    padding: 1.5rem 2rem 0 2rem;
+}
+
+#presentation {
+    font-size: 14px;
+    text-align: justify;
+    width: 100%;
+    margin: 0;
+}
+
+/* bouton upload image formulaire */
+#image-upload {
+    width: 112px;
+    margin: 0 auto;
+}
+
+#cover-zone {
+    background-image: url("/assets/images/cover-upload-mobile.png");
+    width: 116px;
+    height: 157px;
+}
+
+#image-upload .coverPreview {
+    width: 99px;
+    height: 136px;
+    margin-top: -165px;
+}
+
+#upload-picture {
+    width: 115px;
+    margin-top: 96px;
+}
+
+#create-story #fonds {
+    background-color: rgba(255, 221, 156, 0.3);
+    margin-top: 2em;
+    padding: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: .5rem;
+    justify-content: center;
+}
+
+#create-story #title,
+#pseudo-form,
+#nbchapter,
+#genre,
+#lectorat,
+#description {
+    background-color: white;
+    font-size: 12px;
+    width: 90%;
+    height: auto;
+    margin: 2% 5% 2% 5%;
+    text-align: left;
+}
+
+#create-story .binome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    margin: 2% 2.5% 2% 2.5%;
+}
+
+#description {
+    height: 100px;
+    width: 90%;
+}
+
+#age {
+    font-size: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 20px;
+    font-size: 12px;
+    margin: 2% 5% 5% 5%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#buttonform {
+    width: 40%;
+    height: auto;
+    background: #F5664B;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
 /******************** PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
 main #textContribute,
 main #container .story .description,
@@ -264,7 +358,7 @@ main #form .flex fieldset {
     margin-left: 0.5em;
 }
 
-main #form .flex fieldset label{
+main #form .flex fieldset label {
     font-weight: bold;
 }
 
@@ -277,13 +371,12 @@ main #form button {
 }
 
 main button a:link,
-main button a:visited,  
+main button a:visited,
 main button a:hover {
-    text-decoration: none; 
+    text-decoration: none;
     color: white;
 }
 
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE *************************** */
 /* LIRE UNE HISTOIRE */
 #read #container .chapter,
 #read #container .age,
@@ -344,5 +437,3 @@ main #list_stories .title_cooperate {
     margin: auto;
     margin-bottom: 10px;
 }
-
-/* ******************* FIN DE LA PARTIE CREER NOUVEAU CHAPITRE ET RELIER A UNE HISTOIRE **************************/
